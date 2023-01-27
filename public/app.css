@@ -16,33 +16,16 @@
     margin-bottom: 100px;
 }
 
-#mainNavbar {
-    font-size: 1.5rem;
-    font-weight: 100;    
-}
-
-#mainNavbar .nav-link {
-    color: black;
-}
-
-#mainNavbar .nav-link:hover {
-    color: #046A1F;
-}
-
-#mainNavbar .navbar-brand {
-    color: #046A1F;
-    font-size: 1.5rem;
-}
-
 #headingGroup h2 {
     color: black;
     font-weight: 100;
     font-size: 3rem;
 }
 
-#map {
-    width: 90%;
-    height: 90vh;
+#headingGroup h3 {
+    color: black;
+    font-weight: 300;
+    font-size: 2.5rem;
 }
 
 .navbar.scrolled {

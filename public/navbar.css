@@ -1,0 +1,19 @@
+#mainNavbar {
+    background-color: #D3D3D3;
+    font-size: 1.5rem;
+    font-weight: 100;    
+}
+
+#mainNavbar .nav-link {
+    color: black;
+}
+
+#mainNavbar .nav-link:hover {
+    color: #046A1F;
+}
+
+#mainNavbar .navbar-brand {
+    color: #046A1F;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
