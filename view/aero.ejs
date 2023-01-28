@@ -2,33 +2,49 @@
 <link rel="stylesheet" href="map.css">
 
 <section class="container-fluid px-0">
-    <div class="row align-items-center">
+    <div class="row align-items-center mt-5">
         <div id="headingGroup" class="text-center d-none d-lg-block">
             <h3 class="">School-based Physical Fitness Testing of Orange County School Districts</h3>
         </div>
     </div>
-    <div class="row align-items-center">
-        <div class="col-lg-3">
-            <div id="headingGroup" class="text-center d-none d-lg-block mt-5">
-                <br>
-                <h2 class="">2019</h2>
-                <h2 class="">2018</h2>
-                <h2 class="">2017</h2>
-                <h2 class="">2016</h2>
-                <h2 class="">2015</h2>
-                <h2 class="">2014</h2>
-                <h2 class="">2013</h2>
-                <h2 class="">2012</h2>
-                <h2 class="">2011</h2>
-                <h2 class="">2010</h2>
+    <div class="row align-items-center mt-5">
+        <div class="card mx-auto w-80">
+            <div class="input-group m-2">
+                <form class="row g-3 col-12 align-items-center" id="display_options">
+                    <label class="col">Display Options</label>
+                    <div class="col">
+                        <select class="form-select" name="item" id="item">
+                            <option value="" selected>Fitness Assessment...</option>
+                            <option value="aero">Aerobic Capacity</option>
+                            <option value="body">Body Composition</option>
+                        </select>
+                    </div>
+                    <div class="col">
+                        <select class="form-select" name="grade" id="grade">
+                            <option value="" selected>Grade Level...</option>
+                            <option value="5">Elementary (5th Grade)</option>
+                            <option value="7">Middle School (7th Grade)</option>
+                            <option value="9">High School (9th Grade)</option>
+                        </select>
+                    </div>
+                    <div class="col">
+                        <select class="form-select" name="year" id="year">
+                            <option value="" selected>School Year...</option>
+                            <% for (let i=2010; i<2020; i++) { %>
+                                <option value="<% i %>"><%= (i-1).toString() %>~<%= i.toString() %></option>
+                            <% } %>
+                        </select>
+                    </div>
+                    <div class="col">
+                        <button type="submit" class="btn btn-primary">Confirm</button>
+                    </div>
+                </form>
             </div>
-        </div>
-        <div class="col-lg-9">
-            <br>
-            <div id="map">
-
-            </div>
-        </div>
+            <div id="sorting-info-alert"></div>
+    </div>
+    <div class="row align-items-center mt-5">
+        <br>
+        <div id="map"></div>
     </div>
 </section>
 
@@ -43,7 +59,8 @@
         }).addTo(map);
     
     var wmsLayer = L.Geoserver.wms("http://160.87.4.187:8080/geoserver/wms", {
-        layers: "school_districts:OrangeCounty_19"
+        layers: "school_districts:OrangeCounty_19",
+        style: "school_district10"
     });
     wmsLayer.addTo(map);
 </script>
