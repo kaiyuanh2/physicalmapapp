@@ -6,22 +6,25 @@
         <div id="headingGroup" class="text-center d-none d-lg-block">
             <h3 class="">School-based Physical Fitness Testing of Orange County School Districts</h3>
         </div>
+        <div class="text-center d-none d-lg-block">
+            <p>Test: <%= item %>; Grade: <%= grade %>; School Year: <%= year %></p>
+        </div>
     </div>
     <div class="row align-items-center mt-5">
         <div class="card mx-auto w-80">
             <div class="input-group m-2">
-                <form class="row g-3 col-12 align-items-center" id="display_options">
+                <form class="row g-3 col-12 align-items-center" id="display_options" action="/map" method="GET">
                     <label class="col">Display Options</label>
                     <div class="col">
                         <select class="form-select" name="item" id="item">
-                            <option value="" selected>Fitness Assessment...</option>
+                            <option value="" selected>Fitness Assessment</option>
                             <option value="aero">Aerobic Capacity</option>
                             <option value="body">Body Composition</option>
                         </select>
                     </div>
                     <div class="col">
                         <select class="form-select" name="grade" id="grade">
-                            <option value="" selected>Grade Level...</option>
+                            <option value="" selected>Grade Level</option>
                             <option value="5">Elementary (5th Grade)</option>
                             <option value="7">Middle School (7th Grade)</option>
                             <option value="9">High School (9th Grade)</option>
@@ -29,9 +32,9 @@
                     </div>
                     <div class="col">
                         <select class="form-select" name="year" id="year">
-                            <option value="" selected>School Year...</option>
+                            <option value="" selected>School Year</option>
                             <% for (let i=2010; i<2020; i++) { %>
-                                <option value="<% i %>"><%= (i-1).toString() %>~<%= i.toString() %></option>
+                                <option value="<%= i %>"><%= (i-1).toString() %>~<%= i.toString() %></option>
                             <% } %>
                         </select>
                     </div>
@@ -46,21 +49,33 @@
         <br>
         <div id="map"></div>
     </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js" integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
+    <script src="/node_modules/leaflet-geoserver-request/src/L.Geoserver.js"></script>
+
+    <script>
+        console.log('<%- item %>');
+        var map = L.map('map').setView([33.75, -117.86], 10)
+        L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {maxZoom: 19,
+            attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+            }).addTo(map);
+
+        var stylename = 'school_district';
+
+        if ('<%- item %>' == 'aero') {
+            stylename += '<%- year %>'.substring(2, 4);
+        }
+        else {
+            stylename += '19';
+        }
+
+        console.log(stylename);
+        
+        var wmsLayer = L.Geoserver.wms("http://160.87.4.187:8080/geoserver/wms", {
+            layers: "school_districts:OrangeCounty_19",
+            style: stylename
+        });
+        wmsLayer.addTo(map);
+    </script>
 </section>
-
-<script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
-<script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js" integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
-<script src="/node_modules/leaflet-geoserver-request/src/L.Geoserver.js"></script>
-
-<script>
-    var map = L.map('map').setView([33.75, -117.86], 10)
-    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {maxZoom: 19,
-        attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-        }).addTo(map);
-    
-    var wmsLayer = L.Geoserver.wms("http://160.87.4.187:8080/geoserver/wms", {
-        layers: "school_districts:OrangeCounty_19",
-        style: "school_district10"
-    });
-    wmsLayer.addTo(map);
-</script>

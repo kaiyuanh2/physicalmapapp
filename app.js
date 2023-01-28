@@ -4,6 +4,7 @@ const path = require('path');
 const ejsMate = require('ejs-mate');
 const methodOverride = require('method-override');
 const ExpressError = require('./utils/ExpressError');
+const catchAsync = require('./utils/catchAsync');
 
 app.use(express.urlencoded({extended: true}));
 app.use(methodOverride('_method'));
@@ -19,9 +20,12 @@ app.get('/', (req, res) => {
     res.render('index')
 })
 
-app.get('/map', (req, res) => {
-    res.render('aero')
-})
+app.get('/map', catchAsync(async (req, res) => {
+    var item = req.query.item;
+    var grade = req.query.grade;
+    var year = req.query.year;
+    res.render('map', {item, grade, year});
+}))
 
 app.all('*', (req, res, next) => {
     next(new ExpressError('Page Not Found', 404))
