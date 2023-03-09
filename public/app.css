@@ -28,6 +28,12 @@
     font-size: 2.5rem;
 }
 
+#headingGroup h4 {
+    color: black;
+    font-weight: 200;
+    font-size: 2rem;
+}
+
 .navbar.scrolled {
     background: white;
     transition: background 500ms;
@@ -42,7 +48,3 @@
         font-size: 2rem;
     }
 }
-
-
-
-

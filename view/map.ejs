@@ -3,38 +3,41 @@
 
 <section class="container-fluid px-0">
     <div class="row align-items-center mt-5">
-        <div id="headingGroup" class="text-center d-none d-lg-block">
-            <h3 class="">School-based Physical Fitness Testing of Orange County School Districts</h3>
-        </div>
-        <div class="text-center d-none d-lg-block">
-            <p>Test: <%= item %>; Grade: <%= grade %>; School Year: <%= year %></p>
+        <div class="card mx-auto w-85 border-0">
+            <div id="headingGroup" class="text-center d-none d-lg-block">
+                <h3 class="">School-based Physical Fitness Testing of Orange County School Districts</h3>
+            </div>
+            <!-- <div id="headingGroup" class="text-center d-none d-lg-block">
+                <h4>Legend: The lighter, the higher percentage (better); the darker, the lower percentage (worse)</h4>
+            </div> -->
         </div>
     </div>
-    <div class="row align-items-center mt-5">
+    
+    <div class="row align-items-center mt-3">
         <div class="card mx-auto w-80">
             <div class="input-group m-2">
                 <form class="row g-3 col-12 align-items-center" id="display_options" action="/map" method="GET">
                     <label class="col">Display Options</label>
                     <div class="col">
                         <select class="form-select" name="item" id="item">
-                            <option value="" selected>Fitness Assessment</option>
-                            <option value="aero">Aerobic Capacity</option>
-                            <option value="body">Body Composition</option>
+                            <option value="" selected>--Fitness Assessment--</option>
+                            <option value="aero" <%= item === "aero" ? 'selected' : '' %>>Aerobic Capacity</option>
+                            <option value="body" <%= item === "body" ? 'selected' : '' %>>Body Composition</option>
                         </select>
                     </div>
                     <div class="col">
                         <select class="form-select" name="grade" id="grade">
-                            <option value="" selected>Grade Level</option>
-                            <option value="5">Elementary (5th Grade)</option>
-                            <option value="7">Middle School (7th Grade)</option>
-                            <option value="9">High School (9th Grade)</option>
+                            <option value="" selected>--Grade Level--</option>
+                            <option value="5" <%= grade === "5" ? 'selected' : '' %>>Elementary (5th Grade)</option>
+                            <option value="7" <%= grade === "7" ? 'selected' : '' %>>Middle School (7th Grade)</option>
+                            <option value="9" <%= grade === "9" ? 'selected' : '' %>>High School (9th Grade)</option>
                         </select>
                     </div>
                     <div class="col">
                         <select class="form-select" name="year" id="year">
-                            <option value="" selected>School Year</option>
+                            <option value="" selected>--School Year--</option>
                             <% for (let i=2010; i<2020; i++) { %>
-                                <option value="<%= i %>"><%= (i-1).toString() %>~<%= i.toString() %></option>
+                                <option value="<%= i %>" <%= year == i.toString() ? 'selected' : '' %>><%= (i-1).toString() %>~<%= i.toString() %></option>
                             <% } %>
                         </select>
                     </div>
@@ -45,6 +48,7 @@
             </div>
             <div id="sorting-info-alert"></div>
     </div>
+    <div id="selection-alert"></div>
     <div class="row align-items-center mt-5">
         <br>
         <div id="map"></div>
@@ -53,29 +57,40 @@
     <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js" integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
     <script src="/node_modules/leaflet-geoserver-request/src/L.Geoserver.js"></script>
-
     <script>
-        console.log('<%- item %>');
-        var map = L.map('map').setView([33.75, -117.86], 10)
+        var map = L.map('map').setView([33.67, -117.83], 10)
         L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {maxZoom: 19,
             attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-            }).addTo(map);
+        }).addTo(map);
 
-        var stylename = 'school_district';
+        var stylename = 'school_districts:school_districts';
 
         if ('<%- item %>' == 'aero') {
             stylename += '<%- year %>'.substring(2, 4);
+            stylename += '_' + '<%- grade %>';
         }
         else {
-            stylename += '19';
+            stylename += '19_5';
         }
 
+        const debugStr = '<%- item %> ' + '<%- grade %> ' + '<%- year %>'
+        console.log(debugStr);
         console.log(stylename);
-        
+                
         var wmsLayer = L.Geoserver.wms("http://160.87.4.187:8080/geoserver/wms", {
             layers: "school_districts:OrangeCounty_19",
-            style: stylename
+            styles: stylename
         });
         wmsLayer.addTo(map);
+        console.log(wmsLayer);
+
+        var legend = L.control({position: 'bottomleft'});
+
+        legend.onAdd = function (map) {
+            var div = L.DomUtil.create('div', 'info legend');
+            div.innerHTML += '<img src="legend.png" alt="legend">';
+            return div;
+        };
+        legend.addTo(map);
     </script>
 </section>
