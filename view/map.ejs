@@ -63,23 +63,32 @@
             attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
         }).addTo(map);
 
-        var stylename = 'school_districts:school_districts';
-
-        if ('<%- item %>' == 'aero') {
-            stylename += '<%- year %>'.substring(2, 4);
-            stylename += '_' + '<%- grade %>';
+        var stylename = 'element:Perc';
+        if ('<%- grade %>' == '5' || '<%- grade %>' == '7' || '<%- grade %>' == '9') {
+            stylename += '<%- grade %>';
         }
         else {
-            stylename += '19_5';
+            stylename += '5'
+        }
+        
+        if ('<%- item %>' == 'aero') {
+            stylename += 'a_' + '<%- year %>'.substring(2, 4);
+        }
+        else if ('<%- item %>' == 'body') {
+            stylename += 'b_' + '<%- year %>'.substring(2, 4);
+        }
+        else {
+            stylename += 'a_19';
         }
 
         const debugStr = '<%- item %> ' + '<%- grade %> ' + '<%- year %>'
         console.log(debugStr);
         console.log(stylename);
                 
-        var wmsLayer = L.Geoserver.wms("http://160.87.4.187:8080/geoserver/wms", {
-            layers: "school_districts:OrangeCounty_19",
-            styles: stylename
+        var wmsLayer = L.Geoserver.wms("http://127.0.0.1:8080/geoserver/wms", {
+            layers: "schooldistrict:OrangeCounty_combined",
+            styles: "schooldistrict:school_districts",
+            env: stylename
         });
         wmsLayer.addTo(map);
         console.log(wmsLayer);
