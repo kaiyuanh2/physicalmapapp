@@ -12,6 +12,17 @@
             </div> -->
         </div>
     </div>
+
+    <% if (item === "body") { %>
+        <div class="row align-items-center mt-3">
+            <div class="col-6 offset-3">
+                <div class="alert alert-danger" role="alert">
+                    <h4 class="alert-heading">ERROR</h4>
+                    <p>Sorry, student body composition data currently not available. Showing aerobic capacity data with the same year and grade.</p>
+                </div>
+            </div>
+        </div>
+    <% } %>
     
     <div class="row align-items-center mt-3">
         <div class="card mx-auto w-80">
@@ -75,7 +86,7 @@
             stylename += 'a_' + '<%- year %>'.substring(2, 4);
         }
         else if ('<%- item %>' == 'body') {
-            stylename += 'b_' + '<%- year %>'.substring(2, 4);
+            stylename += 'a_' + '<%- year %>'.substring(2, 4);
         }
         else {
             stylename += 'a_19';
