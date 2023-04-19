@@ -94,23 +94,15 @@
         }
 
         const debugStr = '<%- item %> ' + '<%- grade %> ' + '<%- year %>'
-        console.log(debugStr);
+        // console.log(debugStr);
         console.log(stylename);
                 
-        // var wmsLayer = L.Geoserver.wms("http://127.0.0.1:8080/geoserver/wms", {
-        //     layers: "schooldistrict:OrangeCounty_combined",
-        //     styles: "schooldistrict:school_districts",
-        //     env: stylename
-        // });
-        // wmsLayer.addTo(map);
-
-        L.tileLayer.betterWms("http://127.0.0.1:8080/geoserver/wms", {
+        var wmsLayer = L.Geoserver.wms("http://127.0.0.1:8080/geoserver/wms", {
             layers: "schooldistrict:OrangeCounty_combined",
             styles: "schooldistrict:school_districts",
-            transparent: true,
-            format: 'image/png',
             env: stylename
-        }).addTo(map);
+        });
+        wmsLayer.addTo(map);
         // console.log(wmsLayer);
 
         var legend = L.control({position: 'bottomleft'});
@@ -122,20 +114,19 @@
         };
         legend.addTo(map);
 
-        // map.on('click', function(e) {        
-        //     var popLocation = e.latlng;
-        //     var BBOX = map.getBounds()._southWest.lng+","+map.getBounds()._southWest.lat+","+map.getBounds()._northEast.lng+","+map.getBounds()._northEast.lat;
-        //     var WIDTH = map.getSize().x;
-        //     var HEIGHT = map.getSize().y;
-        //     var X = map.layerPointToContainerPoint(e.layerPoint).x;
-        //     var Y = map.layerPointToContainerPoint(e.layerPoint).y;
-        //     console.log(X, Y);
-        //     var URL = 'http://127.0.0.1:8080/geoserver/wms?SERVICE=WMS&VERSION=1.3&REQUEST=GetFeatureInfo&LAYERS=schooldistrict:OrangeCounty_combined&QUERY_LAYERS=schooldistrict:OrangeCounty_combined&STYLES=&BBOX=' + BBOX + '&FEATURE_COUNT=5&HEIGHT=' + HEIGHT + '&WIDTH=' + WIDTH + '&FORMAT=image%2Fpng&INFO_FORMAT=text%2fhtml&SRS=EPSG%3A4326&i=' + X + '&j=' + Y;
-        //     console.log(URL);
-        //     var popup = L.popup()
-        //     .setLatLng(popLocation)
-        //     .setContent("<iframe src='"+ URL +"' width='400' height='200' frameborder='0'></iframe>")
-        //     .openOn(map);        
-        // });
+        map.on('click', function(e) {        
+            var popLocation = e.latlng;
+            var latlngStr = '(' + e.latlng.lat.toFixed(3) + ', ' + e.latlng.lng.toFixed(3) + ')';
+            var BBOX = map.getBounds()._southWest.lng + "," + map.getBounds()._southWest.lat + "," + map.getBounds()._northEast.lng + "," + map.getBounds()._northEast.lat;
+            var WIDTH= map.getSize().x;
+            var HEIGHT = map.getSize().y;
+            var X = Math.floor(map.layerPointToContainerPoint(e.layerPoint).x);
+            var Y = Math.floor(map.layerPointToContainerPoint(e.layerPoint).y);
+            var URL = 'http://localhost:8080/geoserver/schooldistrict/wms?SERVICE=WMS&VERSION=1.1.1&REQUEST=GetFeatureInfo&LAYERS=schooldistrict:OrangeCounty_combined&QUERY_LAYERS=schooldistrict:OrangeCounty_combined&propertyName=CountyName,DistrictNa,' + stylename.substring(8) + '&STYLES=&BBOX=' + BBOX + '&FEATURE_COUNT=5&HEIGHT=' + HEIGHT + '&WIDTH=' + WIDTH + '&FORMAT=image%2Fpng&INFO_FORMAT=text%2fhtml&SRS=EPSG%3A4326&X=' + X + '&Y=' + Y;
+            var popup = L.popup()
+            .setLatLng(popLocation)
+            .setContent("<iframe src='"+ URL +"' frameborder='0'></iframe>")
+            .openOn(map);        
+        });
     </script>
 </section>
