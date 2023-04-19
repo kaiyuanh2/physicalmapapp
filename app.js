@@ -27,6 +27,13 @@ app.get('/map', catchAsync(async (req, res) => {
     res.render('map', {item, grade, year});
 }))
 
+app.get('/california', catchAsync(async (req, res) => {
+    var item = req.query.item;
+    var grade = req.query.grade;
+    var year = req.query.year;
+    res.render('california', {item, grade, year});
+}))
+
 app.all('*', (req, res, next) => {
     next(new ExpressError('Page Not Found', 404))
 })
