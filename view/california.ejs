@@ -13,7 +13,7 @@
         </div>
     </div>
 
-    <% if (item === "body") { %>
+    <!-- <% if (item === "body") { %>
         <div class="row align-items-center mt-3">
             <div class="col-6 offset-3">
                 <div class="alert alert-danger" role="alert">
@@ -22,7 +22,7 @@
                 </div>
             </div>
         </div>
-    <% } %>
+    <% } %> -->
     
     <div class="row align-items-center mt-3">
         <div class="card mx-auto w-80">
@@ -84,12 +84,15 @@
         
         if ('<%- item %>' == 'aero') {
             stylename += 'a_' + '<%- year %>'.substring(2, 4);
+            layer = 'schooldistrict:ca_school_district'
         }
         else if ('<%- item %>' == 'body') {
             stylename += 'a_' + '<%- year %>'.substring(2, 4);
+            layer = 'schooldistrict:ca_school_district_b'
         }
         else {
             stylename += 'a_19';
+            layer = 'schooldistrict:ca_school_district'
         }
 
         const debugStr = '<%- item %> ' + '<%- grade %> ' + '<%- year %>'
@@ -97,7 +100,7 @@
         console.log(stylename);
                 
         var wmsLayer = L.Geoserver.wms("http://127.0.0.1:8080/geoserver/wms", {
-            layers: "schooldistrict:ca_school_district",
+            layers: layer,
             styles: "schooldistrict:school_districts",
             env: stylename
         });
@@ -121,7 +124,7 @@
             var HEIGHT = map.getSize().y;
             var X = Math.floor(map.layerPointToContainerPoint(e.layerPoint).x);
             var Y = Math.floor(map.layerPointToContainerPoint(e.layerPoint).y);
-            var URL = 'http://localhost:8080/geoserver/schooldistrict/wms?SERVICE=WMS&VERSION=1.1.1&REQUEST=GetFeatureInfo&LAYERS=schooldistrict:ca_school_district&QUERY_LAYERS=ca_school_district&propertyName=CountyName,DistrictNa,' + stylename.substring(8) + '&STYLES=&BBOX=' + BBOX + '&FEATURE_COUNT=5&HEIGHT=' + HEIGHT + '&WIDTH=' + WIDTH + '&FORMAT=image%2Fpng&INFO_FORMAT=text%2fhtml&SRS=EPSG%3A4326&X=' + X + '&Y=' + Y;
+            var URL = 'http://localhost:8080/geoserver/schooldistrict/wms?SERVICE=WMS&VERSION=1.1.1&REQUEST=GetFeatureInfo&LAYERS=' + layer + '&QUERY_LAYERS=' + layer.substring(15) + '&propertyName=CountyName,DistrictNa,' + stylename.substring(8) + '&STYLES=&BBOX=' + BBOX + '&FEATURE_COUNT=5&HEIGHT=' + HEIGHT + '&WIDTH=' + WIDTH + '&FORMAT=image%2Fpng&INFO_FORMAT=text%2fhtml&SRS=EPSG%3A4326&X=' + X + '&Y=' + Y;
             var popup = L.popup()
             .setLatLng(popLocation)
             .setContent("<iframe src='"+ URL +"' frameborder='0'></iframe>")
