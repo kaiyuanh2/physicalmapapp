@@ -13,16 +13,16 @@
         </div>
     </div>
 
-    <!-- <% if (item === "body") { %>
+    <% if (item === "" || grade === "" || year === "") { %>
         <div class="row align-items-center mt-3">
             <div class="col-6 offset-3">
                 <div class="alert alert-danger" role="alert">
                     <h4 class="alert-heading">ERROR</h4>
-                    <p>Sorry, student body composition data currently not available. Showing aerobic capacity data with the same year and grade.</p>
+                    <p>Invalid parameter(s)! Showing results under default option: Aerobic Capacity, Elementary (5th Grade), and 2018-2019.</p>
                 </div>
             </div>
         </div>
-    <% } %> -->
+    <% } %>
     
     <div class="row align-items-center mt-3">
         <div class="card mx-auto w-80">
@@ -34,6 +34,10 @@
                             <option value="" selected>--Fitness Assessment--</option>
                             <option value="aero" <%= item === "aero" ? 'selected' : '' %>>Aerobic Capacity</option>
                             <option value="body" <%= item === "body" ? 'selected' : '' %>>Body Composition</option>
+                            <option value="abd" <%= item === "abd" ? 'selected' : '' %>>Abdominal Strength</option>
+                            <option value="trunk" <%= item === "trunk" ? 'selected' : '' %>>Trunk Extension Strength</option>
+                            <option value="ub" <%= item === "ub" ? 'selected' : '' %>>Upper Body Strength</option>
+                            <option value="flex" <%= item === "flex" ? 'selected' : '' %>>Flexibility</option>
                         </select>
                     </div>
                     <div class="col">
@@ -47,7 +51,7 @@
                     <div class="col">
                         <select class="form-select" name="year" id="year">
                             <option value="" selected>--School Year--</option>
-                            <% for (let i=2010; i<2020; i++) { %>
+                            <% for (let i=2000; i<2020; i++) { %>
                                 <option value="<%= i %>" <%= year == i.toString() ? 'selected' : '' %>><%= (i-1).toString() %>~<%= i.toString() %></option>
                             <% } %>
                         </select>
@@ -81,18 +85,42 @@
         else {
             stylename += '5'
         }
+
+        var year_str = ''
+        if ('<%- year %>' == '2000') {
+            year_str = '1999'
+        }
+        else{
+            year_str = '<%- year %>'
+        }
         
         if ('<%- item %>' == 'aero') {
-            stylename += 'a_' + '<%- year %>'.substring(2, 4);
-            layer = 'schooldistrict:ca_school_district'
+            stylename += 'a_' + year_str.substring(2, 4);
+            layer = 'schooldistrict:ca_school_district_feature_a'
         }
         else if ('<%- item %>' == 'body') {
-            stylename += 'a_' + '<%- year %>'.substring(2, 4);
-            layer = 'schooldistrict:ca_school_district_b'
+            stylename += 'a_' + year_str.substring(2, 4);
+            layer = 'schooldistrict:ca_school_district_feature_b'
+        }
+        else if ('<%- item %>' == 'abd') {
+            stylename += 'a_' + year_str.substring(2, 4);
+            layer = 'schooldistrict:ca_school_district_feature_ab'
+        }
+        else if ('<%- item %>' == 'trunk') {
+            stylename += 'a_' + year_str.substring(2, 4);
+            layer = 'schooldistrict:ca_school_district_feature_t'
+        }
+        else if ('<%- item %>' == 'ub') {
+            stylename += 'a_' + year_str.substring(2, 4);
+            layer = 'schooldistrict:ca_school_district_feature_ub'
+        }
+        else if ('<%- item %>' == 'flex') {
+            stylename += 'a_' + year_str.substring(2, 4);
+            layer = 'schooldistrict:ca_school_district_feature_f'
         }
         else {
             stylename += 'a_19';
-            layer = 'schooldistrict:ca_school_district'
+            layer = 'schooldistrict:ca_school_district_feature_a'
         }
 
         const debugStr = '<%- item %> ' + '<%- grade %> ' + '<%- year %>'
