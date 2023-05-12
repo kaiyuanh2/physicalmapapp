@@ -18,7 +18,7 @@
                 <div class="col-6 offset-3">
                     <div class="alert alert-danger" role="alert">
                         <h4 class="alert-heading">ERROR</h4>
-                        <p>Invalid parameter(s)! Showing results under default option: Aerobic Capacity, Elementary (5th
+                        <p>Invalid parameter(s)! Showing results under default options: Aerobic Capacity, Elementary (5th
                             Grade), and 2018-2019.</p>
                     </div>
                 </div>
@@ -142,9 +142,11 @@
                             layer = 'schooldistrict:ca_school_district_feature_a'
                         }
 
-                        const debugStr = '<%- item %> ' + grade_str + year_str
-                        console.log(debugStr);
-                        console.log(stylename);
+                        // for debug uses
+
+                        // const debugStr = item_str + grade_str + year_str
+                        // console.log(debugStr);
+                        // console.log(stylename);
 
                         var wmsLayer = L.Geoserver.wms("http://127.0.0.1:8080/geoserver/wms", {
                             layers: layer,
@@ -152,7 +154,7 @@
                             env: stylename
                         });
                         wmsLayer.addTo(map);
-                        console.log(wmsLayer);
+                        // console.log(wmsLayer);
 
                         var legend = L.control({ position: 'bottomleft' });
 
