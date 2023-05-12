@@ -62,7 +62,7 @@
                                     <select class="form-select" name="year" id="year">
                                         <option value="" selected>--School Year--</option>
                                         <% for (let i=2000; i<2020; i++) { %>
-                                            <option value="<%= i %>" <%=year==i.toString() ? 'selected' : '' %>><%=
+                                            <option value="<%= i %>" <%=year===i.toString() ? 'selected' : '' %>><%=
                                                     (i-1).toString() %>~<%= i.toString() %>
                                             </option>
                                             <% } %>
