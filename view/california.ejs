@@ -1,162 +1,181 @@
 <% layout('layouts/boilerplate') %>
-<link rel="stylesheet" href="map.css">
+    <link rel="stylesheet" href="map.css">
 
-<section class="container-fluid px-0">
-    <div class="row align-items-center mt-5">
-        <div class="card mx-auto w-85 border-0">
-            <div id="headingGroup" class="text-center d-none d-lg-block">
-                <h3 class="">School-based Physical Fitness Testing of California School Districts</h3>
-            </div>
-            <!-- <div id="headingGroup" class="text-center d-none d-lg-block">
+    <section class="container-fluid px-0">
+        <div class="row align-items-center mt-5">
+            <div class="card mx-auto w-85 border-0">
+                <div id="headingGroup" class="text-center d-none d-lg-block">
+                    <h3 class="">School-based Physical Fitness Testing of California School Districts</h3>
+                </div>
+                <!-- <div id="headingGroup" class="text-center d-none d-lg-block">
                 <h4>Legend: The lighter, the higher percentage (better); the darker, the lower percentage (worse)</h4>
             </div> -->
+            </div>
         </div>
-    </div>
 
-    <% if (item === "" || grade === "" || year === "") { %>
-        <div class="row align-items-center mt-3">
-            <div class="col-6 offset-3">
-                <div class="alert alert-danger" role="alert">
-                    <h4 class="alert-heading">ERROR</h4>
-                    <p>Invalid parameter(s)! Showing results under default option: Aerobic Capacity, Elementary (5th Grade), and 2018-2019.</p>
+        <% if (item==="" || grade==="" || year==="" ) { %>
+            <div class="row align-items-center mt-3">
+                <div class="col-6 offset-3">
+                    <div class="alert alert-danger" role="alert">
+                        <h4 class="alert-heading">ERROR</h4>
+                        <p>Invalid parameter(s)! Showing results under default option: Aerobic Capacity, Elementary (5th
+                            Grade), and 2018-2019.</p>
+                    </div>
                 </div>
             </div>
-        </div>
-    <% } %>
-    
-    <div class="row align-items-center mt-3">
-        <div class="card mx-auto w-80">
-            <div class="input-group m-2">
-                <form class="row g-3 col-12 align-items-center" id="display_options" action="/california" method="GET">
-                    <label class="col">Display Options</label>
-                    <div class="col">
-                        <select class="form-select" name="item" id="item">
-                            <option value="" selected>--Fitness Assessment--</option>
-                            <option value="aero" <%= item === "aero" ? 'selected' : '' %>>Aerobic Capacity</option>
-                            <option value="body" <%= item === "body" ? 'selected' : '' %>>Body Composition</option>
-                            <option value="abd" <%= item === "abd" ? 'selected' : '' %>>Abdominal Strength</option>
-                            <option value="trunk" <%= item === "trunk" ? 'selected' : '' %>>Trunk Extension Strength</option>
-                            <option value="ub" <%= item === "ub" ? 'selected' : '' %>>Upper Body Strength</option>
-                            <option value="flex" <%= item === "flex" ? 'selected' : '' %>>Flexibility</option>
-                        </select>
+            <% } %>
+
+                <div class="row align-items-center mt-3">
+                    <div class="card mx-auto w-80">
+                        <div class="input-group m-2">
+                            <form class="row g-3 col-12 align-items-center" id="display_options" action="/california"
+                                method="GET">
+                                <label class="col">Display Options</label>
+                                <div class="col">
+                                    <select class="form-select" name="item" id="item">
+                                        <option value="" selected>--Fitness Assessment--</option>
+                                        <option value="aero" <%=item==="aero" ? 'selected' : '' %>>Aerobic Capacity
+                                        </option>
+                                        <option value="body" <%=item==="body" ? 'selected' : '' %>>Body Composition
+                                        </option>
+                                        <option value="abd" <%=item==="abd" ? 'selected' : '' %>>Abdominal Strength
+                                        </option>
+                                        <option value="trunk" <%=item==="trunk" ? 'selected' : '' %>>Trunk Extension
+                                            Strength</option>
+                                        <option value="ub" <%=item==="ub" ? 'selected' : '' %>>Upper Body Strength
+                                        </option>
+                                        <option value="flex" <%=item==="flex" ? 'selected' : '' %>>Flexibility</option>
+                                    </select>
+                                </div>
+                                <div class="col">
+                                    <select class="form-select" name="grade" id="grade">
+                                        <option value="" selected>--Grade Level--</option>
+                                        <option value="5" <%=grade==="5" ? 'selected' : '' %>>Elementary (5th Grade)
+                                        </option>
+                                        <option value="7" <%=grade==="7" ? 'selected' : '' %>>Middle School (7th Grade)
+                                        </option>
+                                        <option value="9" <%=grade==="9" ? 'selected' : '' %>>High School (9th Grade)
+                                        </option>
+                                    </select>
+                                </div>
+                                <div class="col">
+                                    <select class="form-select" name="year" id="year">
+                                        <option value="" selected>--School Year--</option>
+                                        <% for (let i=2000; i<2020; i++) { %>
+                                            <option value="<%= i %>" <%=year==i.toString() ? 'selected' : '' %>><%=
+                                                    (i-1).toString() %>~<%= i.toString() %>
+                                            </option>
+                                            <% } %>
+                                    </select>
+                                </div>
+                                <div class="col">
+                                    <button type="submit" class="btn btn-primary">Confirm</button>
+                                </div>
+                            </form>
+                        </div>
+                        <div id="sorting-info-alert"></div>
                     </div>
-                    <div class="col">
-                        <select class="form-select" name="grade" id="grade">
-                            <option value="" selected>--Grade Level--</option>
-                            <option value="5" <%= grade === "5" ? 'selected' : '' %>>Elementary (5th Grade)</option>
-                            <option value="7" <%= grade === "7" ? 'selected' : '' %>>Middle School (7th Grade)</option>
-                            <option value="9" <%= grade === "9" ? 'selected' : '' %>>High School (9th Grade)</option>
-                        </select>
+                    <div id="selection-alert"></div>
+                    <div class="row align-items-center mt-5">
+                        <br>
+                        <div id="map"></div>
                     </div>
-                    <div class="col">
-                        <select class="form-select" name="year" id="year">
-                            <option value="" selected>--School Year--</option>
-                            <% for (let i=2000; i<2020; i++) { %>
-                                <option value="<%= i %>" <%= year == i.toString() ? 'selected' : '' %>><%= (i-1).toString() %>~<%= i.toString() %></option>
-                            <% } %>
-                        </select>
-                    </div>
-                    <div class="col">
-                        <button type="submit" class="btn btn-primary">Confirm</button>
-                    </div>
-                </form>
-            </div>
-            <div id="sorting-info-alert"></div>
-    </div>
-    <div id="selection-alert"></div>
-    <div class="row align-items-center mt-5">
-        <br>
-        <div id="map"></div>
-    </div>
 
-    <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
-    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js" integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
-    <script src="/node_modules/leaflet-geoserver-request/src/L.Geoserver.js"></script>
-    <script>
-        var map = L.map('map').setView([36.7333, -119.7885], 7)
-        L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {maxZoom: 19,
-            attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-        }).addTo(map);
+                    <script src="https://code.jquery.com/jquery-3.6.3.min.js"
+                        integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU="
+                        crossorigin="anonymous"></script>
+                    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+                        integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
+                    <script src="/node_modules/leaflet-geoserver-request/src/L.Geoserver.js"></script>
+                    <script>
+                        const grade_str = '<%- grade %>';
+                        const item_str = '<%- item %>';
 
-        var stylename = 'element:Perc';
-        if ('<%- grade %>' == '5' || '<%- grade %>' == '7' || '<%- grade %>' == '9') {
-            stylename += '<%- grade %>';
-        }
-        else {
-            stylename += '5'
-        }
+                        var map = L.map('map').setView([36.7333, -119.7885], 7)
+                        L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                            maxZoom: 19,
+                            attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+                        }).addTo(map);
 
-        var year_str = ''
-        if ('<%- year %>' == '2000') {
-            year_str = '1999'
-        }
-        else{
-            year_str = '<%- year %>'
-        }
-        
-        if ('<%- item %>' == 'aero') {
-            stylename += 'a_' + year_str.substring(2, 4);
-            layer = 'schooldistrict:ca_school_district_feature_a'
-        }
-        else if ('<%- item %>' == 'body') {
-            stylename += 'a_' + year_str.substring(2, 4);
-            layer = 'schooldistrict:ca_school_district_feature_b'
-        }
-        else if ('<%- item %>' == 'abd') {
-            stylename += 'a_' + year_str.substring(2, 4);
-            layer = 'schooldistrict:ca_school_district_feature_ab'
-        }
-        else if ('<%- item %>' == 'trunk') {
-            stylename += 'a_' + year_str.substring(2, 4);
-            layer = 'schooldistrict:ca_school_district_feature_t'
-        }
-        else if ('<%- item %>' == 'ub') {
-            stylename += 'a_' + year_str.substring(2, 4);
-            layer = 'schooldistrict:ca_school_district_feature_ub'
-        }
-        else if ('<%- item %>' == 'flex') {
-            stylename += 'a_' + year_str.substring(2, 4);
-            layer = 'schooldistrict:ca_school_district_feature_f'
-        }
-        else {
-            stylename += 'a_19';
-            layer = 'schooldistrict:ca_school_district_feature_a'
-        }
+                        var stylename = 'element:Perc';
+                        if (grade_str == '5' || grade_str == '7' || grade_str == '9') {
+                            stylename += grade_str;
+                        }
+                        else {
+                            stylename += '5'
+                        }
 
-        const debugStr = '<%- item %> ' + '<%- grade %> ' + '<%- year %>'
-        console.log(debugStr);
-        console.log(stylename);
-                
-        var wmsLayer = L.Geoserver.wms("http://127.0.0.1:8080/geoserver/wms", {
-            layers: layer,
-            styles: "schooldistrict:school_districts",
-            env: stylename
-        });
-        wmsLayer.addTo(map);
-        console.log(wmsLayer);
+                        var year_str = ''
+                        if ('<%- year %>' == '2000') {
+                            year_str = '1999'
+                        }
+                        else {
+                            year_str = '<%- year %>'
+                        }
 
-        var legend = L.control({position: 'bottomleft'});
+                        if (item_str == 'aero') {
+                            stylename += 'a_' + year_str.substring(2, 4);
+                            layer = 'schooldistrict:ca_school_district_feature_a'
+                        }
+                        else if (item_str == 'body') {
+                            stylename += 'a_' + year_str.substring(2, 4);
+                            layer = 'schooldistrict:ca_school_district_feature_b'
+                        }
+                        else if (item_str == 'abd') {
+                            stylename += 'a_' + year_str.substring(2, 4);
+                            layer = 'schooldistrict:ca_school_district_feature_ab'
+                        }
+                        else if (item_str == 'trunk') {
+                            stylename += 'a_' + year_str.substring(2, 4);
+                            layer = 'schooldistrict:ca_school_district_feature_t'
+                        }
+                        else if (item_str == 'ub') {
+                            stylename += 'a_' + year_str.substring(2, 4);
+                            layer = 'schooldistrict:ca_school_district_feature_ub'
+                        }
+                        else if (item_str == 'flex') {
+                            stylename += 'a_' + year_str.substring(2, 4);
+                            layer = 'schooldistrict:ca_school_district_feature_f'
+                        }
+                        else {
+                            stylename += 'a_19';
+                            layer = 'schooldistrict:ca_school_district_feature_a'
+                        }
 
-        legend.onAdd = function (map) {
-            var div = L.DomUtil.create('div', 'info legend');
-            div.innerHTML += '<img src="legend.png" alt="legend">';
-            return div;
-        };
-        legend.addTo(map);
+                        const debugStr = '<%- item %> ' + grade_str + year_str
+                        console.log(debugStr);
+                        console.log(stylename);
 
-        map.on('click', function(e) {        
-            var popLocation = e.latlng;
-            var latlngStr = '(' + e.latlng.lat.toFixed(3) + ', ' + e.latlng.lng.toFixed(3) + ')';
-            var BBOX = map.getBounds()._southWest.lng + "," + map.getBounds()._southWest.lat + "," + map.getBounds()._northEast.lng + "," + map.getBounds()._northEast.lat;
-            var WIDTH= map.getSize().x;
-            var HEIGHT = map.getSize().y;
-            var X = Math.floor(map.layerPointToContainerPoint(e.layerPoint).x);
-            var Y = Math.floor(map.layerPointToContainerPoint(e.layerPoint).y);
-            var URL = 'http://localhost:8080/geoserver/schooldistrict/wms?SERVICE=WMS&VERSION=1.1.1&REQUEST=GetFeatureInfo&LAYERS=' + layer + '&QUERY_LAYERS=' + layer.substring(15) + '&propertyName=CountyName,DistrictNa,' + stylename.substring(8) + '&STYLES=&BBOX=' + BBOX + '&FEATURE_COUNT=5&HEIGHT=' + HEIGHT + '&WIDTH=' + WIDTH + '&FORMAT=image%2Fpng&INFO_FORMAT=text%2fhtml&SRS=EPSG%3A4326&X=' + X + '&Y=' + Y;
-            var popup = L.popup()
-            .setLatLng(popLocation)
-            .setContent("<iframe src='"+ URL +"' frameborder='0'></iframe>")
-            .openOn(map);        
-        });
-    </script>
-</section>
+                        var wmsLayer = L.Geoserver.wms("http://127.0.0.1:8080/geoserver/wms", {
+                            layers: layer,
+                            styles: "schooldistrict:school_districts",
+                            env: stylename
+                        });
+                        wmsLayer.addTo(map);
+                        console.log(wmsLayer);
+
+                        var legend = L.control({ position: 'bottomleft' });
+
+                        legend.onAdd = function (map) {
+                            var div = L.DomUtil.create('div', 'info legend');
+                            div.innerHTML += '<img src="legend.png" alt="legend">';
+                            return div;
+                        };
+                        legend.addTo(map);
+
+                        map.on('click', function (e) {
+                            var popLocation = e.latlng;
+                            var latlngStr = '(' + e.latlng.lat.toFixed(3) + ', ' + e.latlng.lng.toFixed(3) + ')';
+                            var BBOX = map.getBounds()._southWest.lng + "," + map.getBounds()._southWest.lat + "," + map.getBounds()._northEast.lng + "," + map.getBounds()._northEast.lat;
+                            var WIDTH = map.getSize().x;
+                            var HEIGHT = map.getSize().y;
+                            var X = Math.floor(map.layerPointToContainerPoint(e.layerPoint).x);
+                            var Y = Math.floor(map.layerPointToContainerPoint(e.layerPoint).y);
+                            var URL = 'http://localhost:8080/geoserver/schooldistrict/wms?SERVICE=WMS&VERSION=1.1.1&REQUEST=GetFeatureInfo&LAYERS=' + layer + '&QUERY_LAYERS=' + layer.substring(15) + '&propertyName=CountyName,DistrictNa,' + stylename.substring(8) + '&STYLES=&BBOX=' + BBOX + '&FEATURE_COUNT=5&HEIGHT=' + HEIGHT + '&WIDTH=' + WIDTH + '&FORMAT=image%2Fpng&INFO_FORMAT=text%2fhtml&SRS=EPSG%3A4326&X=' + X + '&Y=' + Y;
+                            var popup = L.popup()
+                                .setLatLng(popLocation)
+                                .setContent("<iframe src='" + URL + "' frameborder='0'></iframe>")
+                                .openOn(map);
+                        });
+                    </script>
+    </section>
