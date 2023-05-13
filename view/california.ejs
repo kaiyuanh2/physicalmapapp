@@ -148,7 +148,7 @@
                         // console.log(debugStr);
                         // console.log(stylename);
 
-                        var wmsLayer = L.Geoserver.wms("http://127.0.0.1:8080/geoserver/wms", {
+                        var wmsLayer = L.Geoserver.wms("http://ec2-54-176-149-48.us-west-1.compute.amazonaws.com:8080/geoserver/wms", {
                             layers: layer,
                             styles: "schooldistrict:school_districts",
                             env: stylename
@@ -173,7 +173,7 @@
                             var HEIGHT = map.getSize().y;
                             var X = Math.floor(map.layerPointToContainerPoint(e.layerPoint).x);
                             var Y = Math.floor(map.layerPointToContainerPoint(e.layerPoint).y);
-                            var URL = 'http://localhost:8080/geoserver/schooldistrict/wms?SERVICE=WMS&VERSION=1.1.1&REQUEST=GetFeatureInfo&LAYERS=' + layer + '&QUERY_LAYERS=' + layer.substring(15) + '&propertyName=CountyName,DistrictNa,' + stylename.substring(8) + '&STYLES=&BBOX=' + BBOX + '&FEATURE_COUNT=5&HEIGHT=' + HEIGHT + '&WIDTH=' + WIDTH + '&FORMAT=image%2Fpng&INFO_FORMAT=text%2fhtml&SRS=EPSG%3A4326&X=' + X + '&Y=' + Y;
+                            var URL = 'http://ec2-54-176-149-48.us-west-1.compute.amazonaws.com:8080/geoserver/schooldistrict/wms?SERVICE=WMS&VERSION=1.1.1&REQUEST=GetFeatureInfo&LAYERS=' + layer + '&QUERY_LAYERS=' + layer.substring(15) + '&propertyName=CountyName,DistrictNa,' + stylename.substring(8) + '&STYLES=&BBOX=' + BBOX + '&FEATURE_COUNT=5&HEIGHT=' + HEIGHT + '&WIDTH=' + WIDTH + '&FORMAT=image%2Fpng&INFO_FORMAT=text%2fhtml&SRS=EPSG%3A4326&X=' + X + '&Y=' + Y;
                             var popup = L.popup()
                                 .setLatLng(popLocation)
                                 .setContent("<iframe src='" + URL + "' frameborder='0'></iframe>")
