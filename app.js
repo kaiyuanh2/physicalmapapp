@@ -4,35 +4,51 @@ const path = require('path');
 const ejsMate = require('ejs-mate');
 const methodOverride = require('method-override');
 const ExpressError = require('./utils/ExpressError');
-const catchAsync = require('./utils/catchAsync');
+const flash = require('connect-flash');
+const {validateParameters} = require('./middleware');
+const session = require('express-session');
 
 app.use(express.urlencoded({extended: true}));
 app.use(methodOverride('_method'));
 app.use('/node_modules', express.static(__dirname + '/node_modules/'));
-app.use(express.static(path.join(__dirname, 'public')))
 
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, '/view'))
 
 app.engine('ejs', ejsMate)
 
+app.use(express.static(path.join(__dirname, 'public')))
+const sessionConfig = {
+    name: 'mapsession',
+    secret: 'thisisasecret',
+    resave: false,
+    saveUninitialized: true,
+    cookie: {
+        httpOnly: true,
+        expires: Date.now() + 86400000,
+        maxAge: 86400000
+    }
+};
+app.use(session(sessionConfig));
+app.use(flash());
+
 app.get('/', (req, res) => {
     res.render('index')
 })
 
-app.get('/map', catchAsync(async (req, res) => {
+app.get('/map', (req, res) => {
     var item = req.query.item;
     var grade = req.query.grade;
     var year = req.query.year;
     res.render('deprecated', {item, grade, year});
-}))
+})
 
-app.get('/california', catchAsync(async (req, res) => {
+app.get('/california', validateParameters, (req, res) => {
     var item = req.query.item;
     var grade = req.query.grade;
     var year = req.query.year;
-    res.render('california', {item, grade, year});
-}))
+    res.render('california', {item, grade, year, messages: req.flash('error')});
+})
 
 app.all('*', (req, res, next) => {
     next(new ExpressError('Page Not Found', 404))

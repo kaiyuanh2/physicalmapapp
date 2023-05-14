@@ -5,20 +5,20 @@
 
 #headingGroup h1 {
     color: black;
-    font-weight: 400;
-    font-size: 3rem;
+    font-weight: 500;
+    font-size: 2.85rem;
 }
 
 #headingGroup h2 {
     color: black;
     font-weight: 400;
-    font-size: 2.5rem;
+    font-size: 2.25rem;
 }
 
 #headingGroup h3 {
     color: black;
     font-weight: 300;
-    font-size: 2.5rem;
+    font-size: 2rem;
 }
 
 #headingGroup h4 {
@@ -29,13 +29,13 @@
 
 #aboutText p {
     color: black;
-    font-weight: 200;
+    font-weight: 300;
     font-size: 1.5rem;
 }
 
 #referenceText p {
     color: black;
-    font-weight: 100;
+    font-weight: 200;
     font-size: 1.25rem;
 }
 
