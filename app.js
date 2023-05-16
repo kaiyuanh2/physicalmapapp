@@ -40,7 +40,7 @@ app.get('/map', (req, res) => {
     var item = req.query.item;
     var grade = req.query.grade;
     var year = req.query.year;
-    res.render('deprecated', {item, grade, year});
+    res.render('map', {item, grade, year});
 })
 
 app.get('/california', validateParameters, (req, res) => {
