@@ -28,7 +28,7 @@
                     <div class="card mx-auto w-80">
                         <div class="card-header">Display Options</div>
                         <div class="card-block">
-                            <form id="display_options" action="/map" method="GET">
+                            <form id="display_options" action="/map" method="POST">
                                 <div class="form-group row mt-2 align-items-center">
                                     <div class="col-md-4">
                                         <select class="form-select" name="item" id="item">
@@ -92,7 +92,7 @@
                                     <div class="modal-dialog">
                                         <div class="modal-content">
                                             <div class="modal-header">
-                                                <h5 class="modal-title" id="exampleModalLabel">Filter by County</h5>
+                                                <h5 class="modal-title" id="modalLabel">Filter by County</h5>
                                                 <button type="button" class="btn-close" data-bs-dismiss="modal"
                                                     aria-label="Close"></button>
                                             </div>
@@ -103,16 +103,16 @@
                                                 <div class="form-group row mt-2 align-items-center">
                                                     <div>
                                                         <div class="form-check form-check-inline">
-                                                            <input class="form-check-input" type="checkbox" value=""
-                                                                id="flexCheckDefault">
-                                                            <label class="form-check-label" for="flexCheckDefault">
+                                                            <input class="form-check-input" type="checkbox" name="oc"
+                                                                     id="oc">
+                                                            <label class="form-check-label" for="oc">
                                                                 Orange
                                                             </label>
                                                         </div>
                                                         <div class="form-check form-check-inline">
-                                                            <input class="form-check-input" type="checkbox" value=""
-                                                                id="flexCheckChecked" checked>
-                                                            <label class="form-check-label" for="flexCheckDefault">
+                                                            <input class="form-check-input" type="checkbox" name="la"
+                                                                id="la">
+                                                            <label class="form-check-label" for="la">
                                                                 Los Angeles
                                                             </label>
                                                         </div>
@@ -133,7 +133,7 @@
                                     </div>
                                 </div>
 
-
+                                <input type="hidden" name="checkboxStr" id="checkbox_str">
 
                             </form>
                         </div>
@@ -150,6 +150,7 @@
                     integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
                 <script src="/node_modules/leaflet-geoserver-request/src/L.Geoserver.js"></script>
                 <script src="L.TileLayer.BetterWMS.js"></script>
+                <script src="parseform.js"></script>
                 <script>
                     var map = L.map('map').setView([33.67, -117.83], 10)
                     L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {

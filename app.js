@@ -5,7 +5,7 @@ const ejsMate = require('ejs-mate');
 const methodOverride = require('method-override');
 const ExpressError = require('./utils/ExpressError');
 const flash = require('connect-flash');
-const {validateParameters} = require('./middleware');
+const {validateParameters, validateParametersPost} = require('./middleware');
 const session = require('express-session');
 
 app.use(express.urlencoded({extended: true}));
@@ -43,11 +43,29 @@ app.get('/map', (req, res) => {
     res.render('map', {item, grade, year});
 })
 
+app.post('/map', (req, res) => {
+    console.log(req.body);
+    var item = req.body.item;
+    var grade = req.body.grade;
+    var year = req.body.year;
+    res.render('map', {item, grade, year});
+})
+
 app.get('/california', validateParameters, (req, res) => {
-    var item = req.query.item;
-    var grade = req.query.grade;
-    var year = req.query.year;
-    res.render('california', {item, grade, year, messages: req.flash('error')});
+    var item = '';
+    var grade = '';
+    var year = '';
+    var checkboxStr = '';
+    res.render('california', {item, grade, year, checkboxStr, messages: req.flash('error')});
+})
+
+app.post('/california', validateParametersPost, (req, res) => {
+    console.log(req.body);
+    var item = req.body.item;
+    var grade = req.body.grade;
+    var year = req.body.year;
+    var checkboxStr = req.body.checkboxStr;
+    res.render('california', {item, grade, year, checkboxStr, messages: req.flash('error')});
 })
 
 app.all('*', (req, res, next) => {
