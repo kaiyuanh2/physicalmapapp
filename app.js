@@ -34,18 +34,7 @@ app.use(session(sessionConfig));
 app.use(flash());
 
 app.get('/', (req, res) => {
-    fs.readFile('./public/entities.json', 'utf8', (err, jsonString) => {
-        if (err) {
-            console.log("Error reading file from disk:", err);
-            return;
-        }
-        try {
-            const map = new Map(Object.entries(JSON.parse(jsonString)));
-            console.log(map);
-        } catch (err) {
-            console.log('Error parsing JSON string:', err);
-        }
-    });
+    console.log("Welcome!");
     res.render('index')
 })
 
@@ -65,14 +54,16 @@ app.post('/map', (req, res) => {
 })
 
 app.get('/california', validateParameters, (req, res) => {
-    var item = '';
-    var grade = '';
-    var year = '';
+    console.log("CA GET");
+    var item = 'aero';
+    var grade = '5';
+    var year = '2019';
     var checkboxStr = 'all';
     res.render('california', { item, grade, year, checkboxStr, messages: req.flash('error') });
 })
 
 app.post('/california', validateParametersPost, (req, res) => {
+    console.log("CA POST");
     console.log(req.body);
     var item = req.body.item;
     var grade = req.body.grade;

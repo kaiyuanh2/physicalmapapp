@@ -1,3 +1,16 @@
+var map = NULL;
+fs.readFile('./entities.json', 'utf8', (err, jsonString) => {
+  if (err) {
+      console.log("Error reading JSON:", err);
+  }
+  try {
+      map = new Map(Object.entries(JSON.parse(jsonString)));
+      console.log(map);
+  } catch (err) {
+      console.log('Error parsing JSON string:', err);
+  }
+});
+
 var form = document.getElementById('display_options');
 form.addEventListener("submit", submitFunction, false);
 
