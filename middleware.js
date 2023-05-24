@@ -4,7 +4,7 @@ const schema = Joi.object().keys({
     item: Joi.string().valid('aero', 'body', 'abd', 'trunk', 'ub', 'flex').required().default('aero'),
     grade: Joi.string().valid('5', '7', '9').required().default('5'),
     year: Joi.string().valid('1999', '2001', '2002', '2003', '2004', '2005', '2006', '2007', '2008', '2009', '2010', '2011', '2012', '2013', '2014', '2015', '2016', '2017', '2018', '2019').required().default('2019'),
-    checkboxStr: Joi.string().min(2).required().default('01')
+    checkboxStr: Joi.string().required().default('01')
 }).unknown(true);
 
 module.exports.validateParameters = async (req, res, next) => {

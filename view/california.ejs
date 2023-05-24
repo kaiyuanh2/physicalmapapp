@@ -78,7 +78,7 @@
                                 <div class="form-group row mt-2 mb-2 align-items-center justify-content-end">
                                     <div class="col">
                                         <button type="button" class="btn btn-info" data-bs-toggle="modal"
-                                            data-bs-target="#countyModal">Filter by County</button>
+                                            data-bs-target="#countyModal">Filter by County & School District <strong>(Required)</strong></button>
                                     </div>
                                     <div class="col-auto">
                                         <button type="submit" class="btn btn-primary">Confirm</button>
@@ -87,53 +87,126 @@
 
                                 <div class="modal fade" id="countyModal" tabindex="-1"
                                     aria-labelledby="countyModalLabel" aria-hidden="true">
-                                    <div class="modal-dialog">
+                                    <div class="modal-dialog modal-xl">
                                         <div class="modal-content">
                                             <div class="modal-header">
-                                                <h5 class="modal-title" id="modalLabel">Filter by County</h5>
+                                                <h5 class="modal-title" id="modalLabel">Filter by County & School
+                                                    District</h5>
                                                 <button type="button" class="btn-close" data-bs-dismiss="modal"
                                                     aria-label="Close"></button>
                                             </div>
                                             <div class="modal-body">
-                                                <div class="form-group row mt-2 align-items-center">
-                                                    <label>Please choose at least 1 county:</label>
+                                                <div class="form-group row mt-2 mb-2 align-items-center">
+                                                    <label>The counties are sorted alphabetically. School districts are
+                                                        listed under their corresponding counties. Please choose at
+                                                        least 1 school district.</label>
                                                 </div>
-                                                <div class="form-group row mt-2 align-items-center">
-                                                    <div>
-                                                        <% const names=['Alameda', 'Alpine' , 'Amador' , 'Butte'
-                                                            , 'Calaveras' , 'Colusa' , 'Contra Costa' , 'Del Norte'
-                                                            , 'El Dorado' , 'Fresno' , 'Glenn' , 'Humboldt' , 'Imperial'
-                                                            , 'Inyo' , 'Kern' , 'Kings' , 'Lake' , 'Lassen'
-                                                            , 'Los Angeles' , 'Madera' , 'Marin' , 'Mariposa'
-                                                            , 'Mendocino' , 'Merced' , 'Modoc' , 'Mono' , 'Monterey'
-                                                            , 'Napa' , 'Nevada' , 'Orange' , 'Placer' , 'Plumas'
-                                                            , 'Riverside' , 'Sacramento' , 'San Benito'
-                                                            , 'San Bernardino' , 'San Diego' , 'San Francisco'
-                                                            , 'San Joaquin' , 'San Luis Obispo' , 'San Mateo'
-                                                            , 'Santa Barbara' , 'Santa Clara' , 'Santa Cruz' , 'Shasta'
-                                                            , 'Sierra' , 'Siskiyou' , 'Solano' , 'Sonoma' , 'Stanislaus'
-                                                            , 'Sutter' , 'Tehama' , 'Trinity' , 'Tulare' , 'Tuolumne'
-                                                            , 'Ventura' , 'Yolo' , 'Yuba'] %>
-                                                            <% for (let i=0; i<58; i++) { %>
-                                                                <div class="form-check form-check-inline">
-                                                                    <input class="form-check-input" type="checkbox"
-                                                                        name="<%= (i+1).toString().padStart(2, '0') %>"
-                                                                        id="<%= (i+1).toString().padStart(2, '0') %>"
-                                                                        <%=checkboxStr.length> 0 &&
-                                                                    checkboxStr.includes((i+1).toString().padStart(2, '0'
-                                                                    )) ? 'checked' : '' %>>
-                                                                    <label class="form-check-label"
-                                                                        for="<%= (i+1).toString().padStart(2, '0') %>">
-                                                                        <%=names[i] %>
-                                                                    </label>
-                                                                </div>
-                                                                <% } %>
+
+                                                <div class="form-group row mt-2 mb-2 align-items-center">
+                                                    <div class="col"><button type="button" class="btn btn-primary"
+                                                            onclick="selectEverything()">Select
+                                                            All</button></div>
+                                                    <div class="col-auto"><button type="button"
+                                                            class="btn btn-secondary"
+                                                            onclick="deSelectEverything()">Deselect
+                                                            All</button></div>
+                                                </div>
+
+                                                <div class="accordion" id="countyAccordion">
+
+                                                    <div class="accordion-item mt-2 mb-2">
+                                                        <h2 class="accordion-header" id="alameda-heading">
+                                                            <button class="accordion-button" type="button"
+                                                                data-bs-toggle="collapse"
+                                                                data-bs-target="#alameda-collapse" aria-expanded="true"
+                                                                aria-controls="alameda-collapse">
+                                                                Alameda
+                                                            </button>
+                                                        </h2>
+                                                        <div id="alameda-collapse"
+                                                            class="accordion-collapse collapse show"
+                                                            aria-labelledby="alameda-heading">
+                                                            <div class="accordion-body">
+                                                                <% for (let j=0; j<sdi[0].length; j++) { %>
+                                                                    <div class="form-check form-check-inline">
+                                                                        <input
+                                                                            class="<%= 'form-check-input ' + 'alameda-checkbox' %>"
+                                                                            type="checkbox" name="<%= sdi[0][j][0] %>"
+                                                                            id="<%= sdi[0][j][0] %>">
+                                                                        <label class="form-check-label"
+                                                                            for="<%= sdi[0][j][0] %>">
+                                                                            <%= sdi[0][j][1] %>
+                                                                        </label>
+                                                                    </div>
+                                                                    <% } %>
+                                                                        <div class="row mt-2 mb-2 align-items-center">
+                                                                            <div class="col"><button type="button"
+                                                                                    class="btn btn-primary"
+                                                                                    onclick="selectAll('alameda')">Select
+                                                                                    All in Alameda County</button></div>
+                                                                            <div class="col-auto"><button type="button"
+                                                                                    class="btn btn-secondary"
+                                                                                    onclick="deSelectAll('alameda')">Deselect
+                                                                                    All in Alameda County</button></div>
+                                                                        </div>
+                                                            </div>
+                                                        </div>
                                                     </div>
+
+                                                    <% for (let i=1; i<58; i++) { %>
+                                                        <div class="accordion-item mt-2 mb-2">
+                                                            <h2 class="accordion-header"
+                                                                id="<%=names[i].replace(/\s/g, '').toLowerCase() + '-heading' %>">
+                                                                <button class="accordion-button collapsed" type="button"
+                                                                    data-bs-toggle="collapse"
+                                                                    data-bs-target="<%='#' + names[i].replace(/\s/g, '').toLowerCase() + '-collapse' %>"
+                                                                    aria-expanded="false"
+                                                                    aria-controls="<%=names[i].replace(/\s/g, '').toLowerCase() + '-collapse' %>">
+                                                                    <%=names[i] %>
+                                                                </button>
+                                                            </h2>
+                                                            <div id="<%=names[i].replace(/\s/g, '').toLowerCase() + '-collapse' %>"
+                                                                class="accordion-collapse collapse"
+                                                                aria-labelledby="<%=names[i].replace(/\s/g, '').toLowerCase() + '-heading' %>">
+                                                                <div class="accordion-body">
+                                                                    <% for (let j=0; j<sdi[i].length; j++) { %>
+                                                                        <div class="form-check form-check-inline">
+                                                                            <input
+                                                                                class="<%= 'form-check-input ' + names[i].replace(/\s/g, '').toLowerCase() + '-checkbox' %>"
+                                                                                type="checkbox"
+                                                                                name="<%= sdi[i][j][0] %>"
+                                                                                id="<%= sdi[i][j][0] %>">
+                                                                            <label class="form-check-label"
+                                                                                for="<%= sdi[i][j][0] %>">
+                                                                                <%= sdi[i][j][1] %>
+                                                                            </label>
+                                                                        </div>
+                                                                        <% } %>
+                                                                            <div
+                                                                                class="row mt-2 mb-2 align-items-center">
+                                                                                <div class="col"><button type="button"
+                                                                                        class="btn btn-primary"
+                                                                                        onclick="selectAll('<%=names[i].replace(/\s/g, '').toLowerCase() %>')">Select
+                                                                                        All in <%=names[i] %>
+                                                                                            County</button></div>
+                                                                                <div class="col-auto"><button
+                                                                                        type="button"
+                                                                                        class="btn btn-secondary"
+                                                                                        onclick="deSelectAll('<%=names[i].replace(/\s/g, '').toLowerCase() %>')">Deselect
+                                                                                        All in <%=names[i] %>
+                                                                                            County</button></div>
+                                                                            </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <% } %>
+
                                                 </div>
+
                                             </div>
                                             <div class="modal-footer">
-                                                <button type="button" class="btn btn-secondary"
-                                                    data-bs-dismiss="modal">Close</button>
+                                                <button type="button" class="btn btn-primary"
+                                                    data-bs-dismiss="modal">Save and Close</button>
                                             </div>
                                         </div>
                                     </div>
@@ -156,6 +229,7 @@
                     integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
                 <script src="/node_modules/leaflet-geoserver-request/src/L.Geoserver.js"></script>
                 <script src="parseform.js"></script>
+                <script src="selectall.js"></script>
                 <script>
                     const grade_str = '<%- grade %>';
                     const item_str = '<%- item %>';

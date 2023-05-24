@@ -33,6 +33,34 @@ const sessionConfig = {
 app.use(session(sessionConfig));
 app.use(flash());
 
+const sd = []
+for (let i = 0; i < 58; i++) {
+    sd.push(new Array());
+}
+var county = -1;
+const jsonString = fs.readFileSync("./public/entities.json").toString();
+const cmap = new Map(Object.entries(JSON.parse(jsonString)));
+// console.log(cmap);
+cmap.forEach(function (v, k) {
+    county = parseInt(k.substring(0, 2)) - 1;
+    sd[county].push(new Array(k, v));
+})
+global.sdi = sd;
+global.names = ['Alameda', 'Alpine', 'Amador', 'Butte'
+    , 'Calaveras', 'Colusa', 'Contra Costa', 'Del Norte'
+    , 'El Dorado', 'Fresno', 'Glenn', 'Humboldt', 'Imperial'
+    , 'Inyo', 'Kern', 'Kings', 'Lake', 'Lassen', 'Los Angeles'
+    , 'Madera', 'Marin', 'Mariposa', 'Mendocino', 'Merced'
+    , 'Modoc', 'Mono', 'Monterey', 'Napa', 'Nevada', 'Orange'
+    , 'Placer', 'Plumas', 'Riverside', 'Sacramento'
+    , 'San Benito', 'San Bernardino', 'San Diego'
+    , 'San Francisco', 'San Joaquin', 'San Luis Obispo'
+    , 'San Mateo', 'Santa Barbara', 'Santa Clara', 'Santa Cruz'
+    , 'Shasta', 'Sierra', 'Siskiyou', 'Solano', 'Sonoma'
+    , 'Stanislaus', 'Sutter', 'Tehama', 'Trinity', 'Tulare'
+    , 'Tuolumne', 'Ventura', 'Yolo', 'Yuba'];
+console.log(global.sdi[1]);
+
 app.get('/', (req, res) => {
     console.log("Welcome!");
     res.render('index')
@@ -42,16 +70,16 @@ app.get('/map', (req, res) => {
     var item = req.query.item;
     var grade = req.query.grade;
     var year = req.query.year;
-    res.render('map', { item, grade, year });
+    res.render('deprecated', { item, grade, year });
 })
 
-app.post('/map', (req, res) => {
-    console.log(req.body);
-    var item = req.body.item;
-    var grade = req.body.grade;
-    var year = req.body.year;
-    res.render('map', { item, grade, year });
-})
+// app.post('/map', (req, res) => {
+//     console.log(req.body);
+//     var item = req.body.item;
+//     var grade = req.body.grade;
+//     var year = req.body.year;
+//     res.render('map', { item, grade, year });
+// })
 
 app.get('/california', validateParameters, (req, res) => {
     console.log("CA GET");

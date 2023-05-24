@@ -1,10 +1,53 @@
 <% layout('layouts/boilerplate') %>
 
-<div class="row align-items-center mt-3">
-    <div class="col-6 offset-3">
-        <div class="alert alert-danger" role="alert">
-            <h4 class="alert-heading">ERROR</h4>
-            <p>Sorry, this page is deprecated and no longer available</p>
+    <div class="row align-items-center mt-3">
+        <div class="col-6 offset-3">
+            <div class="alert alert-danger" role="alert">
+                <h4 class="alert-heading">ERROR</h4>
+                <p>Sorry, this page is deprecated and no longer available</p>
+            </div>
+        </div>
+
+        <div id="accordion">
+
+            <div class="card">
+                <div class="card-header">
+                    <a class="btn" data-bs-toggle="collapse" href="#al">
+                        Alameda
+                    </a>
+                </div>
+                <div id="al" class="collapse show" data-bs-parent="#accordion">
+                    <div class="card-body">
+                        Lorem ipsum..
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <a class="collapsed btn" data-bs-toggle="collapse" href="#ora">
+                        Orange County
+                    </a>
+                </div>
+                <div id="ora" class="collapse" data-bs-parent="#accordion">
+                    <div class="card-body">
+                        Lorem ipsum..
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <a class="collapsed btn" data-bs-toggle="collapse" href="#la">
+                        Los Angeles
+                    </a>
+                </div>
+                <div id="la" class="collapse" data-bs-parent="#accordion">
+                    <div class="card-body">
+                        Lorem ipsum..
+                    </div>
+                </div>
+            </div>
+
         </div>
     </div>
-</div>
