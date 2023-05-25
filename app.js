@@ -9,7 +9,8 @@ const fs = require('fs');
 const { validateParameters, validateParametersPost } = require('./middleware');
 const session = require('express-session');
 
-app.use(express.urlencoded({ extended: true }));
+app.use(express.json({limit: '10mb'}));
+app.use(express.urlencoded({limit: '10mb', extended: true, parameterLimit: 10000}));
 app.use(methodOverride('_method'));
 app.use('/node_modules', express.static(__dirname + '/node_modules/'));
 
@@ -32,6 +33,8 @@ const sessionConfig = {
 };
 app.use(session(sessionConfig));
 app.use(flash());
+
+
 
 const sd = []
 for (let i = 0; i < 58; i++) {
