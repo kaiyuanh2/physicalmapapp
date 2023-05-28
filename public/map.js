@@ -51,11 +51,15 @@ if (checkbox.length > 0) {
         layer = 'schooldistrict:ca_school_district_feature_a'
     }
 
+    stylename += ';';
+    stylename += 'district:';
+    stylename += checkbox;
+
     // for debug uses
 
     // const debugStr = item_str + grade_str + year_str
     // console.log(debugStr);
-    // console.log(stylename);
+    console.log(stylename);
 
     var wmsLayer = L.Geoserver.wms(link + "wms", {
         layers: layer,
@@ -82,7 +86,7 @@ if (checkbox.length > 0) {
         var HEIGHT = map.getSize().y;
         var X = Math.floor(map.layerPointToContainerPoint(e.layerPoint).x);
         var Y = Math.floor(map.layerPointToContainerPoint(e.layerPoint).y);
-        var URL = link + 'schooldistrict/wms?SERVICE=WMS&VERSION=1.1.1&REQUEST=GetFeatureInfo&LAYERS=' + layer + '&QUERY_LAYERS=' + layer.substring(15) + '&propertyName=CountyName,DistrictNa,' + stylename.substring(8) + '&STYLES=&BBOX=' + BBOX + '&FEATURE_COUNT=5&HEIGHT=' + HEIGHT + '&WIDTH=' + WIDTH + '&FORMAT=image%2Fpng&INFO_FORMAT=text%2fhtml&SRS=EPSG%3A4326&X=' + X + '&Y=' + Y;
+        var URL = link + 'schooldistrict/wms?SERVICE=WMS&VERSION=1.1.1&REQUEST=GetFeatureInfo&LAYERS=' + layer + '&QUERY_LAYERS=' + layer.substring(15) + '&propertyName=CountyName,DistrictNa,' + stylename.substring(8,17) + '&STYLES=&BBOX=' + BBOX + '&FEATURE_COUNT=5&HEIGHT=' + HEIGHT + '&WIDTH=' + WIDTH + '&FORMAT=image%2Fpng&INFO_FORMAT=text%2fhtml&SRS=EPSG%3A4326&X=' + X + '&Y=' + Y;
         var popup = L.popup()
             .setLatLng(popLocation)
             .setContent("<iframe src='" + URL + "' frameborder='0'></iframe>")
