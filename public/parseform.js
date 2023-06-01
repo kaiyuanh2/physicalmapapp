@@ -14,7 +14,12 @@ function submitFunction(event) {
     var checkedStr = 'all';
   }
   else {
-    var checkedStr = checked.join(",");
+    if (checked.length > 128) {
+      var checkedStr = 'all';
+    }
+    else {
+      var checkedStr = checked.join(",");
+    }
   }
 
   document.getElementById('checkbox_str').value = checkedStr;
