@@ -103,10 +103,7 @@
                                                         select at least 1 school district.</label>
                                                 </div>
                                                 <div class="form-group row mt-2 mb-2 align-items-center">
-                                                    <label>Due to HTTP limitations, the maximum number of selections
-                                                        allowed is 128 school districts. This does not apply to "Select
-                                                        All" button choosing all the school districts in
-                                                        California.</label>
+                                                    <label>Due to HTTP limitations, if you select more than 100 school districts, the loading process might significantly slow down.</label>
                                                 </div>
 
                                                 <div class="form-group row mt-2 mb-2 align-items-center">
@@ -220,6 +217,7 @@
                                 </div>
 
                                 <input type="hidden" name="checkboxStr" id="checkbox_str">
+                                <input type="hidden" name="checkedLength" id="checked_length">
 
                             </form>
                         </div>
@@ -241,7 +239,8 @@
                     const grade_str = '<%- grade %>';
                     const item_str = '<%- item %>';
                     const year_str = '<%- year %>';
-                    const checkbox = '<%- checkboxStr %>'
+                    const checkbox = '<%- checkboxStr %>';
+                    const checked_length = '<%- checkedLength %>';
                 </script>
                 <script src="map.js"></script>
     </section>

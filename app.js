@@ -90,7 +90,8 @@ app.get('/california', validateParameters, (req, res) => {
     var grade = '5';
     var year = '2019';
     var checkboxStr = 'all';
-    res.render('california', { item, grade, year, checkboxStr, messages: req.flash('error') });
+    var checkedLength = 1125;
+    res.render('california', { item, grade, year, checkboxStr, checkedLength, messages: req.flash('error') });
 })
 
 app.post('/california', validateParametersPost, (req, res) => {
@@ -100,7 +101,8 @@ app.post('/california', validateParametersPost, (req, res) => {
     var grade = req.body.grade;
     var year = req.body.year;
     var checkboxStr = req.body.checkboxStr;
-    res.render('california', { item, grade, year, checkboxStr, messages: req.flash('error') });
+    var checkedLength = req.body.checkedLength;
+    res.render('california', { item, grade, year, checkboxStr, checkedLength, messages: req.flash('error') });
 })
 
 app.all('*', (req, res, next) => {

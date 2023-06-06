@@ -1,3 +1,7 @@
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+
 const dev = true;
 var map = L.map('map').setView([36.7333, -119.7885], 7)
 L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -53,7 +57,6 @@ if (checkbox.length > 0) {
 
     stylename += ';';
     stylename += 'district:';
-    stylename += checkbox;
 
     // for debug uses
 
@@ -61,13 +64,43 @@ if (checkbox.length > 0) {
     // console.log(debugStr);
     console.log(stylename);
 
-    var wmsLayer = L.Geoserver.wms(link + "wms", {
-        layers: layer,
-        styles: "schooldistrict:school_districts",
-        env: stylename
-    });
-    wmsLayer.addTo(map);
-    // console.log(wmsLayer);
+    if (checked_length >= 1125 || checked_length <= 100) {
+        stylename += checkbox;
+        var wmsLayer = L.Geoserver.wms(link + "wms", {
+            layers: layer,
+            styles: "schooldistrict:school_districts",
+            env: stylename
+        });
+        wmsLayer.addTo(map);
+        // console.log(wmsLayer);
+    }
+    else {
+        var checked = [];
+        var iter = Math.ceil(checked_length / 100);
+        for (var i = 1; i <= iter; i++) {
+            if (checked_length > i * 15 * 100) {
+                console.log(checkbox.substring((i-1) * 15 * 100, i * 15 * 100 - 1));
+                checked.push(L.Geoserver.wms(link + "wms", {
+                    layers: layer,
+                    styles: "schooldistrict:school_districts",
+                    env: stylename + checkbox.substring((i-1) * 15 * 100, i * 15 * 100 - 1)
+                }));
+            }
+            else {
+                console.log(checkbox.substring((i-1) * 15 * 100));
+                checked.push(L.Geoserver.wms(link + "wms", {
+                    layers: layer,
+                    styles: "schooldistrict:school_districts",
+                    env: stylename + checkbox.substring((i-1) * 15 * 100)
+                }));
+            }
+            sleep(1000);
+        }
+
+        for (var j = 0; checked[j]; j++) {
+            checked[j].addTo(map);
+        }
+    }
 
     var legend = L.control({ position: 'bottomleft' });
 
@@ -86,7 +119,7 @@ if (checkbox.length > 0) {
         var HEIGHT = map.getSize().y;
         var X = Math.floor(map.layerPointToContainerPoint(e.layerPoint).x);
         var Y = Math.floor(map.layerPointToContainerPoint(e.layerPoint).y);
-        var URL = link + 'schooldistrict/wms?SERVICE=WMS&VERSION=1.1.1&REQUEST=GetFeatureInfo&LAYERS=' + layer + '&QUERY_LAYERS=' + layer.substring(15) + '&propertyName=CountyName,DistrictNa,' + stylename.substring(8,17) + '&STYLES=&BBOX=' + BBOX + '&FEATURE_COUNT=5&HEIGHT=' + HEIGHT + '&WIDTH=' + WIDTH + '&FORMAT=image%2Fpng&INFO_FORMAT=text%2fhtml&SRS=EPSG%3A4326&X=' + X + '&Y=' + Y;
+        var URL = link + 'schooldistrict/wms?SERVICE=WMS&VERSION=1.1.1&REQUEST=GetFeatureInfo&LAYERS=' + layer + '&QUERY_LAYERS=' + layer.substring(15) + '&propertyName=CountyName,DistrictNa,' + stylename.substring(8, 17) + '&STYLES=&BBOX=' + BBOX + '&FEATURE_COUNT=5&HEIGHT=' + HEIGHT + '&WIDTH=' + WIDTH + '&FORMAT=image%2Fpng&INFO_FORMAT=text%2fhtml&SRS=EPSG%3A4326&X=' + X + '&Y=' + Y;
         var popup = L.popup()
             .setLatLng(popLocation)
             .setContent("<iframe src='" + URL + "' frameborder='0'></iframe>")
