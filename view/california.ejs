@@ -21,13 +21,13 @@
 
                 <div class="row align-items-center mt-3">
                     <div class="card mx-auto w-80">
-                        <div class="card-header">Display Options</div>
+                        <div class="card-header"><strong>Display Options</strong></div>
                         <div class="card-block">
                             <form id="display_options" action="/california" method="POST">
                                 <div class="form-group row mt-2 align-items-center">
                                     <div class="col-md-4">
                                         <select class="form-select" name="item" id="item">
-                                            <option value="" selected>--Fitness Assessment--</option>
+                                            <option value="" selected><strong>--Fitness Assessment--</strong></option>
                                             <option value="aero" <%=item==="aero" ? 'selected' : '' %>>Aerobic
                                                 Capacity
                                             </option>
@@ -49,7 +49,7 @@
                                     </div>
                                     <div class="col-md-4">
                                         <select class="form-select" name="grade" id="grade">
-                                            <option value="" selected>--Grade Level--</option>
+                                            <option value="" selected><strong>--Grade Level--</strong></option>
                                             <option value="5" <%=grade==="5" ? 'selected' : '' %>>Elementary (5th
                                                 Grade)
                                             </option>
@@ -63,7 +63,7 @@
                                     </div>
                                     <div class="col-md-4">
                                         <select class="form-select" name="year" id="year">
-                                            <option value="" selected>--School Year--</option>
+                                            <option value="" selected><strong>--School Year--</strong></option>
                                             <option value="1999" <%=year==="1999" ? 'selected' : '' %>>1998~1999
                                             </option>
                                             <% for (let i=2001; i<2020; i++) { %>
@@ -92,19 +92,23 @@
                                         <div class="modal-content">
                                             <div class="modal-header">
                                                 <h5 class="modal-title" id="modalLabel">Filter by County & School
-                                                    District</h5>
+                                                    District <strong>(Required)</strong></h5>
                                                 <button type="button" class="btn-close" data-bs-dismiss="modal"
                                                     aria-label="Close"></button>
                                             </div>
                                             <div class="modal-body">
                                                 <div class="form-group row mt-2 mb-2 align-items-center">
-                                                    <label>The counties are sorted alphabetically. School districts are
-                                                        listed under their corresponding counties. It is required to
-                                                        select at least 1 school district.</label>
+                                                    <label><strong>Instructions:</strong></label>
                                                 </div>
                                                 <div class="form-group row mt-2 mb-2 align-items-center">
-                                                    <label>Due to HTTP request limitations, the maximum number of school district selections allowed is 384. This does not affect the "Select All" button below.</label>
+                                                    <label>The counties are sorted alphabetically. School districts are
+                                                        listed under their corresponding counties. It is required to
+                                                        select at least 1 school district. After selecting, please click "Confirm" to proceed.</label>
                                                 </div>
+                                                <div class="form-group row mt-2 mb-2 align-items-center">
+                                                    <label>Due to HTTP request limitations, the maximum number of selections allowed is 384. This does not affect the "Select All" button below to select every school district.</label>
+                                                </div>
+                                                <br>
 
                                                 <div class="form-group row mt-2 mb-2 align-items-center">
                                                     <div class="col"><button type="button" class="btn btn-primary"
@@ -218,6 +222,7 @@
 
                                 <input type="hidden" name="checkboxStr" id="checkbox_str">
                                 <input type="hidden" name="checkedLength" id="checked_length">
+                                <input type="hidden" name="selectedCounties" id="selected_county">
 
                             </form>
                         </div>

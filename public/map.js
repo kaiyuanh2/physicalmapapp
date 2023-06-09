@@ -2,7 +2,7 @@ function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
 
-const dev = true;
+const dev = false;
 var map = L.map('map').setView([36.7333, -119.7885], 7)
 L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 19,
@@ -94,7 +94,7 @@ if (checkbox.length > 0) {
                     env: stylename + checkbox.substring((i-1) * 15 * 128)
                 }));
             }
-            sleep(100);
+            sleep(1000);
         }
 
         for (var j = 0; checked[j]; j++) {
