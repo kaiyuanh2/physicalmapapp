@@ -64,7 +64,7 @@ if (checkbox.length > 0) {
     // console.log(debugStr);
     console.log(stylename);
 
-    if (checked_length >= 1125 || checked_length <= 100) {
+    if (checked_length >= 1125 || checked_length <= 128) {
         stylename += checkbox;
         var wmsLayer = L.Geoserver.wms(link + "wms", {
             layers: layer,
@@ -76,25 +76,25 @@ if (checkbox.length > 0) {
     }
     else {
         var checked = [];
-        var iter = Math.ceil(checked_length / 100);
+        var iter = Math.ceil(checked_length / 128);
         for (var i = 1; i <= iter; i++) {
-            if (checked_length > i * 15 * 100) {
-                console.log(checkbox.substring((i-1) * 15 * 100, i * 15 * 100 - 1));
+            if (checked_length > i * 15 * 128) {
+                console.log(checkbox.substring((i-1) * 15 * 128, i * 15 * 128 - 1));
                 checked.push(L.Geoserver.wms(link + "wms", {
                     layers: layer,
                     styles: "schooldistrict:school_districts",
-                    env: stylename + checkbox.substring((i-1) * 15 * 100, i * 15 * 100 - 1)
+                    env: stylename + checkbox.substring((i-1) * 15 * 128, i * 15 * 128 - 1)
                 }));
             }
             else {
-                console.log(checkbox.substring((i-1) * 15 * 100));
+                console.log(checkbox.substring((i-1) * 15 * 128));
                 checked.push(L.Geoserver.wms(link + "wms", {
                     layers: layer,
                     styles: "schooldistrict:school_districts",
-                    env: stylename + checkbox.substring((i-1) * 15 * 100)
+                    env: stylename + checkbox.substring((i-1) * 15 * 128)
                 }));
             }
-            sleep(1000);
+            sleep(100);
         }
 
         for (var j = 0; checked[j]; j++) {

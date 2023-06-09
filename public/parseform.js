@@ -14,9 +14,9 @@ function submitFunction(event) {
     var checkedStr = 'all';
   }
   else {
-    if (checked.length > 128) {
-      // var checkedStr = 'all';
-      var checkedStr = checked.join(",");
+    if (checked.length > 384) {
+      var checkedStr = 'al';
+      // var checkedStr = checked.join(",");
     }
     else {
       var checkedStr = checked.join(",");

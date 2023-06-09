@@ -96,12 +96,12 @@ app.get('/california', validateParameters, (req, res) => {
 
 app.post('/california', validateParametersPost, (req, res) => {
     console.log("CA POST");
-    console.log(req.body);
     var item = req.body.item;
     var grade = req.body.grade;
     var year = req.body.year;
     var checkboxStr = req.body.checkboxStr;
     var checkedLength = req.body.checkedLength;
+    console.log(checkedLength);
     res.render('california', { item, grade, year, checkboxStr, checkedLength, messages: req.flash('error') });
 })
 
