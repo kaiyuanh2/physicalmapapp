@@ -3,7 +3,7 @@ function sleep(ms) {
 }
 
 const dev = true;
-var map = L.map('map').setView([36.7333, -119.7885], 7)
+var map = L.map('map').setView([37.1661, -119.4494], 7)
 L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 19,
     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
