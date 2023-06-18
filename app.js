@@ -7,6 +7,7 @@ const ExpressError = require('./utils/ExpressError');
 const flash = require('connect-flash');
 const fs = require('fs');
 const { validateParameters, validateParametersPost } = require('./middleware');
+const { getAverage, getRange } = require('./helper');
 const session = require('express-session');
 
 app.use(express.json({limit: '10mb'}));
@@ -36,9 +37,11 @@ app.use(flash());
 
 
 
-const sd = []
+const sd = [];
+const latlon = [];
 for (let i = 0; i < 58; i++) {
     sd.push(new Array());
+    latlon.push(new Array());
 }
 var county = -1;
 const jsonString = fs.readFileSync("./public/entities.json").toString();
@@ -63,6 +66,22 @@ global.names = ['Alameda', 'Alpine', 'Amador', 'Butte'
     , 'Stanislaus', 'Sutter', 'Tehama', 'Trinity', 'Tulare'
     , 'Tuolumne', 'Ventura', 'Yolo', 'Yuba'];
 console.log(global.sdi[1]);
+
+const latlonString = fs.readFileSync("./public/latlon.json").toString();
+const lmap = new Map(Object.entries(JSON.parse(latlonString)));
+
+var parsed = [];
+var lat = 0.0;
+var lon = 0.0;
+lmap.forEach(function (v, k) {
+    parsed = v.split(',');
+    county = parseInt(k) - 1;
+    lat = parseFloat(parsed[0]);
+    lon = parseFloat(parsed[1]);
+    latlon[county].push(lat);
+    latlon[county].push(lon);
+})
+console.log(latlon[0]);
 
 app.get('/', (req, res) => {
     console.log("Welcome!");
@@ -91,7 +110,10 @@ app.get('/california', validateParameters, (req, res) => {
     var year = '2019';
     var checkboxStr = 'all';
     var checkedLength = 1125;
-    res.render('california', { item, grade, year, checkboxStr, checkedLength, messages: req.flash('error') });
+    var mapLat = 37.1661;
+    var mapLon = -119.4494;
+    var zoom = 7;
+    res.render('california', { item, grade, year, checkboxStr, checkedLength, mapLat, mapLon, zoom, messages: req.flash('error') });
 })
 
 app.post('/california', validateParametersPost, (req, res) => {
@@ -102,7 +124,42 @@ app.post('/california', validateParametersPost, (req, res) => {
     var checkboxStr = req.body.checkboxStr;
     var checkedLength = req.body.checkedLength;
     console.log(checkedLength);
-    res.render('california', { item, grade, year, checkboxStr, checkedLength, messages: req.flash('error') });
+    var mapLat = 37.1661;
+    var mapLon = -119.4494;
+    var zoom = 7;
+    if (checkboxStr != 'all') {
+        var cts = new Set();
+        var c = 0;
+        for (var i=0; i<checkboxStr.length; i+=15) {
+            c = parseInt(checkboxStr.substring(i, i+2)) - 1;
+            cts.add(c);
+        }
+        cts = Array.from(cts);
+        if (cts.length == 1) {
+            mapLat = latlon[cts[0]][0];
+            mapLon = latlon[cts[0]][1];
+            zoom = 10;
+        }
+        else {
+            // console.log(cts);
+            lats = [];
+            lons = [];
+            for (var i=0; i<cts.length; i++) {
+                lats.push(latlon[cts[i]][0]);
+                lons.push(latlon[cts[i]][1]);
+            }
+            mapLat = getAverage(lats);
+            mapLon = getAverage(lons);
+            // console.log(typeof lats[0]);
+            var range = [getRange(lats), getRange(lons)];
+            zoom = Math.round(10.0 - Math.sqrt(Math.max.apply(null, range)));
+            if (zoom < 7) {
+                zoom = 7;
+            }
+            console.log(zoom);
+        }
+    }
+    res.render('california', { item, grade, year, checkboxStr, checkedLength, mapLat, mapLon, zoom, messages: req.flash('error') });
 })
 
 app.all('*', (req, res, next) => {

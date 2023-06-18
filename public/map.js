@@ -1,11 +1,15 @@
 function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
-
 const dev = true;
-var map = L.map('map').setView([37.1661, -119.4494], 7)
+
+// var map_lat = 37.1661;
+// var map_lon = -119.4494;
+// var zoom = 7;
+
+var map = L.map('map').setView([map_lat, map_lon], map_zoom)
 L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    maxZoom: 19,
+    maxZoom: 17,
     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 }).addTo(map);
 

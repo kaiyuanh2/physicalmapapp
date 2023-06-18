@@ -75,60 +75,93 @@
                                     </div>
                                 </div>
 
-                                <div class="form-group row mt-2 mb-2 align-items-center justify-content-end">
-                                    <div class="col">
-                                        <button type="button" class="btn btn-info" data-bs-toggle="modal"
-                                            data-bs-target="#countyModal">Filter by County & School District
-                                            <strong>(Required)</strong></button>
-                                    </div>
-                                    <div class="col-auto">
-                                        <button type="submit" class="btn btn-primary">Confirm</button>
-                                    </div>
+                                <div class="form-group row mt-2 mb-2 align-items-center justify-content-end"
+                                    style="vertical-align: middle;">
+                                    <div class="col text-center"><button type="button" class="btn btn-info"
+                                            data-bs-toggle="modal"
+                                            data-bs-target="#countyModal"><strong>Continue</strong> to Filter by County
+                                            & School District and <strong>Submit</strong></button></div>
                                 </div>
 
                                 <div class="form-group row mt-2 mb-2 align-items-center justify-content-end">
                                     <div class="accordion" id="selectedAccordion">
                                         <div class="accordion-item mt-2 mb-2">
                                             <h2 class="accordion-header" id="selected-heading">
-                                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                                    data-bs-target="#selected-collapse" aria-expanded="false"
-                                                    aria-controls="selected-collapse">
+                                                <button class="accordion-button collapsed" type="button"
+                                                    data-bs-toggle="collapse" data-bs-target="#selected-collapse"
+                                                    aria-expanded="false" aria-controls="selected-collapse">
                                                     Show Selected School District(s)
                                                 </button>
                                             </h2>
                                             <div id="selected-collapse" class="accordion-collapse collapse"
                                                 aria-labelledby="selected-heading">
                                                 <div class="accordion-body">
-                                                    <% if (checkboxStr == 'all') { %>
+                                                    <% if (checkboxStr=='all' ) { %>
                                                         <strong>Every School District in California</strong>
-                                                    <% } else { %>
-                                                        <% var flag = false %>
-                                                        <% const selectedStr = checkboxStr.split(',') %>
-                                                        <% var curr_county = -1 %>
-                                                        <% var new_county = 0 %>
-                                                        <% var line_str = '' %>
-                                                        <% for (let i=0; i<selectedStr.length; i++) { %>
-                                                            <% new_county = parseInt(selectedStr[i].substring(0, 2)) - 1 %>
-                                                            <% if (new_county != curr_county) { %>
-                                                                <% curr_county = new_county %>
-                                                                <% if (line_str.length > 0) { %>
-                                                                    <%= line_str.substring(0, line_str.length - 2) %>
-                                                                    <br>
-                                                                    <% line_str = '' %>
-                                                                <% } %>
-                                                                <strong><%= names[curr_county] %>: </strong>
-                                                            <% } %>
-                                                            <% for (let j=0; j<sdi[curr_county].length; j++) { %>
-                                                                <% if (sdi[curr_county][j][0] == selectedStr[i]) { %>
-                                                                    <% line_str += sdi[curr_county][j][1] + ', ' %>
-                                                                <% } %>
-                                                            <% } %>
-                                                        <% } %>
-                                                        <% if (line_str.length > 0) { %>
-                                                            <%= line_str.substring(0, line_str.length - 2) %>
-                                                            <% line_str = '' %>
-                                                        <% } %>
-                                                    <% } %>
+                                                        <% } else { %>
+                                                            <% var flag=false %>
+                                                                <% const selectedStr=checkboxStr.split(',') %>
+                                                                    <% var curr_county=-1 %>
+                                                                        <% var new_county=0 %>
+                                                                            <% var line_str='' %>
+                                                                                <% for (let i=0; i<selectedStr.length;
+                                                                                    i++) { %>
+                                                                                    <% new_county=parseInt(selectedStr[i].substring(0,
+                                                                                        2)) - 1 %>
+                                                                                        <% if (new_county !=curr_county)
+                                                                                            { %>
+                                                                                            <% curr_county=new_county %>
+                                                                                                <% if (line_str.length>
+                                                                                                    0) { %>
+                                                                                                    <%= line_str.substring(0,
+                                                                                                        line_str.length
+                                                                                                        - 2) %>
+                                                                                                        <br>
+                                                                                                        <% line_str=''
+                                                                                                            %>
+                                                                                                            <% } %>
+                                                                                                                <strong>
+                                                                                                                    <%= names[curr_county]
+                                                                                                                        %>
+                                                                                                                        :</strong>
+                                                                                                                <% } %>
+                                                                                                                <% for
+                                                                                                                        (let
+                                                                                                                        j=0;
+                                                                                                                        j<sdi[curr_county].length;
+                                                                                                                        j++)
+                                                                                                                        {
+                                                                                                                        %>
+                                                                                                                        <% if
+                                                                                                                            (sdi[curr_county][j][0]==selectedStr[i])
+                                                                                                                            {
+                                                                                                                            %>
+                                                                                                                            <% line_str
+                                                                                                                                +=sdi[curr_county][j][1]
+                                                                                                                                + ', '
+                                                                                                                                %>
+                                                                                                                                <% }
+                                                                                                                                    %>
+                                                                                                                                    <% }
+                                                                                                                                        %>
+                                                                                                                                        <% }
+                                                                                                                                            %>
+                                                                                                                                            <% if
+                                                                                                                                                (line_str.length>
+                                                                                                                                                0)
+                                                                                                                                                {
+                                                                                                                                                %>
+                                                                                                                                                <%= line_str.substring(0,
+                                                                                                                                                    line_str.length
+                                                                                                                                                    -
+                                                                                                                                                    2)
+                                                                                                                                                    %>
+                                                                                                                                                    <% line_str=''
+                                                                                                                                                        %>
+                                                                                                                                                        <% }
+                                                                                                                                                            %>
+                                                                                                                                                            <% }
+                                                                                                                                                                %>
                                                 </div>
                                             </div>
                                         </div>
@@ -151,14 +184,23 @@
                                                     <div class="form-group row mt-2 mb-2 align-items-center">
                                                         <label>The counties are sorted alphabetically. School districts
                                                             are
-                                                            listed under their corresponding counties. It is required to
-                                                            select at least 1 school district. After selecting, please
-                                                            click "Confirm" to proceed.</label>
+                                                            listed under their corresponding counties. <strong>It is
+                                                                required to
+                                                                select at least 1 school district.</strong></label>
                                                     </div>
                                                     <div class="form-group row mt-2 mb-2 align-items-center">
                                                         <label>Due to HTTP request limitations, the maximum number of
                                                             selections allowed is 384. This does not affect the "Select
-                                                            All" button below to select every school district.</label>
+                                                            All" button below to select every school district in
+                                                            California.</label>
+                                                    </div>
+                                                    <div class="form-group row mt-2 mb-2 align-items-center">
+                                                        <label>After selecting the school districts, click
+                                                            <strong>"Submit"</strong> at the bottom of this window to
+                                                            submit your
+                                                            request. To close this window and return to the map, click
+                                                            <strong>"X"</strong> on the upper right or anywhere outside
+                                                            this window.</label>
                                                     </div>
                                                     <br>
 
@@ -272,8 +314,12 @@
 
                                                 </div>
                                                 <div class="modal-footer">
-                                                    <button type="button" class="btn btn-primary"
-                                                        data-bs-dismiss="modal">Save and Close</button>
+                                                    <div class="col-auto">
+                                                        <button type="submit"
+                                                            class="btn btn-success"><strong>Submit</strong></button>
+                                                    </div>
+                                                    <!-- <button type="button" class="btn btn-primary"
+                                                        data-bs-dismiss="modal">Save and Close</button> -->
                                                 </div>
                                             </div>
                                         </div>
@@ -305,6 +351,9 @@
                     const year_str = '<%- year %>';
                     const checkbox = '<%- checkboxStr %>';
                     const checked_length = '<%- checkedLength %>';
+                    const map_lat = '<%- mapLat %>';
+                    const map_lon = '<%- mapLon %>';
+                    const map_zoom = '<%- zoom %>';
                 </script>
                 <script src="map.js"></script>
     </section>
