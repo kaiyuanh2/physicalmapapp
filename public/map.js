@@ -1,7 +1,7 @@
 function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
-const dev = false;
+const dev = true;
 
 // var map_lat = 37.1661;
 // var map_lon = -119.4494;
