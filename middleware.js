@@ -8,6 +8,12 @@ const schema = Joi.object().keys({
     checkedLength: Joi.number().integer().required().min(1).max(1125).default(1125)
 }).unknown(true);
 
+const schemaCustom = Joi.object().keys({
+    item: Joi.string().required().default('insurance'),
+    checkboxStr: Joi.string().required().min(3).default('all'),
+    checkedLength: Joi.number().integer().required().min(1).max(1125).default(1125)
+}).unknown(true);
+
 module.exports.validateParameters = async (req, res, next) => {
     // console.log('validating...');
     // const { error, value } = schema.validate(req.query);
@@ -18,6 +24,22 @@ module.exports.validateParameters = async (req, res, next) => {
     // } else {
     //     req.query = value;
     // }
+    next();
+}
+
+module.exports.validateParametersPostCustom = async (req, res, next) => {
+    // console.log('validating...');
+    const { error, value } = await schemaCustom.validate(req.body);
+    if (error) {
+        console.log(value);
+        req.body.item = 'insurance';
+        req.body.checkboxStr = 'all';
+        req.body.checkedLength = '1125';
+        req.flash('error', "Invalid parameter(s)! Displaying the map under default options: Map of Insurance Coverage, and the whole California. Please make sure that every parameter is not empty and is valid.");
+        console.log(req.body);
+    } else {
+        req.body = value;
+    }
     next();
 }
 

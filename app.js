@@ -45,7 +45,10 @@ for (let i = 0; i < 58; i++) {
 }
 var county = -1;
 const jsonString = fs.readFileSync("./public/entities.json").toString();
+const customString = fs.readFileSync("./public/custom.json").toString();
 const cmap = new Map(Object.entries(JSON.parse(jsonString)));
+const mmap = new Map(Object.entries(JSON.parse(customString)));
+console.log(mmap);
 // console.log(cmap);
 cmap.forEach(function (v, k) {
     county = parseInt(k.substring(0, 2)) - 1;
@@ -65,7 +68,7 @@ global.names = ['Alameda', 'Alpine', 'Amador', 'Butte'
     , 'Shasta', 'Sierra', 'Siskiyou', 'Solano', 'Sonoma'
     , 'Stanislaus', 'Sutter', 'Tehama', 'Trinity', 'Tulare'
     , 'Tuolumne', 'Ventura', 'Yolo', 'Yuba'];
-console.log(global.sdi[1]);
+// console.log(global.sdi[1]);
 
 const latlonString = fs.readFileSync("./public/latlon.json").toString();
 const lmap = new Map(Object.entries(JSON.parse(latlonString)));
@@ -81,18 +84,20 @@ lmap.forEach(function (v, k) {
     latlon[county].push(lat);
     latlon[county].push(lon);
 })
-console.log(latlon[0]);
+// console.log(latlon[0]);
 
 app.get('/', (req, res) => {
     console.log("Welcome!");
-    res.render('index')
+    const page_name = 'index';
+    res.render('index', {page_name})
 })
 
 app.get('/map', (req, res) => {
     var item = req.query.item;
     var grade = req.query.grade;
     var year = req.query.year;
-    res.render('deprecated', { item, grade, year });
+    const page_name = 'deprecated';
+    res.render('deprecated', { item, grade, year, page_name });
 })
 
 // app.post('/map', (req, res) => {
@@ -113,7 +118,8 @@ app.get('/california', validateParameters, (req, res) => {
     var mapLat = 37.1661;
     var mapLon = -119.4494;
     var zoom = 7;
-    res.render('california', { item, grade, year, checkboxStr, checkedLength, mapLat, mapLon, zoom, messages: req.flash('error') });
+    const page_name = 'california';
+    res.render('california', { item, grade, year, checkboxStr, checkedLength, mapLat, mapLon, zoom, messages: req.flash('error'), page_name });
 })
 
 app.post('/california', validateParametersPost, (req, res) => {
@@ -127,6 +133,7 @@ app.post('/california', validateParametersPost, (req, res) => {
     var mapLat = 37.1661;
     var mapLon = -119.4494;
     var zoom = 7;
+    const page_name = 'california';
     if (checkboxStr != 'all') {
         var cts = new Set();
         var c = 0;
@@ -159,7 +166,64 @@ app.post('/california', validateParametersPost, (req, res) => {
             console.log(zoom);
         }
     }
-    res.render('california', { item, grade, year, checkboxStr, checkedLength, mapLat, mapLon, zoom, messages: req.flash('error') });
+    res.render('california', { item, grade, year, checkboxStr, checkedLength, mapLat, mapLon, zoom, messages: req.flash('error'), page_name });
+})
+
+app.get('/custom', validateParameters, (req, res) => {
+    console.log("CUSTOM GET");
+    var item = 'insurance';
+    var checkboxStr = 'all';
+    var checkedLength = 1125;
+    var mapLat = 37.1661;
+    var mapLon = -119.4494;
+    var zoom = 7;
+    const page_name = 'custom';
+    res.render('custom', { item, checkboxStr, checkedLength, mapLat, mapLon, zoom, messages: req.flash('error'), page_name });
+})
+
+app.post('/custom', validateParametersPost, (req, res) => {
+    console.log("CUSTOM POST");
+    var item = req.body.item;
+    var checkboxStr = req.body.checkboxStr;
+    var checkedLength = req.body.checkedLength;
+    console.log(checkedLength);
+    var mapLat = 37.1661;
+    var mapLon = -119.4494;
+    var zoom = 7;
+    const page_name = 'custom';
+    if (checkboxStr != 'all') {
+        var cts = new Set();
+        var c = 0;
+        for (var i=0; i<checkboxStr.length; i+=15) {
+            c = parseInt(checkboxStr.substring(i, i+2)) - 1;
+            cts.add(c);
+        }
+        cts = Array.from(cts);
+        if (cts.length == 1) {
+            mapLat = latlon[cts[0]][0];
+            mapLon = latlon[cts[0]][1];
+            zoom = 10;
+        }
+        else {
+            // console.log(cts);
+            lats = [];
+            lons = [];
+            for (var i=0; i<cts.length; i++) {
+                lats.push(latlon[cts[i]][0]);
+                lons.push(latlon[cts[i]][1]);
+            }
+            mapLat = getAverage(lats);
+            mapLon = getAverage(lons);
+            // console.log(typeof lats[0]);
+            var range = [getRange(lats), getRange(lons)];
+            zoom = Math.round(10.0 - Math.sqrt(Math.max.apply(null, range)));
+            if (zoom < 7) {
+                zoom = 7;
+            }
+            console.log(zoom);
+        }
+    }
+    res.render('custom', { item, checkboxStr, checkedLength, mapLat, mapLon, zoom, messages: req.flash('error'), page_name });
 })
 
 app.all('*', (req, res, next) => {
@@ -168,8 +232,9 @@ app.all('*', (req, res, next) => {
 
 app.use((err, req, res, next) => {
     const { statusCode = 500 } = err;
+    const page_name = 'err';
     if (!err.message) err.message = 'Error!'
-    res.status(statusCode).render('error', { err })
+    res.status(statusCode).render('error', { err, page_name })
 })
 
 app.listen(3000, () => {

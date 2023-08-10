@@ -25,6 +25,7 @@ function submitFunction(event) {
 
   document.getElementById('checkbox_str').value = checkedStr;
   document.getElementById('checked_length').value = checked.length;
+  console.log(checked.length)
   form.submit();
 
   return false;
