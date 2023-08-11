@@ -277,6 +277,11 @@
             <div id="map"></div>
         </div>
 
+        <div class="row align-items-center mt-2">
+            <p>Maximum value of this dataset: <%= custom_map.get(item)[1] %></p>
+            <p>Minimum value of this dataset: <%= custom_map.get(item)[0] %></p>
+        </div>
+
         <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
             integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
         <script src="/node_modules/leaflet-geoserver-request/src/L.Geoserver.js"></script>

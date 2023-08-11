@@ -48,7 +48,7 @@ const jsonString = fs.readFileSync("./public/entities.json").toString();
 const customString = fs.readFileSync("./public/custom.json").toString();
 const cmap = new Map(Object.entries(JSON.parse(jsonString)));
 const mmap = new Map(Object.entries(JSON.parse(customString)));
-console.log(mmap);
+console.log(mmap.get('insurance'));
 // console.log(cmap);
 cmap.forEach(function (v, k) {
     county = parseInt(k.substring(0, 2)) - 1;
@@ -69,6 +69,7 @@ global.names = ['Alameda', 'Alpine', 'Amador', 'Butte'
     , 'Stanislaus', 'Sutter', 'Tehama', 'Trinity', 'Tulare'
     , 'Tuolumne', 'Ventura', 'Yolo', 'Yuba'];
 // console.log(global.sdi[1]);
+global.custom_map = mmap;
 
 const latlonString = fs.readFileSync("./public/latlon.json").toString();
 const lmap = new Map(Object.entries(JSON.parse(latlonString)));
