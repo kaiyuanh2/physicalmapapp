@@ -60,3 +60,8 @@ module.exports.validateParametersPost = async (req, res, next) => {
     }
     next();
 }
+
+module.exports.uploadSuccess = async (req, res, next) => {
+    req.flash('success', "Upload success!!!");
+    next();
+}

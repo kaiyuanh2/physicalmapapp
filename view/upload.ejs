@@ -1,0 +1,42 @@
+<% layout('layouts/boilerplate') %>
+
+    <div id="headingGroup" class="text-center d-none d-lg-block mt-3">
+        <h3 class="">Upload Custom Dataset</h3>
+    </div>
+
+    <% if (messages.length> 0) { %>
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            <%= messages[0] %>
+        </div>
+        <% } %>
+
+    <div class="row align-items-center mt-3">
+        <div class="card">
+            <div class="card-body">
+                <p>Please follow the format described in the documentation. The file types allowed are .csv, .xlsx, and
+                    .xls. The maximum file size allowed is 10MB.</p>
+                <div class="row align-items-center mt-3">
+                    <form id="custom_map_upload" action="/upload" method="POST" enctype="multipart/form-data">
+                        <div class="row align-items-center mt-3">
+                            <div class="col-12">
+                                <label for="fileSelect" class="form-label">Upload dataset file here:</label>
+                                <input type="file" id="dataSet" name="dataSet" class="form-control" accept=".csv, .xlsx, .xls"
+                                    max="10000000" required>
+                            </div>
+                        </div>
+
+                        <div class="row align-items-center mt-3">
+                            <div class="col-10">
+                                <label for="mapName" class="form-label">Name of custom map (required):</label>
+                                <input type="text" id="mapName" name="mapName" class="form-control" required>
+                            </div>
+                            <div class="col-2">
+                                <button type="submit" class="btn btn-primary btn-lg"><strong>+</strong> Upload</button>
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>

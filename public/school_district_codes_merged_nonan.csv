@@ -1,0 +1,1033 @@
+,STATE CODE,COUNTY CODE,COUNTY NAME,SDLEA,NAME,LEAID,CDSCODE
+0,06,001,Alameda,00019,Dublin Unified School District,0600019,01750930000000
+1,06,001,Alameda,00020,Pleasanton Unified School District,0600020,01751010000000
+2,06,001,Alameda,00021,Sunol Glen Unified School District,0600021,01751190000000
+3,06,001,Alameda,01770,Alameda City Unified School District,0601770,01611190000000
+4,06,001,Alameda,01860,Albany City Unified School District,0601860,01611270000000
+5,06,001,Alameda,04740,Berkeley Unified School District,0604740,01611430000000
+7,06,001,Alameda,07800,Castro Valley Unified School District,0607800,01611500000000
+8,06,001,Alameda,12630,Emery Unified School District,0612630,01611680000000
+9,06,001,Alameda,14400,Fremont Unified School District,0614400,01611760000000
+10,06,001,Alameda,16740,Hayward Unified School District,0616740,01611920000000
+11,06,001,Alameda,22110,Livermore Valley Joint Unified School District,0622110,01612000000000
+12,06,001,Alameda,26130,Mountain House Elementary School District,0626130,01612180000000
+13,06,001,Alameda,26910,New Haven Unified School District,0626910,01612420000000
+14,06,001,Alameda,27060,Newark Unified School District,0627060,01612340000000
+15,06,001,Alameda,28050,Oakland Unified School District,0628050,01612590000000
+16,06,001,Alameda,30330,Piedmont City Unified School District,0630330,01612750000000
+17,06,001,Alameda,34680,San Leandro Unified School District,0634680,01612910000000
+18,06,001,Alameda,34710,San Lorenzo Unified School District,0634710,01613090000000
+19,06,003,Alpine,02070,Alpine County Unified School District,0602070,02613330000000
+20,06,005,Amador,02450,Amador County Unified School District,0602450,03739810000000
+21,06,007,Butte,00051,Gridley Unified School District,0600051,04755070000000
+22,06,007,Butte,03780,Bangor Union Elementary School District,0603780,04613820000000
+23,06,007,Butte,05040,Biggs Unified School District,0605040,04614080000000
+24,06,007,Butte,08370,Chico Unified School District,0608370,04614240000000
+25,06,007,Butte,11730,Durham Unified School District,0611730,04614320000000
+26,06,007,Butte,15480,Golden Feather Union Elementary School District,0615480,04614570000000
+27,06,007,Butte,23700,Manzanita Elementary School District,0623700,04614990000000
+28,06,007,Butte,24090,Marysville Joint Unified School District,0624090,58727360000000
+29,06,007,Butte,29100,Oroville City Elementary School District,0629100,04615070000000
+30,06,007,Butte,29130,Oroville Union High School District,0629130,04615150000000
+31,06,007,Butte,29540,Palermo Union Elementary School District,0629540,04615230000000
+32,06,007,Butte,29820,Paradise Unified School District,0629820,04615310000000
+33,06,007,Butte,30520,Pioneer Union Elementary School District,0630520,04733790000000
+34,06,007,Butte,39180,Thermalito Union School District,0639180,04615490000000
+36,06,009,Calaveras,05940,Bret Harte Union High School District,0605940,05615560000000
+37,06,009,Calaveras,06870,Calaveras Unified School District,0606870,05615640000000
+38,06,009,Calaveras,23970,Mark Twain Union Elementary School District,0623970,05615720000000
+39,06,009,Calaveras,40680,Vallecito Union Elementary School District,0640680,05615800000000
+40,06,011,Colusa,09570,Colusa Unified School District,0609570,06615980000000
+41,06,011,Colusa,24150,Maxwell Unified School District,0624150,06616060000000
+42,06,011,Colusa,30360,Pierce Joint Unified School District,0630360,06616140000000
+43,06,011,Colusa,31620,Princeton Joint Unified School District,0631620,11626460000000
+44,06,011,Colusa,38070,Stony Creek Joint Unified School District,0638070,11626530000000
+45,06,011,Colusa,42540,Williams Unified School District,0642540,06616220000000
+46,06,013,Contra Costa,01650,Acalanes Union High School District,0601650,07616300000000
+47,06,013,Contra Costa,02850,Antioch Unified School District,0602850,07616480000000
+48,06,013,Contra Costa,05910,Brentwood Union Elementary School District,0605910,07616550000000
+49,06,013,Contra Costa,06750,Byron Union Elementary School District,0606750,07616630000000
+50,06,013,Contra Costa,07350,Canyon Elementary School District,0607350,07616710000000
+51,06,013,Contra Costa,18990,John Swett Unified School District,0618990,07616970000000
+52,06,013,Contra Costa,20040,Knightsen Elementary School District,0620040,07617050000000
+53,06,013,Contra Costa,20310,Lafayette Elementary School District,0620310,07617130000000
+54,06,013,Contra Costa,21600,Liberty Union High School District,0621600,07617210000000
+55,06,013,Contra Costa,22110,Livermore Valley Joint Unified School District,0622110,01612000000000
+56,06,013,Contra Costa,24030,Martinez Unified School District,0624030,07617390000000
+57,06,013,Contra Costa,25740,Moraga Elementary School District,0625740,07617470000000
+58,06,013,Contra Costa,26370,Mount Diablo Unified School District,0626370,07617540000000
+59,06,013,Contra Costa,28080,Oakley Union Elementary School District,0628080,07617620000000
+60,06,013,Contra Costa,28860,Orinda Union Elementary School District,0628860,07617700000000
+61,06,013,Contra Costa,30600,Pittsburg Unified School District,0630600,07617880000000
+62,06,013,Contra Costa,32550,West Contra Costa Unified School District,0632550,07617960000000
+63,06,013,Contra Costa,35130,San Ramon Valley Unified School District,0635130,07618040000000
+64,06,013,Contra Costa,41250,Walnut Creek Elementary School District,0641250,07618120000000
+65,06,015,Del Norte,10770,Del Norte County Unified School District,0610770,08618200000000
+66,06,017,El Dorado,05240,Black Oak Mine Unified School District,0605240,09737830000000
+67,06,017,El Dorado,06270,Buckeye Union Elementary School District,0606270,09618380000000
+68,06,017,El Dorado,07170,Camino Union Elementary School District,0607170,09618460000000
+69,06,017,El Dorado,12070,El Dorado Union High School District,0612070,09618530000000
+70,06,017,El Dorado,15390,Gold Oak Union Elementary School District,0615390,09618790000000
+71,06,017,El Dorado,15450,Gold Trail Union Elementary School District,0615450,09618870000000
+72,06,017,El Dorado,18240,Indian Diggings Elementary School District,0618240,09618950000000
+73,06,017,El Dorado,20640,Lake Tahoe Unified School District,0620640,09619030000000
+74,06,017,El Dorado,21180,Latrobe Elementary School District,0621180,09619110000000
+75,06,017,El Dorado,25980,Mother Lode Union Elementary School District,0625980,09619290000000
+76,06,017,El Dorado,30480,Pioneer Union Elementary School District,0630480,09619450000000
+77,06,017,El Dorado,30780,Placerville Union Elementary School District,0630780,09619520000000
+78,06,017,El Dorado,31290,Pollock Pines Elementary School District,0631290,09619600000000
+79,06,017,El Dorado,32310,Rescue Union Elementary School District,0632310,09619780000000
+80,06,017,El Dorado,36810,Silver Fork Elementary School District,0636810,09619860000000
+81,06,017,El Dorado,38770,Tahoe-Truckee Unified School District,0638770,31669440000000
+82,06,019,Fresno,00022,Mendota Unified School District,0600022,10751270000000
+83,06,019,Fresno,00033,Dos Palos-Oro Loma Joint Unified School District,0600033,24753170000000
+84,06,019,Fresno,00040,Riverdale Joint Unified School District,0600040,10754080000000
+85,06,019,Fresno,00067,Caruthers Unified School District,0600067,10755980000000
+86,06,019,Fresno,01415,Washington Unified School District,0601415,10767780000000
+87,06,019,Fresno,02370,Alvina Elementary School District,0602370,10619940000000
+88,06,019,Fresno,04860,Big Creek Elementary School District,0604860,10620260000000
+91,06,019,Fresno,06540,Burrel Union Elementary School District,0606540,10620420000000
+92,06,019,Fresno,07970,Central Unified School District,0607970,10739650000000
+93,06,019,Fresno,08850,Clay Joint Elementary School District,0608850,10621090000000
+94,06,019,Fresno,09030,Clovis Unified School District,0609030,10621170000000
+95,06,019,Fresno,09120,Coalinga-Huron Unified School District,0609120,10621250000000
+96,06,019,Fresno,10350,Cutler-Orosi Joint Unified School District,0610350,54718600000000
+97,06,019,Fresno,13840,Firebaugh-Las Deltas Unified School District,0613840,10738090000000
+98,06,019,Fresno,14250,Fowler Unified School District,0614250,10621580000000
+99,06,019,Fresno,14550,Fresno Unified School District,0614550,10621660000000
+100,06,019,Fresno,19490,Kerman Unified School District,0619490,10739990000000
+101,06,019,Fresno,19700,Kings Canyon Joint Unified School District,0619700,10622650000000
+102,06,019,Fresno,19800,Kingsburg Elementary Charter School District,0619800,10622400000000
+103,06,019,Fresno,19830,Kingsburg Joint Union High School District,0619830,10622570000000
+104,06,019,Fresno,21150,Laton Joint Unified School District,0621150,10622810000000
+105,06,019,Fresno,25290,Monroe Elementary School District,0625290,10623230000000
+106,06,019,Fresno,25350,Monson-Sultana Joint Union Elementary School District,0625350,54720090000000
+107,06,019,Fresno,28530,Orange Center Elementary School District,0628530,10623310000000
+108,06,019,Fresno,29400,Pacific Union Elementary School District,0629400,10623560000000
+109,06,019,Fresno,29910,Parlier Unified School District,0629910,10623640000000
+110,06,019,Fresno,30390,Pine Ridge Elementary School District,0630390,10623720000000
+111,06,019,Fresno,31680,Raisin City Elementary School District,0631680,10623800000000
+112,06,019,Fresno,35250,Sanger Unified School District,0635250,10624140000000
+113,06,019,Fresno,36270,Selma Unified School District,0636270,10624300000000
+114,06,019,Fresno,36805,Sierra Unified School District,0636805,10752750000000
+115,06,019,Fresno,41460,Washington Colony Elementary School District,0641460,10625130000000
+116,06,019,Fresno,42060,West Park Elementary School District,0642060,10625390000000
+117,06,019,Fresno,42210,Westside Elementary School District,0642210,10625470000000
+118,06,019,Fresno,91134,Golden Plains Unified School District,0691134,10752340000000
+122,06,021,Glenn,00045,Orland Joint Unified School District,0600045,11754810000000
+123,06,021,Glenn,01339,Hamilton Unified School District,0601339,11765620000000
+125,06,021,Glenn,07410,Capay Joint Union Elementary School District,0607410,11625540000000
+126,06,021,Glenn,20610,Lake Elementary School District,0620610,11625960000000
+127,06,021,Glenn,30870,Plaza Elementary School District,0630870,11626380000000
+128,06,021,Glenn,31620,Princeton Joint Unified School District,0631620,11626460000000
+129,06,021,Glenn,38070,Stony Creek Joint Unified School District,0638070,11626530000000
+130,06,021,Glenn,42710,Willows Unified School District,0642710,11626610000000
+132,06,023,Humboldt,00037,Ferndale Unified School District,0600037,12753740000000
+133,06,023,Humboldt,00038,Mattole Unified School District,0600038,12753820000000
+134,06,023,Humboldt,00052,Eureka City Unified School District,0600052,12755150000000
+135,06,023,Humboldt,01420,Fortuna Elementary School District,0601420,12768020000000
+136,06,023,Humboldt,03000,Arcata Elementary School District,0603000,12626790000000
+137,06,023,Humboldt,03030,Northern Humboldt Union High School District,0603030,12626870000000
+138,06,023,Humboldt,04890,Big Lagoon Union Elementary School District,0604890,12626950000000
+139,06,023,Humboldt,05400,Blue Lake Union Elementary School District,0605400,12627030000000
+140,06,023,Humboldt,06000,Bridgeville Elementary School District,0606000,12627290000000
+141,06,023,Humboldt,10230,Cuddeback Union Elementary School District,0610230,12627370000000
+142,06,023,Humboldt,10380,Cutten Elementary School District,0610380,12627450000000
+143,06,023,Humboldt,13740,Fieldbrook Elementary School District,0613740,12627940000000
+144,06,023,Humboldt,14190,Fortuna Union High School District,0614190,12628100000000
+145,06,023,Humboldt,14520,Freshwater Elementary School District,0614520,12628280000000
+146,06,023,Humboldt,14910,Garfield Elementary School District,0614910,12628360000000
+147,06,023,Humboldt,15990,Green Point Elementary School District,0615990,12628510000000
+148,06,023,Humboldt,18120,Hydesville Elementary School District,0618120,12628850000000
+149,06,023,Humboldt,18660,Jacoby Creek Elementary School District,0618660,12628930000000
+150,06,023,Humboldt,19950,Klamath-Trinity Joint Unified School District,0619950,12629010000000
+151,06,023,Humboldt,19980,Kneeland Elementary School District,0619980,12629190000000
+152,06,023,Humboldt,22320,Loleta Union Elementary School District,0622320,12629270000000
+153,06,023,Humboldt,23730,Maple Creek Elementary School District,0623730,12629350000000
+154,06,023,Humboldt,24300,McKinleyville Union Elementary School District,0624300,12629500000000
+155,06,023,Humboldt,28830,Orick Elementary School District,0628830,12629680000000
+156,06,023,Humboldt,29430,Pacific Union Elementary School District,0629430,12629760000000
+157,06,023,Humboldt,30090,Peninsula Union Elementary School District,0630090,12629840000000
+158,06,023,Humboldt,32730,Rio Dell Elementary School District,0632730,12630080000000
+159,06,023,Humboldt,36100,Scotia Union Elementary School District,0636100,12630240000000
+160,06,023,Humboldt,37350,South Bay Union Elementary School District,0637350,12630320000000
+161,06,023,Humboldt,37590,Southern Humboldt Joint Unified School District,0637590,12630400000000
+162,06,023,Humboldt,37630,Southern Trinity Joint Unified School District,0637630,53738330000000
+163,06,023,Humboldt,39720,Trinidad Union Elementary School District,0639720,12630570000000
+167,06,025,Imperial,05790,Brawley Elementary School District,0605790,13630730000000
+168,06,025,Imperial,05820,Brawley Union High School District,0605820,13630810000000
+169,06,025,Imperial,06900,Calexico Unified School District,0606900,13630990000000
+170,06,025,Imperial,06990,Calipatria Unified School District,0606990,13631070000000
+171,06,025,Imperial,08010,Central Union High School District,0608010,13631150000000
+172,06,025,Imperial,09070,Coachella Valley Unified School District,0609070,33736760000000
+173,06,025,Imperial,12030,El Centro Elementary School District,0612030,13631230000000
+174,06,025,Imperial,16830,Heber Elementary School District,0616830,13631310000000
+175,06,025,Imperial,17430,Holtville Unified School District,0617430,13631490000000
+176,06,025,Imperial,18210,Imperial Unified School District,0618210,13631640000000
+177,06,025,Imperial,23460,Magnolia Union Elementary School District,0623460,13631720000000
+178,06,025,Imperial,24180,McCabe Union Elementary School District,0624180,13631800000000
+179,06,025,Imperial,24390,Meadows Union Elementary School District,0624390,13631980000000
+180,06,025,Imperial,26430,Mulberry Elementary School District,0626430,13632060000000
+181,06,025,Imperial,35070,San Pasqual Valley Unified School District,0635070,13632140000000
+182,06,025,Imperial,36210,Seeley Union Elementary School District,0636210,13632220000000
+183,06,025,Imperial,42180,Westmorland Union Elementary School District,0642180,13632300000000
+184,06,027,Inyo,01409,Bishop Unified School District,0601409,14766870000000
+185,06,027,Inyo,04950,Big Pine Unified School District,0604950,14632480000000
+187,06,027,Inyo,10680,Death Valley Unified School District,0610680,14632710000000
+188,06,027,Inyo,22440,Lone Pine Unified School District,0622440,14632890000000
+189,06,027,Inyo,29190,Owens Valley Unified School District,0629190,14632970000000
+190,06,027,Inyo,33690,Round Valley Joint Elementary School District,0633690,14633050000000
+191,06,027,Inyo,39840,Trona Joint Unified School District,0639840,36678920000000
+192,06,029,Kern,00026,El Tejon Unified School District,0600026,15751680000000
+193,06,029,Kern,03270,Arvin Union School District,0603270,15633130000000
+194,06,029,Kern,03630,Bakersfield City School District,0603630,15633210000000
+195,06,029,Kern,04260,Beardsley Elementary School District,0604260,15633390000000
+197,06,029,Kern,05250,Blake Elementary School District,0605250,15633540000000
+198,06,029,Kern,06390,Panama-Buena Vista School District,0606390,15633620000000
+199,06,029,Kern,06720,Buttonwillow Union Elementary School District,0606720,15633700000000
+200,06,029,Kern,06960,Caliente Union Elementary School District,0606960,15633880000000
+201,06,029,Kern,10860,Delano Joint Union High School District,0610860,15634120000000
+202,06,029,Kern,10890,Delano Union Elementary School District,0610890,15634040000000
+203,06,029,Kern,11130,Di Giorgio Elementary School District,0611130,15634200000000
+204,06,029,Kern,11940,Edison Elementary School District,0611940,15634380000000
+205,06,029,Kern,12360,Elk Hills Elementary School District,0612360,15634460000000
+206,06,029,Kern,13290,Fairfax Elementary School District,0613290,15634610000000
+207,06,029,Kern,14700,Fruitvale Elementary School District,0614700,15634790000000
+208,06,029,Kern,15000,General Shafter Elementary School District,0615000,15634870000000
+209,06,029,Kern,16050,Greenfield Union School District,0616050,15635030000000
+210,06,029,Kern,19540,Kern High School District,0619540,15635290000000
+211,06,029,Kern,19590,Kernville Union Elementary School District,0619590,15635450000000
+212,06,029,Kern,20730,Lakeside Union School District,0620730,15635520000000
+213,06,029,Kern,20850,Lamont Elementary School District,0620850,15635600000000
+214,06,029,Kern,21450,Richland Union School District,0621450,15635780000000
+215,06,029,Kern,21900,Linns Valley-Poso Flat Union School District,0621900,15635860000000
+216,06,029,Kern,22950,Lost Hills Union Elementary School District,0622950,15635940000000
+217,06,029,Kern,23760,Maple Elementary School District,0623760,15636100000000
+218,06,029,Kern,23820,Maricopa Unified School District,0623820,15636280000000
+219,06,029,Kern,24230,McFarland Unified School District,0624230,15739080000000
+220,06,029,Kern,24330,McKittrick Elementary School District,0624330,15636510000000
+221,06,029,Kern,24780,Midway Elementary School District,0624780,15636690000000
+222,06,029,Kern,25230,Mojave Unified School District,0625230,15636770000000
+223,06,029,Kern,26490,Muroc Joint Unified School District,0626490,15636850000000
+224,06,029,Kern,27450,Norris Elementary School District,0627450,15636930000000
+225,06,029,Kern,31350,Pond Union Elementary School District,0631350,15637190000000
+226,06,029,Kern,32710,Rio Bravo-Greeley Union Elementary School District,0632710,15735440000000
+227,06,029,Kern,33480,Rosedale Union Elementary School District,0633480,15637500000000
+228,06,029,Kern,36330,Semitropic Elementary School District,0636330,15637680000000
+229,06,029,Kern,36800,Sierra Sands Unified School District,0636800,15737420000000
+230,06,029,Kern,37470,South Fork Union School District,0637470,15637840000000
+231,06,029,Kern,37620,Southern Kern Unified School District,0637620,15637760000000
+232,06,029,Kern,37890,Standard Elementary School District,0637890,15637920000000
+233,06,029,Kern,38700,Taft City School District,0638700,15638000000000
+234,06,029,Kern,38730,Taft Union High School District,0638730,15638180000000
+235,06,029,Kern,38880,Tehachapi Unified School District,0638880,15638260000000
+236,06,029,Kern,41130,Vineland Elementary School District,0641130,15638340000000
+237,06,029,Kern,41400,Wasco Union Elementary School District,0641400,15638420000000
+238,06,029,Kern,41430,Wasco Union High School District,0641430,15638590000000
+239,06,031,Kings,00040,Riverdale Joint Unified School District,0600040,10754080000000
+240,06,031,Kings,03180,Armona Union Elementary School District,0603180,16638750000000
+241,06,031,Kings,07980,Central Union Elementary School District,0607980,16638830000000
+242,06,031,Kings,09690,Corcoran Joint Unified School District,0609690,16638910000000
+243,06,031,Kings,16470,Hanford Elementary School District,0616470,16639170000000
+244,06,031,Kings,16500,Hanford Joint Union High School District,0616500,16639250000000
+245,06,031,Kings,18510,Island Union Elementary School District,0618510,16639330000000
+246,06,031,Kings,19770,Kings River-Hardwick Union Elementary School District,0619770,16639410000000
+247,06,031,Kings,19800,Kingsburg Elementary Charter School District,0619800,10622400000000
+248,06,031,Kings,19830,Kingsburg Joint Union High School District,0619830,10622570000000
+249,06,031,Kings,19890,Kit Carson Union Elementary School District,0619890,16639580000000
+250,06,031,Kings,20760,Lakeside Union Elementary School District,0620760,16639660000000
+251,06,031,Kings,21150,Laton Joint Unified School District,0621150,10622810000000
+252,06,031,Kings,21360,Lemoore Union Elementary School District,0621360,16639740000000
+253,06,031,Kings,21400,Lemoore Union High School District,0621400,16639820000000
+254,06,031,Kings,30510,Pioneer Union Elementary School District,0630510,16639900000000
+255,06,031,Kings,32270,Reef-Sunset Unified School District,0632270,16739320000000
+256,06,031,Kings,39600,Traver Joint Elementary School District,0639600,54722230000000
+257,06,031,Kings,39930,Tulare Joint Union High School District,0639930,54722490000000
+258,06,031,Kings,41820,Waukena Joint Union Elementary School District,0641820,54722640000000
+259,06,033,Lake,01442,Upper Lake Unified School District,0601442,17769760000000
+260,06,033,Lake,19320,Kelseyville Unified School District,0619320,17640140000000
+261,06,033,Lake,20070,Konocti Unified School District,0620070,17640220000000
+262,06,033,Lake,20670,Lakeport Unified School District,0620670,17640300000000
+263,06,033,Lake,23040,Lucerne Elementary School District,0623040,17640480000000
+264,06,033,Lake,24750,Middletown Unified School District,0624750,17640550000000
+266,06,035,Lassen,00011,Fort Sage Unified School District,0600011,18750360000000
+267,06,035,Lassen,05010,Big Valley Joint Unified School District,0605010,18640890000000
+268,06,035,Lassen,13470,Fall River Joint Unified School District,0613470,45699890000000
+269,06,035,Lassen,18780,Janesville Union Elementary School District,0618780,18641050000000
+270,06,035,Lassen,19050,Johnstonville Elementary School District,0619050,18641130000000
+271,06,035,Lassen,21060,Lassen Union High School District,0621060,18641390000000
+272,06,035,Lassen,25190,Modoc Joint Unified School District,0625190,25735850000000
+273,06,035,Lassen,31830,Ravendale-Termo Elementary School District,0631830,18641620000000
+274,06,035,Lassen,32520,Richmond Elementary School District,0632520,18641700000000
+275,06,035,Lassen,36420,Shaffer Union Elementary School District,0636420,18641880000000
+276,06,035,Lassen,38520,Surprise Valley Joint Unified School District,0638520,25658960000000
+277,06,035,Lassen,38550,Susanville Elementary School District,0638550,18641960000000
+278,06,035,Lassen,42300,Westwood Unified School District,0642300,18642040000000
+279,06,037,Los Angeles,00001,Acton-Agua Dulce Unified School District,0600001,19753090000000
+280,06,037,Los Angeles,00025,Manhattan Beach Unified School District,0600025,19753330000000
+281,06,037,Los Angeles,00032,Redondo Beach Unified School District,0600032,19753410000000
+282,06,037,Los Angeles,00153,Alhambra Unified School District,0600153,19757130000000
+283,06,037,Los Angeles,01428,Wiseburn Unified School District,0601428,19768690000000
+284,06,037,Los Angeles,01620,ABC Unified School District,0601620,19642120000000
+285,06,037,Los Angeles,02820,Antelope Valley Union Joint High School District,0602820,19642460000000
+286,06,037,Los Angeles,02970,Arcadia Unified School District,0602970,19642610000000
+287,06,037,Los Angeles,03600,Azusa Unified School District,0603600,19642790000000
+288,06,037,Los Angeles,03690,Baldwin Park Unified School District,0603690,19642870000000
+289,06,037,Los Angeles,04110,Bassett Unified School District,0604110,19642950000000
+290,06,037,Los Angeles,04440,Bellflower Unified School District,0604440,19643030000000
+291,06,037,Los Angeles,04830,Beverly Hills Unified School District,0604830,19643110000000
+292,06,037,Los Angeles,05610,Bonita Unified School District,0605610,19643290000000
+294,06,037,Los Angeles,06450,Burbank Unified School District,0606450,19643370000000
+295,06,037,Los Angeles,07740,Castaic Union School District,0607740,19643450000000
+296,06,037,Los Angeles,07920,Centinela Valley Union High School District,0607920,19643520000000
+297,06,037,Los Angeles,08160,Chaffey Joint Union High School District,0608160,36676520000000
+298,06,037,Los Angeles,08190,Charter Oak Unified School District,0608190,19643780000000
+299,06,037,Los Angeles,08760,Claremont Unified School District,0608760,19643940000000
+300,06,037,Los Angeles,09620,Compton Unified School District,0609620,19734370000000
+301,06,037,Los Angeles,10050,Covina-Valley Unified School District,0610050,19644360000000
+302,06,037,Los Angeles,10260,Culver City Unified School District,0610260,19644440000000
+303,06,037,Los Angeles,11460,Downey Unified School District,0611460,19644510000000
+304,06,037,Los Angeles,11520,Duarte Unified School District,0611520,19644690000000
+305,06,037,Los Angeles,11850,East Whittier City Elementary School District,0611850,19644850000000
+306,06,037,Los Angeles,11910,Eastside Union Elementary School District,0611910,19644770000000
+307,06,037,Los Angeles,12090,El Monte City School District,0612090,19645010000000
+308,06,037,Los Angeles,12120,El Monte Union High School District,0612120,19645190000000
+309,06,037,Los Angeles,12180,El Rancho Unified School District,0612180,19645270000000
+310,06,037,Los Angeles,12210,El Segundo Unified School District,0612210,19645350000000
+311,06,037,Los Angeles,14760,Fullerton Joint Union High School District,0614760,30665140000000
+312,06,037,Los Angeles,14940,Garvey Elementary School District,0614940,19645500000000
+313,06,037,Los Angeles,15240,Glendale Unified School District,0615240,19645680000000
+314,06,037,Los Angeles,15270,Glendora Unified School District,0615270,19645760000000
+315,06,037,Los Angeles,15600,Gorman Elementary School District,0615600,19645840000000
+316,06,037,Los Angeles,16325,Hacienda La Puente Unified School District,0616325,19734450000000
+317,06,037,Los Angeles,16680,Hawthorne Elementary School District,0616680,19645920000000
+318,06,037,Los Angeles,17040,Hermosa Beach City Elementary School District,0617040,19646000000000
+319,06,037,Los Angeles,17880,Hughes-Elizabeth Lakes Union Elementary School District,0617880,19646260000000
+320,06,037,Los Angeles,18390,Inglewood Unified School District,0618390,19646340000000
+321,06,037,Los Angeles,19440,Keppel Union Elementary School District,0619440,19646420000000
+322,06,037,Los Angeles,20130,La Cañada Unified School District,0620130,19646590000000
+323,06,037,Los Angeles,20880,Lancaster Elementary School District,0620880,19646670000000
+324,06,037,Los Angeles,21000,Las Virgenes Unified School District,0621000,19646830000000
+325,06,037,Los Angeles,21210,Lawndale Elementary School District,0621210,19646910000000
+326,06,037,Los Angeles,21420,Lennox Elementary School District,0621420,19647090000000
+327,06,037,Los Angeles,21930,Little Lake City Elementary School District,0621930,19647170000000
+328,06,037,Los Angeles,22500,Long Beach Unified School District,0622500,19647250000000
+329,06,037,Los Angeles,22710,Los Angeles Unified School District,0622710,19647330000000
+330,06,037,Los Angeles,22890,Los Nietos Elementary School District,0622890,19647580000000
+331,06,037,Los Angeles,23010,Lowell Joint Elementary School District,0623010,30647660000000
+332,06,037,Los Angeles,23160,Lynwood Unified School District,0623160,19647740000000
+333,06,037,Los Angeles,25320,Monrovia Unified School District,0625320,19647900000000
+334,06,037,Los Angeles,25470,Montebello Unified School District,0625470,19648080000000
+335,06,037,Los Angeles,26190,Mountain View Elementary School District,0626190,19648160000000
+336,06,037,Los Angeles,26340,Mount Baldy Joint Elementary School District,0626340,36677930000000
+337,06,037,Los Angeles,27180,Newhall Elementary School District,0627180,19648320000000
+338,06,037,Los Angeles,27690,Norwalk-La Mirada Unified School District,0627690,19648400000000
+339,06,037,Los Angeles,29580,Palmdale Elementary School District,0629580,19648570000000
+340,06,037,Los Angeles,29700,Palos Verdes Peninsula Unified School District,0629700,19648650000000
+341,06,037,Los Angeles,29850,Paramount Unified School District,0629850,19648730000000
+342,06,037,Los Angeles,29940,Pasadena Unified School District,0629940,19648810000000
+343,06,037,Los Angeles,31320,Pomona Unified School District,0631320,19649070000000
+344,06,037,Los Angeles,33570,Rosemead Elementary School District,0633570,19649310000000
+345,06,037,Los Angeles,33750,Rowland Unified School District,0633750,19734520000000
+346,06,037,Los Angeles,34425,San Gabriel Unified School District,0634425,19752910000000
+347,06,037,Los Angeles,34860,San Marino Unified School District,0634860,19649640000000
+348,06,037,Los Angeles,35700,Santa Monica-Malibu Unified School District,0635700,19649800000000
+349,06,037,Los Angeles,35970,Saugus Union Elementary School District,0635970,19649980000000
+350,06,037,Los Angeles,36970,Snowline Joint Unified School District,0636970,36739570000000
+351,06,037,Los Angeles,37500,South Pasadena Unified School District,0637500,19650290000000
+352,06,037,Los Angeles,37560,South Whittier Elementary School District,0637560,19650370000000
+353,06,037,Los Angeles,38220,Sulphur Springs Union Elementary School District,0638220,19650450000000
+354,06,037,Los Angeles,38980,Temple City Unified School District,0638980,19650520000000
+355,06,037,Los Angeles,39420,Torrance Unified School District,0639420,19650600000000
+356,06,037,Los Angeles,40650,Valle Lindo Elementary School District,0640650,19650780000000
+357,06,037,Los Angeles,41280,Walnut Valley Unified School District,0641280,19734600000000
+358,06,037,Los Angeles,42000,West Covina Unified School District,0642000,19650940000000
+359,06,037,Los Angeles,42120,Westside Union Elementary School District,0642120,19651020000000
+360,06,037,Los Angeles,42450,Whittier City Elementary School District,0642450,19651100000000
+361,06,037,Los Angeles,42480,Whittier Union High School District,0642480,19651280000000
+362,06,037,Los Angeles,42510,William S. Hart Union High School District,0642510,19651360000000
+363,06,037,Los Angeles,42810,Wilsona Elementary School District,0642810,19651510000000
+364,06,039,Madera,00068,Golden Valley Unified School District,0600068,20755800000000
+365,06,039,Madera,00116,Chawanakee Unified School District,0600116,20756060000000
+366,06,039,Madera,00160,Yosemite Unified School District,0600160,20764140000000
+367,06,039,Madera,02360,Alview-Dairyland Union Elementary School District,0602360,20651770000000
+368,06,039,Madera,04080,Bass Lake Joint Union Elementary School District,0604080,20651850000000
+370,06,039,Madera,08520,Chowchilla Elementary School District,0608520,20651930000000
+371,06,039,Madera,08550,Chowchilla Union High School District,0608550,20652010000000
+372,06,039,Madera,13840,Firebaugh-Las Deltas Unified School District,0613840,10738090000000
+373,06,039,Madera,23340,Madera Unified School District,0623340,20652430000000
+374,06,039,Madera,31920,Raymond-Knowles Union Elementary School District,0631920,20652760000000
+375,06,041,Marin,00006,Ross Valley Elementary School District,0600006,21750020000000
+376,06,041,Marin,05520,Bolinas-Stinson Union Elementary School District,0605520,21653000000000
+377,06,041,Marin,11220,Dixie Elementary School District,0611220,21653180000000
+378,06,041,Marin,19380,Kentfield Elementary School District,0619380,21653340000000
+379,06,041,Marin,20430,Laguna Joint Elementary School District,0620430,21653420000000
+380,06,041,Marin,20520,Lagunitas Elementary School District,0620520,21653590000000
+381,06,041,Marin,20910,Larkspur Elementary School District,0620910,21653670000000
+383,06,041,Marin,24870,Mill Valley Elementary School District,0624870,21653910000000
+384,06,041,Marin,27300,Nicasio Elementary School District,0627300,21654090000000
+385,06,041,Marin,27720,Novato Unified School District,0627720,21654170000000
+386,06,041,Marin,30250,Petaluma Joint Union High School District,0630250,49708620000000
+387,06,041,Marin,32160,Reed Union Elementary School District,0632160,21654250000000
+388,06,041,Marin,33660,Ross Elementary School District,0633660,21654330000000
+389,06,041,Marin,35090,San Rafael City Elementary School District,0635090,21654580000000
+390,06,041,Marin,35110,San Rafael City High School District,0635110,21654660000000
+391,06,041,Marin,36000,Sausalito Elementary School District,0636000,21654740000000
+392,06,041,Marin,36670,Shoreline Unified School District,0636670,21733610000000
+393,06,041,Marin,38790,Tamalpais Union High School District,0638790,21654820000000
+394,06,043,Mariposa,04080,Bass Lake Joint Union Elementary School District,0604080,20651850000000
+396,06,043,Mariposa,23940,Mariposa County Unified School District,0623940,22655320000000
+397,06,045,Mendocino,02730,Anderson Valley Unified School District,0602730,23655400000000
+398,06,045,Mendocino,03090,Arena Union Elementary School District,0603090,23655570000000
+399,06,045,Mendocino,09665,Leggett Valley Unified School District,0609665,23752180000000
+400,06,045,Mendocino,14070,Fort Bragg Unified School District,0614070,23655650000000
+401,06,045,Mendocino,23550,Manchester Union Elementary School District,0623550,23655730000000
+402,06,045,Mendocino,24480,Mendocino Unified School District,0624480,23655810000000
+403,06,045,Mendocino,31230,Point Arena Joint Union High School District,0631230,23655990000000
+404,06,045,Mendocino,31400,Potter Valley Community Unified School District,0631400,23738660000000
+405,06,045,Mendocino,33720,Round Valley Unified School District,0633720,23656070000000
+406,06,045,Mendocino,37590,Southern Humboldt Joint Unified School District,0637590,12630400000000
+407,06,045,Mendocino,40300,Ukiah Unified School District,0640300,23656150000000
+408,06,045,Mendocino,42560,Willits Unified School District,0642560,23656230000000
+409,06,045,Mendocino,42580,Laytonville Unified School District,0642580,23739160000000
+410,06,047,Merced,00033,Dos Palos-Oro Loma Joint Unified School District,0600033,24753170000000
+411,06,047,Merced,00039,Delhi Unified School District,0600039,24753660000000
+412,06,047,Merced,00158,Turlock Unified School District,0600158,50757390000000
+413,06,047,Merced,03420,Atwater Elementary School District,0603420,24656310000000
+414,06,047,Merced,03750,Ballico-Cressey Elementary School District,0603750,24656490000000
+415,06,047,Merced,12150,El Nido Elementary School District,0612150,24656800000000
+416,06,047,Merced,16323,Gustine Unified School District,0616323,24736190000000
+417,06,047,Merced,17220,Hilmar Unified School District,0617220,24656980000000
+418,06,047,Merced,21240,Le Grand Union Elementary School District,0621240,24657220000000
+419,06,047,Merced,21270,Le Grand Union High School District,0621270,24657300000000
+420,06,047,Merced,22170,Livingston Union School District,0622170,24657480000000
+421,06,047,Merced,22740,Los Banos Unified School District,0622740,24657550000000
+422,06,047,Merced,24360,McSwain Union Elementary School District,0624360,24657630000000
+423,06,047,Merced,24600,Merced City Elementary School District,0624600,24657710000000
+424,06,047,Merced,24630,Merced River Union Elementary School District,0624630,24737260000000
+425,06,047,Merced,24660,Merced Union High School District,0624660,24657890000000
+426,06,047,Merced,30810,Plainsburg Union Elementary School District,0630810,24658130000000
+427,06,047,Merced,30840,Planada Elementary School District,0630840,24658210000000
+428,06,047,Merced,36960,Snelling-Merced Falls Union Elementary School District,0636960,24658390000000
+429,06,047,Merced,41880,Weaver Union Elementary School District,0641880,24658620000000
+430,06,047,Merced,42960,Winton School District,0642960,24658700000000
+431,06,049,Modoc,05010,Big Valley Joint Unified School District,0605010,18640890000000
+432,06,049,Modoc,13470,Fall River Joint Unified School District,0613470,45699890000000
+433,06,049,Modoc,25190,Modoc Joint Unified School District,0625190,25735850000000
+434,06,049,Modoc,38520,Surprise Valley Joint Unified School District,0638520,25658960000000
+435,06,049,Modoc,39940,Tulelake Basin Joint Unified School District,0639940,25735930000000
+437,06,051,Mono,11870,Eastern Sierra Unified School District,0611870,26736680000000
+438,06,051,Mono,23530,Mammoth Unified School District,0623530,26736920000000
+439,06,051,Mono,33690,Round Valley Joint Elementary School District,0633690,14633050000000
+440,06,053,Monterey,00031,Big Sur Unified School District,0600031,27751500000000
+441,06,053,Monterey,00046,Gonzales Unified School District,0600046,27754730000000
+442,06,053,Monterey,01950,Alisal Union Elementary School District,0601950,27659610000000
+443,06,053,Monterey,05730,Bradley Union Elementary School District,0605730,27659790000000
+445,06,053,Monterey,07530,Carmel Unified School District,0607530,27659870000000
+446,06,053,Monterey,08580,Chualar Union Elementary School District,0608580,27659950000000
+447,06,053,Monterey,09120,Coalinga-Huron Unified School District,0609120,10621250000000
+448,06,053,Monterey,15870,Graves Elementary School District,0615870,27660270000000
+449,06,053,Monterey,16080,Greenfield Union Elementary School District,0616080,27660350000000
+450,06,053,Monterey,19650,South Monterey County Joint Union High School District,0619650,27660680000000
+451,06,053,Monterey,19680,King City Union Elementary School District,0619680,27660500000000
+452,06,053,Monterey,20490,Lagunita Elementary School District,0620490,27660760000000
+453,06,053,Monterey,25110,Mission Union Elementary School District,0625110,27660840000000
+454,06,053,Monterey,25530,Monterey Peninsula Unified School District,0625530,27660920000000
+455,06,053,Monterey,27590,North Monterey County Unified School District,0627590,27738250000000
+456,06,053,Monterey,29370,Pacific Grove Unified School District,0629370,27661340000000
+457,06,053,Monterey,29490,Pajaro Valley Joint Unified School District,0629490,44697990000000
+458,06,053,Monterey,31020,Pleasant Valley Joint Union Elementary School District,0631020,40687910000000
+459,06,053,Monterey,33930,Salinas City Elementary School District,0633930,27661420000000
+460,06,053,Monterey,33980,Salinas Union High School District,0633980,27661590000000
+461,06,053,Monterey,34050,San Antonio Union Elementary School District,0634050,27661670000000
+462,06,053,Monterey,34080,San Ardo Union Elementary School District,0634080,27661750000000
+463,06,053,Monterey,34770,San Lucas Union Elementary School District,0634770,27661830000000
+464,06,053,Monterey,35010,San Miguel Joint Union Elementary School District,0635010,40688250000000
+465,06,053,Monterey,35790,Santa Rita Union Elementary School District,0635790,27661910000000
+466,06,053,Monterey,36450,Shandon Joint Unified School District,0636450,40688330000000
+467,06,053,Monterey,37050,Soledad Unified School District,0637050,27754400000000
+468,06,053,Monterey,37710,Spreckels Union Elementary School District,0637710,27662250000000
+469,06,053,Monterey,41610,Washington Union Elementary School District,0641610,27662330000000
+470,06,053,Monterey,91136,Aromas-San Juan Unified School District,0691136,35752590000000
+473,06,055,Napa,07020,Calistoga Joint Unified School District,0607020,28662410000000
+474,06,055,Napa,13360,Fairfield-Suisun Unified School District,0613360,48705400000000
+475,06,055,Napa,17760,Howell Mountain Elementary School District,0617760,28662580000000
+476,06,055,Napa,26640,Napa Valley Unified School District,0626640,28662660000000
+477,06,055,Napa,31380,Pope Valley Union Elementary School District,0631380,28662820000000
+478,06,055,Napa,37830,St. Helena Unified School District,0637830,28662900000000
+479,06,057,Nevada,00012,Twin Ridges Elementary School District,0600012,29664150000000
+480,06,057,Nevada,01427,Penn Valley Union Elementary School District,0601427,29768770000000
+481,06,057,Nevada,08340,Chicago Park Elementary School District,0608340,29663160000000
+482,06,057,Nevada,08880,Clear Creek Elementary School District,0608880,29663240000000
+483,06,057,Nevada,15780,Grass Valley Elementary School District,0615780,29663320000000
+484,06,057,Nevada,26820,Nevada City Elementary School District,0626820,29663400000000
+485,06,057,Nevada,26880,Nevada Joint Union High School District,0626880,29663570000000
+486,06,057,Nevada,30930,Pleasant Ridge Union Elementary School District,0630930,29663730000000
+487,06,057,Nevada,38770,Tahoe-Truckee Unified School District,0638770,31669440000000
+488,06,057,Nevada,40380,Union Hill Elementary School District,0640380,29664070000000
+489,06,059,Orange,02610,Anaheim Elementary School District,0602610,30664230000000
+490,06,059,Orange,02630,Anaheim Union High School District,0602630,30664310000000
+491,06,059,Orange,05880,Brea-Olinda Unified School District,0605880,30664490000000
+492,06,059,Orange,06360,Buena Park Elementary School District,0606360,30664560000000
+493,06,059,Orange,07440,Capistrano Unified School District,0607440,30664640000000
+494,06,059,Orange,08070,Centralia Elementary School District,0608070,30664720000000
+495,06,059,Orange,10440,Cypress Elementary School District,0610440,30664800000000
+496,06,059,Orange,14220,Fountain Valley Elementary School District,0614220,30664980000000
+497,06,059,Orange,14730,Fullerton Elementary School District,0614730,30665060000000
+498,06,059,Orange,14760,Fullerton Joint Union High School District,0614760,30665140000000
+499,06,059,Orange,14880,Garden Grove Unified School District,0614880,30665220000000
+500,06,059,Orange,18030,Huntington Beach City Elementary School District,0618030,30665300000000
+501,06,059,Orange,18060,Huntington Beach Union High School District,0618060,30665480000000
+502,06,059,Orange,20190,La Habra City Elementary School District,0620190,30665630000000
+503,06,059,Orange,20370,Laguna Beach Unified School District,0620370,30665550000000
+504,06,059,Orange,22590,Los Alamitos Unified School District,0622590,30739240000000
+505,06,059,Orange,23010,Lowell Joint Elementary School District,0623010,30647660000000
+506,06,059,Orange,23430,Magnolia Elementary School District,0623430,30665890000000
+507,06,059,Orange,27240,Newport-Mesa Unified School District,0627240,30665970000000
+508,06,059,Orange,28140,Ocean View Elementary School District,0628140,30666130000000
+509,06,059,Orange,28650,Orange Unified School District,0628650,30666210000000
+510,06,059,Orange,30660,Placentia-Yorba Linda Unified School District,0630660,30666470000000
+511,06,059,Orange,33750,Rowland Unified School District,0633750,19734520000000
+512,06,059,Orange,33860,Saddleback Valley Unified School District,0633860,30736350000000
+513,06,059,Orange,35310,Santa Ana Unified School District,0635310,30666700000000
+514,06,059,Orange,36030,Savanna Elementary School District,0636030,30666960000000
+515,06,059,Orange,40150,Tustin Unified School District,0640150,30736430000000
+516,06,059,Orange,42150,Westminster School District,0642150,30667460000000
+517,06,059,Orange,84500,Irvine Unified School District,0684500,30736500000000
+518,06,061,Placer,00013,Rocklin Unified School District,0600013,31750850000000
+519,06,061,Placer,01680,Ackerman Elementary School District,0601680,31667610000000
+520,06,061,Placer,02250,Alta-Dutch Flat Union Elementary School District,0602250,31667790000000
+521,06,061,Placer,03480,Auburn Union Elementary School District,0603480,31667870000000
+523,06,061,Placer,07900,Center Joint Unified School District,0607900,34739730000000
+524,06,061,Placer,09300,Colfax Elementary School District,0609300,31667950000000
+525,06,061,Placer,11490,Dry Creek Joint Elementary School District,0611490,31668030000000
+526,06,061,Placer,11780,East Nicolaus Joint Union High School District,0611780,51713730000000
+527,06,061,Placer,12600,Elverta Joint Elementary School District,0612600,34673220000000
+528,06,061,Placer,13080,Eureka Union Elementary School District,0613080,31668290000000
+529,06,061,Placer,13980,Foresthill Union Elementary School District,0613980,31668370000000
+530,06,061,Placer,22560,Loomis Union Elementary School District,0622560,31668450000000
+531,06,061,Placer,27120,Newcastle Elementary School District,0627120,31668520000000
+532,06,061,Placer,30720,Placer Hills Union Elementary School District,0630720,31668860000000
+533,06,061,Placer,30750,Placer Union High School District,0630750,31668940000000
+534,06,061,Placer,30900,Pleasant Grove Joint Union Elementary School District,0630900,51714310000000
+535,06,061,Placer,33600,Roseville City Elementary School District,0633600,31669100000000
+536,06,061,Placer,33630,Roseville Joint Union High School District,0633630,31669280000000
+537,06,061,Placer,38770,Tahoe-Truckee Unified School District,0638770,31669440000000
+538,06,061,Placer,42140,Western Placer Unified School District,0642140,31669510000000
+539,06,063,Plumas,31170,Plumas Unified School District,0631170,32669690000000
+540,06,063,Plumas,36780,Sierra-Plumas Joint Unified School District,0636780,46701770000000
+541,06,065,Riverside,00027,Lake Elsinore Unified School District,0600027,33751760000000
+542,06,065,Riverside,00028,Temecula Valley Unified School District,0600028,33751920000000
+543,06,065,Riverside,00029,Murrieta Valley Unified School District,0600029,33752000000000
+544,06,065,Riverside,02430,Alvord Unified School District,0602430,33669770000000
+545,06,065,Riverside,03840,Banning Unified School District,0603840,33669850000000
+546,06,065,Riverside,04290,Beaumont Unified School District,0604290,33669930000000
+548,06,065,Riverside,09070,Coachella Valley Unified School District,0609070,33736760000000
+549,06,065,Riverside,09390,Colton Joint Unified School District,0609390,36676860000000
+550,06,065,Riverside,09850,Corona-Norco Unified School District,0609850,33670330000000
+551,06,065,Riverside,11100,Desert Center Unified School District,0611100,33670410000000
+552,06,065,Riverside,11110,Desert Sands Unified School District,0611110,33670580000000
+553,06,065,Riverside,16920,Hemet Unified School District,0616920,33670820000000
+554,06,065,Riverside,19260,Jurupa Unified School District,0619260,33670900000000
+555,06,065,Riverside,24540,Menifee Union School District,0624540,33671160000000
+556,06,065,Riverside,25800,Moreno Valley Unified School District,0625800,33671240000000
+557,06,065,Riverside,27780,Nuview Union Elementary School District,0627780,33671570000000
+558,06,065,Riverside,29550,Palm Springs Unified School District,0629550,33671730000000
+559,06,065,Riverside,29640,Palo Verde Unified School District,0629640,33671810000000
+560,06,065,Riverside,30180,Perris Elementary School District,0630180,33671990000000
+561,06,065,Riverside,30210,Perris Union High School District,0630210,33672070000000
+562,06,065,Riverside,33150,Riverside Unified School District,0633150,33672150000000
+563,06,065,Riverside,33390,Romoland Elementary School District,0633390,33672310000000
+564,06,065,Riverside,34440,San Jacinto Unified School District,0634440,33672490000000
+565,06,065,Riverside,43560,Yucaipa-Calimesa Joint Unified School District,0643560,36679590000000
+566,06,065,Riverside,91135,Val Verde Unified School District,0691135,33752420000000
+567,06,067,Sacramento,00036,Natomas Unified School District,0600036,34752830000000
+568,06,067,Sacramento,01332,Twin Rivers Unified School District,0601332,34765050000000
+569,06,067,Sacramento,03060,Arcohe Union Elementary School District,0603060,34672800000000
+572,06,067,Sacramento,07900,Center Joint Unified School District,0607900,34739730000000
+573,06,067,Sacramento,11490,Dry Creek Joint Elementary School District,0611490,31668030000000
+574,06,067,Sacramento,12330,Elk Grove Unified School District,0612330,34673140000000
+575,06,067,Sacramento,12600,Elverta Joint Elementary School District,0612600,34673220000000
+576,06,067,Sacramento,13890,Folsom-Cordova Unified School District,0613890,34673300000000
+577,06,067,Sacramento,14790,Galt Joint Union Elementary School District,0614790,34673480000000
+578,06,067,Sacramento,14820,Galt Joint Union High School District,0614820,34673550000000
+579,06,067,Sacramento,33110,River Delta Joint Unified School District,0633110,34674130000000
+580,06,067,Sacramento,33240,Robla Elementary School District,0633240,34674210000000
+581,06,067,Sacramento,33630,Roseville Joint Union High School District,0633630,31669280000000
+582,06,067,Sacramento,33840,Sacramento City Unified School District,0633840,34674390000000
+583,06,067,Sacramento,34620,San Juan Unified School District,0634620,34674470000000
+584,06,069,San Benito,05190,Bitterwater-Tully Union Elementary School District,0605190,35674540000000
+585,06,069,San Benito,08640,Cienega Union Elementary School District,0608640,35674620000000
+586,06,069,San Benito,09120,Coalinga-Huron Unified School District,0609120,10621250000000
+587,06,069,San Benito,17340,Hollister School District,0617340,35674700000000
+588,06,069,San Benito,18810,Jefferson Elementary School District,0618810,35674880000000
+589,06,069,San Benito,19650,South Monterey County Joint Union High School District,0619650,27660680000000
+590,06,069,San Benito,27480,North County Joint Union Elementary School District,0627480,35675040000000
+591,06,069,San Benito,29770,Panoche Elementary School District,0629770,35675200000000
+592,06,069,San Benito,34140,San Benito High School District,0634140,35675380000000
+593,06,069,San Benito,37650,Southside Elementary School District,0637650,35675530000000
+594,06,069,San Benito,39690,Tres Pinos Union Elementary School District,0639690,35675610000000
+595,06,069,San Benito,42630,Willow Grove Union Elementary School District,0642630,35675790000000
+596,06,069,San Benito,91136,Aromas-San Juan Unified School District,0691136,35752590000000
+597,06,071,San Bernardino,00014,Hesperia Unified School District,0600014,36750440000000
+598,06,071,San Bernardino,00015,Lucerne Valley Unified School District,0600015,36750510000000
+599,06,071,San Bernardino,00016,Upland Unified School District,0600016,36750690000000
+600,06,071,San Bernardino,00017,Apple Valley Unified School District,0600017,36750770000000
+601,06,071,San Bernardino,01710,Adelanto Elementary School District,0601710,36675870000000
+602,06,071,San Bernardino,02160,Alta Loma Elementary School District,0602160,36675950000000
+603,06,071,San Bernardino,03610,Baker Valley Unified School District,0603610,36738580000000
+604,06,071,San Bernardino,04020,Barstow Unified School District,0604020,36676110000000
+605,06,071,San Bernardino,04230,Bear Valley Unified School District,0604230,36676370000000
+606,06,071,San Bernardino,04290,Beaumont Unified School District,0604290,33669930000000
+607,06,071,San Bernardino,07950,Central Elementary School District,0607950,36676450000000
+608,06,071,San Bernardino,08160,Chaffey Joint Union High School District,0608160,36676520000000
+609,06,071,San Bernardino,08460,Chino Valley Unified School District,0608460,36676780000000
+610,06,071,San Bernardino,09390,Colton Joint Unified School District,0609390,36676860000000
+611,06,071,San Bernardino,12960,Etiwanda Elementary School District,0612960,36677020000000
+612,06,071,San Bernardino,13920,Fontana Unified School District,0613920,36677100000000
+613,06,071,San Bernardino,16300,Cucamonga Elementary School District,0616300,36676940000000
+614,06,071,San Bernardino,16860,Helendale Elementary School District,0616860,36677360000000
+615,06,071,San Bernardino,25860,Morongo Unified School District,0625860,36677770000000
+616,06,071,San Bernardino,26220,Mountain View Elementary School District,0626220,36677850000000
+617,06,071,San Bernardino,26340,Mount Baldy Joint Elementary School District,0626340,36677930000000
+618,06,071,San Bernardino,26490,Muroc Joint Unified School District,0626490,15636850000000
+619,06,071,San Bernardino,26760,Needles Unified School District,0626760,36678010000000
+620,06,071,San Bernardino,28470,Ontario-Montclair School District,0628470,36678190000000
+621,06,071,San Bernardino,28950,Oro Grande Elementary School District,0628950,36678270000000
+622,06,071,San Bernardino,32070,Redlands Unified School District,0632070,36678430000000
+623,06,071,San Bernardino,32370,Rialto Unified School District,0632370,36678500000000
+624,06,071,San Bernardino,32610,Rim of the World Unified School District,0632610,36678680000000
+625,06,071,San Bernardino,34170,San Bernardino City Unified School District,0634170,36678760000000
+626,06,071,San Bernardino,36800,Sierra Sands Unified School District,0636800,15737420000000
+627,06,071,San Bernardino,36820,Silver Valley Unified School District,0636820,36738900000000
+628,06,071,San Bernardino,36970,Snowline Joint Unified School District,0636970,36739570000000
+629,06,071,San Bernardino,36972,Victor Valley Union High School District,0636972,36679340000000
+630,06,071,San Bernardino,39840,Trona Joint Unified School District,0639840,36678920000000
+631,06,071,San Bernardino,41040,Victor Elementary School District,0641040,36679180000000
+632,06,071,San Bernardino,43560,Yucaipa-Calimesa Joint Unified School District,0643560,36679590000000
+633,06,073,San Diego,00042,Warner Unified School District,0600042,37754160000000
+634,06,073,San Diego,00069,Valley Center-Pauma Unified School District,0600069,37756140000000
+635,06,073,San Diego,01426,Bonsall Unified School District,0601426,37768510000000
+636,06,073,San Diego,02100,Alpine Union Elementary School District,0602100,37679670000000
+637,06,073,San Diego,05700,Borrego Springs Unified School District,0605700,37679830000000
+638,06,073,San Diego,06810,Cajon Valley Union Elementary School District,0606810,37679910000000
+639,06,073,San Diego,07470,Cardiff Elementary School District,0607470,37680070000000
+640,06,073,San Diego,07500,Carlsbad Unified School District,0607500,37735510000000
+641,06,073,San Diego,08610,Chula Vista Elementary School District,0608610,37680230000000
+642,06,073,San Diego,09870,Coronado Unified School District,0609870,37680310000000
+643,06,073,San Diego,10710,Dehesa Elementary School District,0610710,37680490000000
+644,06,073,San Diego,10740,Del Mar Union Elementary School District,0610740,37680560000000
+645,06,073,San Diego,12750,Encinitas Union Elementary School District,0612750,37680800000000
+646,06,073,San Diego,12880,Escondido Union Elementary School District,0612880,37680980000000
+647,06,073,San Diego,12910,Escondido Union High School District,0612910,37681060000000
+648,06,073,San Diego,13500,Fallbrook Union Elementary School District,0613500,37681140000000
+649,06,073,San Diego,13530,Fallbrook Union High School District,0613530,37681220000000
+650,06,073,San Diego,16230,Grossmont Union High School District,0616230,37681300000000
+651,06,073,San Diego,18730,Jamul-Dulzura Union Elementary School District,0618730,37681550000000
+652,06,073,San Diego,19110,Julian Union High School District,0619110,37681710000000
+653,06,073,San Diego,19140,Julian Union Elementary School District,0619140,37681630000000
+654,06,073,San Diego,20250,La Mesa-Spring Valley School District,0620250,37681970000000
+655,06,073,San Diego,20790,Lakeside Union Elementary School District,0620790,37681890000000
+656,06,073,San Diego,21330,Lemon Grove Elementary School District,0621330,37682050000000
+657,06,073,San Diego,26100,Mountain Empire Unified School District,0626100,37682130000000
+658,06,073,San Diego,26670,National Elementary School District,0626670,37682210000000
+659,06,073,San Diego,28250,Oceanside Unified School District,0628250,37735690000000
+660,06,073,San Diego,31530,Poway Unified School District,0631530,37682960000000
+661,06,073,San Diego,31710,Ramona City Unified School District,0631710,37683040000000
+662,06,073,San Diego,31740,Rancho Santa Fe Elementary School District,0631740,37683120000000
+663,06,073,San Diego,34320,San Diego City Unified School District,0634320,37683380000000
+664,06,073,San Diego,34380,San Dieguito Union High School District,0634380,37683460000000
+665,06,073,San Diego,34880,San Marcos Unified School District,0634880,37737910000000
+666,06,073,San Diego,35040,San Pasqual Union Elementary School District,0635040,37683530000000
+667,06,073,San Diego,35220,San Ysidro Elementary School District,0635220,37683790000000
+668,06,073,San Diego,35880,Santee School District,0635880,37683610000000
+669,06,073,San Diego,36990,Solana Beach Elementary School District,0636990,37683870000000
+670,06,073,San Diego,37380,South Bay Union School District,0637380,37683950000000
+671,06,073,San Diego,37680,Spencer Valley Elementary School District,0637680,37684030000000
+672,06,073,San Diego,38640,Sweetwater Union High School District,0638640,37684110000000
+673,06,073,San Diego,40710,Vallecitos Elementary School District,0640710,37684370000000
+674,06,073,San Diego,41190,Vista Unified School District,0641190,37684520000000
+675,06,075,San Francisco,34410,San Francisco Unified School District,0634410,38684780000000
+676,06,077,San Joaquin,00047,Tracy Unified School District,0600047,39754990000000
+677,06,077,San Joaquin,01410,Lammersville Joint Unified School District,0601410,39767600000000
+680,06,077,San Joaquin,12840,Escalon Unified School District,0612840,39685020000000
+681,06,077,San Joaquin,14790,Galt Joint Union Elementary School District,0614790,34673480000000
+682,06,077,San Joaquin,14820,Galt Joint Union High School District,0614820,34673550000000
+683,06,077,San Joaquin,18840,Jefferson Elementary School District,0618840,39685440000000
+684,06,077,San Joaquin,21690,Lincoln Unified School District,0621690,39685690000000
+685,06,077,San Joaquin,21810,Linden Unified School District,0621810,39685770000000
+686,06,077,San Joaquin,22230,Lodi Unified School District,0622230,39685850000000
+687,06,077,San Joaquin,23610,Manteca Unified School District,0623610,39685930000000
+688,06,077,San Joaquin,26970,New Hope Elementary School District,0626970,39686190000000
+689,06,077,San Joaquin,27030,New Jerusalem Elementary School District,0627030,39686270000000
+690,06,077,San Joaquin,27930,Oak View Union Elementary School District,0627930,39686350000000
+691,06,077,San Joaquin,32880,Ripon Unified School District,0632880,39686500000000
+692,06,077,San Joaquin,38010,Stockton Unified School District,0638010,39686760000000
+693,06,077,San Joaquin,40800,Valley Home Joint Elementary School District,0640800,50713240000000
+695,06,079,San Luis Obispo,00009,Cuyama Joint Unified School District,0600009,42750100000000
+696,06,079,San Luis Obispo,00048,Paso Robles Joint Unified School District,0600048,40754570000000
+697,06,079,San Luis Obispo,00049,Coast Unified School District,0600049,40754650000000
+698,06,079,San Luis Obispo,03300,Atascadero Unified School District,0603300,40687000000000
+699,06,079,San Luis Obispo,07840,Cayucos Elementary School District,0607840,40687260000000
+700,06,079,San Luis Obispo,23080,Lucia Mar Unified School District,0623080,40687590000000
+701,06,079,San Luis Obispo,31020,Pleasant Valley Joint Union Elementary School District,0631020,40687910000000
+702,06,079,San Luis Obispo,34800,San Luis Coastal Unified School District,0634800,40688090000000
+703,06,079,San Luis Obispo,35010,San Miguel Joint Union Elementary School District,0635010,40688250000000
+704,06,079,San Luis Obispo,36450,Shandon Joint Unified School District,0636450,40688330000000
+705,06,079,San Luis Obispo,39000,Templeton Unified School District,0639000,40688410000000
+708,06,081,San Mateo,04200,Bayshore Elementary School District,0604200,41688580000000
+709,06,081,San Mateo,04530,Belmont-Redwood Shores Elementary School District,0604530,41688660000000
+710,06,081,San Mateo,06060,Brisbane Elementary School District,0606060,41688740000000
+711,06,081,San Mateo,06480,Burlingame Elementary School District,0606480,41688820000000
+712,06,081,San Mateo,06780,Cabrillo Unified School District,0606780,41688900000000
+713,06,081,San Mateo,17190,Hillsborough City Elementary School District,0617190,41689080000000
+714,06,081,San Mateo,18870,Jefferson Elementary School District,0618870,41689160000000
+715,06,081,San Mateo,18930,Jefferson Union High School District,0618930,41689240000000
+716,06,081,San Mateo,20220,La Honda-Pescadero Unified School District,0620220,41689400000000
+717,06,081,San Mateo,20460,Pacifica School District,0620460,41689320000000
+718,06,081,San Mateo,22380,Las Lomitas Elementary School District,0622380,41689570000000
+719,06,081,San Mateo,24570,Menlo Park City Elementary School District,0624570,41689650000000
+720,06,081,San Mateo,24900,Millbrae Elementary School District,0624900,41689730000000
+721,06,081,San Mateo,31470,Portola Valley Elementary School District,0631470,41689810000000
+722,06,081,San Mateo,31860,Ravenswood City Elementary School District,0631860,41689990000000
+723,06,081,San Mateo,32130,Redwood City Elementary School District,0632130,41690050000000
+724,06,081,San Mateo,34230,San Bruno Park Elementary School District,0634230,41690130000000
+725,06,081,San Mateo,34290,San Carlos Elementary School District,0634290,41690210000000
+726,06,081,San Mateo,34920,San Mateo-Foster City Elementary School District,0634920,41690390000000
+727,06,081,San Mateo,34980,San Mateo Union High School District,0634980,41690470000000
+728,06,081,San Mateo,36390,Sequoia Union High School District,0636390,41690620000000
+729,06,081,San Mateo,37530,South San Francisco Unified School District,0637530,41690700000000
+730,06,081,San Mateo,43140,Woodside Elementary School District,0643140,41690880000000
+731,06,083,Santa Barbara,00009,Cuyama Joint Unified School District,0600009,42750100000000
+732,06,083,Santa Barbara,01414,Santa Barbara Unified School District,0601414,42767860000000
+733,06,083,Santa Barbara,03720,Ballard Elementary School District,0603720,42691040000000
+734,06,083,Santa Barbara,05280,Blochman Union Elementary School District,0605280,42691120000000
+735,06,083,Santa Barbara,05580,Santa Maria-Bonita Elementary School District,0605580,42691200000000
+737,06,083,Santa Barbara,06330,Buellton Union Elementary School District,0606330,42691380000000
+738,06,083,Santa Barbara,07560,Carpinteria Unified School District,0607560,42691460000000
+739,06,083,Santa Barbara,09270,Cold Spring Elementary School District,0609270,42691610000000
+740,06,083,Santa Barbara,09330,College Elementary School District,0609330,42691790000000
+741,06,083,Santa Barbara,15510,Goleta Union Elementary School District,0615510,42691950000000
+742,06,083,Santa Barbara,16260,Guadalupe Union Elementary School District,0616260,42692030000000
+743,06,083,Santa Barbara,17490,Hope Elementary School District,0617490,42692110000000
+744,06,083,Santa Barbara,22410,Lompoc Unified School District,0622410,42692290000000
+745,06,083,Santa Barbara,22920,Los Olivos Elementary School District,0622920,42692450000000
+746,06,083,Santa Barbara,25500,Montecito Union Elementary School District,0625500,42692520000000
+747,06,083,Santa Barbara,28710,Orcutt Union Elementary School District,0628710,42692600000000
+748,06,083,Santa Barbara,35670,Santa Maria Joint Union High School District,0635670,42693100000000
+749,06,083,Santa Barbara,35850,Santa Ynez Valley Union High School District,0635850,42693280000000
+750,06,083,Santa Barbara,37110,Solvang Elementary School District,0637110,42693360000000
+751,06,083,Santa Barbara,41220,Vista del Mar Union Elementary School District,0641220,42693440000000
+753,06,085,Santa Clara,02310,Alum Rock Union Elementary School District,0602310,43693690000000
+754,06,085,Santa Clara,04800,Berryessa Union Elementary School District,0604800,43693770000000
+755,06,085,Santa Clara,07140,Cambrian Elementary School District,0607140,43693850000000
+756,06,085,Santa Clara,07200,Campbell Union Elementary School District,0607200,43693930000000
+757,06,085,Santa Clara,07230,Campbell Union High School District,0607230,43694010000000
+758,06,085,Santa Clara,10290,Cupertino Union Elementary School District,0610290,43694190000000
+759,06,085,Santa Clara,11820,East Side Union High School District,0611820,43694270000000
+760,06,085,Santa Clara,13140,Evergreen Elementary School District,0613140,43694350000000
+761,06,085,Santa Clara,14370,Franklin-McKinley Elementary School District,0614370,43694500000000
+762,06,085,Santa Clara,14430,Fremont Union High School District,0614430,43694680000000
+763,06,085,Santa Clara,15180,Gilroy Unified School District,0615180,43694840000000
+764,06,085,Santa Clara,20700,Lakeside Joint Elementary School District,0620700,43694920000000
+765,06,085,Santa Clara,22350,Loma Prieta Joint Union Elementary School District,0622350,43695000000000
+766,06,085,Santa Clara,22650,Los Altos Elementary School District,0622650,43695180000000
+767,06,085,Santa Clara,22800,Los Gatos-Saratoga Joint Union School District,0622800,43695340000000
+768,06,085,Santa Clara,22830,Los Gatos Union Elementary School District,0622830,43695260000000
+769,06,085,Santa Clara,23130,Luther Burbank Elementary School District,0623130,43695420000000
+770,06,085,Santa Clara,24500,Milpitas Unified School District,0624500,43733870000000
+771,06,085,Santa Clara,25770,Moreland School District,0625770,43695750000000
+772,06,085,Santa Clara,25830,Morgan Hill Unified School District,0625830,43695830000000
+773,06,085,Santa Clara,26280,Mountain View Whisman Elementary School District,0626280,43695910000000
+774,06,085,Santa Clara,26310,Mountain View-Los Altos Union School District,0626310,43696090000000
+775,06,085,Santa Clara,26400,Mount Pleasant Elementary School District,0626400,43696170000000
+776,06,085,Santa Clara,27810,Oak Grove Elementary School District,0627810,43696250000000
+777,06,085,Santa Clara,28680,Orchard Elementary School District,0628680,43696330000000
+778,06,085,Santa Clara,29610,Palo Alto Unified School District,0629610,43696410000000
+779,06,085,Santa Clara,30030,Patterson Joint Unified School District,0630030,50712170000000
+780,06,085,Santa Clara,34590,San Jose Unified School District,0634590,43696660000000
+781,06,085,Santa Clara,35430,Santa Clara Unified School District,0635430,43696740000000
+782,06,085,Santa Clara,35910,Saratoga Union Elementary School District,0635910,43696820000000
+783,06,085,Santa Clara,38460,Sunnyvale Elementary School District,0638460,43696900000000
+784,06,085,Santa Clara,40320,Union Elementary School District,0640320,43697080000000
+785,06,087,Santa Cruz,00043,Scotts Valley Unified School District,0600043,44754320000000
+786,06,087,Santa Cruz,05640,Bonny Doon Union Elementary School District,0605640,44697320000000
+788,06,087,Santa Cruz,16560,Happy Valley Elementary School District,0616560,44697570000000
+789,06,087,Santa Cruz,20700,Lakeside Joint Elementary School District,0620700,43694920000000
+790,06,087,Santa Cruz,21990,Live Oak Elementary School District,0621990,44697650000000
+791,06,087,Santa Cruz,22350,Loma Prieta Joint Union Elementary School District,0622350,43695000000000
+792,06,087,Santa Cruz,22800,Los Gatos-Saratoga Joint Union School District,0622800,43695340000000
+793,06,087,Santa Cruz,26070,Mountain Elementary School District,0626070,44697730000000
+794,06,087,Santa Cruz,29340,Pacific Elementary School District,0629340,44697810000000
+795,06,087,Santa Cruz,29490,Pajaro Valley Joint Unified School District,0629490,44697990000000
+796,06,087,Santa Cruz,34740,San Lorenzo Valley Unified School District,0634740,44698070000000
+797,06,087,Santa Cruz,35590,Santa Cruz City Elementary School District,0635590,44698150000000
+798,06,087,Santa Cruz,35600,Santa Cruz City High School District,0635600,44698230000000
+799,06,087,Santa Cruz,37290,Soquel Elementary School District,0637290,44698490000000
+800,06,087,Santa Cruz,91136,Aromas-San Juan Unified School District,0691136,35752590000000
+802,06,089,Shasta,02700,Anderson Union High School District,0602700,45698560000000
+803,06,089,Shasta,02760,Antelope Elementary School District,0602760,52714720000000
+804,06,089,Shasta,04350,Bella Vista Elementary School District,0604350,45698720000000
+805,06,089,Shasta,05220,Black Butte Union Elementary School District,0605220,45698800000000
+806,06,089,Shasta,07680,Cascade Union Elementary School District,0607680,45699140000000
+807,06,089,Shasta,07770,Castle Rock Union Elementary School District,0607770,45699220000000
+808,06,089,Shasta,09450,Columbia Elementary School District,0609450,45699480000000
+809,06,089,Shasta,09990,Cottonwood Union Elementary School District,0609990,45699550000000
+810,06,089,Shasta,11700,Dunsmuir Joint Union High School District,0611700,47702500000000
+811,06,089,Shasta,12810,Enterprise Elementary School District,0612810,45699710000000
+812,06,089,Shasta,13470,Fall River Joint Unified School District,0613470,45699890000000
+813,06,089,Shasta,14490,French Gulch-Whiskeytown Elementary School District,0614490,45699970000000
+814,06,089,Shasta,14950,Gateway Unified School District,0614950,45752670000000
+815,06,089,Shasta,15690,Grant Elementary School District,0615690,45700030000000
+816,06,089,Shasta,16570,Happy Valley Union Elementary School District,0616570,45700110000000
+817,06,089,Shasta,18160,"Igo, Ono, Platina Union Elementary School District",0618160,45700290000000
+819,06,089,Shasta,19200,Junction Elementary School District,0619200,45700450000000
+820,06,089,Shasta,24930,Millville Elementary School District,0624930,45700520000000
+821,06,089,Shasta,27040,Mountain Union Elementary School District,0627040,45737000000000
+822,06,089,Shasta,27510,North Cow Creek Elementary School District,0627510,45700780000000
+823,06,089,Shasta,27870,Oak Run Elementary School District,0627870,45700860000000
+824,06,089,Shasta,29280,Pacheco Union Elementary School District,0629280,45700940000000
+825,06,089,Shasta,32010,Red Bluff Joint Union High School District,0632010,52716390000000
+826,06,089,Shasta,32040,Redding Elementary School District,0632040,45701100000000
+827,06,089,Shasta,36570,Shasta Union Elementary School District,0636570,45701280000000
+828,06,089,Shasta,36600,Shasta Union High School District,0636600,45701360000000
+829,06,089,Shasta,42420,Whitmore Union Elementary School District,0642420,45701690000000
+830,06,091,Sierra,36780,Sierra-Plumas Joint Unified School District,0636780,46701770000000
+831,06,093,Siskiyou,00159,Scott Valley Unified School District,0600159,47764550000000
+832,06,093,Siskiyou,04980,Big Springs Union Elementary School District,0604980,47701850000000
+833,06,093,Siskiyou,05490,Bogus Elementary School District,0605490,47701930000000
+835,06,093,Siskiyou,06580,Butte Valley Unified School District,0606580,47736840000000
+836,06,093,Siskiyou,06690,Butteville Union Elementary School District,0606690,47702010000000
+837,06,093,Siskiyou,10980,Delphic Elementary School District,0610980,47702270000000
+838,06,093,Siskiyou,11670,Dunsmuir Elementary School District,0611670,47702430000000
+839,06,093,Siskiyou,11700,Dunsmuir Joint Union High School District,0611700,47702500000000
+841,06,093,Siskiyou,14970,Gazelle Union Elementary School District,0614970,47703180000000
+842,06,093,Siskiyou,16110,Grenada Elementary School District,0616110,47703260000000
+843,06,093,Siskiyou,16530,Happy Camp Union Elementary School District,0616530,47703340000000
+844,06,093,Siskiyou,17620,Hornbrook Elementary School District,0617620,47703590000000
+845,06,093,Siskiyou,19230,Junction Elementary School District,0619230,47703670000000
+846,06,093,Siskiyou,19920,Klamath River Union Elementary School District,0619920,47703750000000
+847,06,093,Siskiyou,21960,Little Shasta Elementary School District,0621960,47703830000000
+848,06,093,Siskiyou,24210,McCloud Union Elementary School District,0624210,47704090000000
+849,06,093,Siskiyou,25380,Montague Elementary School District,0625380,47704170000000
+850,06,093,Siskiyou,26040,Mount Shasta Union Elementary School District,0626040,47704250000000
+851,06,093,Siskiyou,36240,Seiad Elementary School District,0636240,47704580000000
+852,06,093,Siskiyou,36940,Siskiyou Union High School District,0636940,47704660000000
+853,06,093,Siskiyou,39940,Tulelake Basin Joint Unified School District,0639940,25735930000000
+854,06,093,Siskiyou,41980,Weed Union Elementary School District,0641980,47704820000000
+855,06,093,Siskiyou,42600,Willow Creek Elementary School District,0642600,47704900000000
+856,06,093,Siskiyou,43380,Yreka Union Elementary School District,0643380,47705080000000
+857,06,093,Siskiyou,43410,Yreka Union High School District,0643410,47705160000000
+858,06,095,Solano,04620,Benicia Unified School District,0604620,48705240000000
+859,06,095,Solano,10620,Davis Joint Unified School District,0610620,57726780000000
+860,06,095,Solano,11280,Dixon Unified School District,0611280,48705320000000
+861,06,095,Solano,13360,Fairfield-Suisun Unified School District,0613360,48705400000000
+862,06,095,Solano,33110,River Delta Joint Unified School District,0633110,34674130000000
+863,06,095,Solano,39630,Travis Unified School District,0639630,48705650000000
+864,06,095,Solano,40590,Vacaville Unified School District,0640590,48705730000000
+865,06,095,Solano,40740,Vallejo City Unified School District,0640740,48705810000000
+866,06,095,Solano,42930,Winters Joint Unified School District,0642930,57727020000000
+867,06,097,Sonoma,00034,Windsor Unified School District,0600034,49753580000000
+868,06,097,Sonoma,00044,Healdsburg Unified School District,0600044,49753900000000
+869,06,097,Sonoma,01890,Alexander Valley Union School District,0601890,49705990000000
+870,06,097,Sonoma,02670,West Sonoma County Union High School District,0602670,49706070000000
+871,06,097,Sonoma,04380,Bellevue Union School District,0604380,49706150000000
+872,06,097,Sonoma,04650,Bennett Valley Union Elementary School District,0604650,49706230000000
+874,06,097,Sonoma,07020,Calistoga Joint Unified School District,0607020,28662410000000
+875,06,097,Sonoma,08700,Cinnabar Elementary School District,0608700,49706490000000
+876,06,097,Sonoma,08970,Cloverdale Unified School District,0608970,49706560000000
+877,06,097,Sonoma,09940,Cotati-Rohnert Park Unified School District,0609940,49738820000000
+878,06,097,Sonoma,11610,Dunham Elementary School District,0611610,49706720000000
+879,06,097,Sonoma,14010,Forestville Union Elementary School District,0614010,49706800000000
+880,06,097,Sonoma,14130,Fort Ross Elementary School District,0614130,49706980000000
+881,06,097,Sonoma,15150,Geyserville Unified School District,0615150,49707060000000
+882,06,097,Sonoma,15840,Gravenstein Union Elementary School District,0615840,49707140000000
+883,06,097,Sonoma,16320,Guerneville Elementary School District,0616320,49707220000000
+884,06,097,Sonoma,16620,Harmony Union School District,0616620,49707300000000
+885,06,097,Sonoma,17580,Horicon Elementary School District,0617580,49707630000000
+886,06,097,Sonoma,19410,Kenwood Elementary School District,0619410,49707890000000
+887,06,097,Sonoma,20430,Laguna Joint Elementary School District,0620430,21653420000000
+888,06,097,Sonoma,21540,Liberty Elementary School District,0621540,49707970000000
+889,06,097,Sonoma,24000,Mark West Union Elementary School District,0624000,49708050000000
+890,06,097,Sonoma,25410,Monte Rio Union Elementary School District,0625410,49708130000000
+891,06,097,Sonoma,25650,Montgomery Elementary School District,0625650,49708210000000
+892,06,097,Sonoma,27840,Oak Grove Union Elementary School District,0627840,49708390000000
+893,06,097,Sonoma,28320,Old Adobe Union Elementary School District,0628320,49708470000000
+894,06,097,Sonoma,30230,Petaluma City Elementary School District,0630230,49708540000000
+895,06,097,Sonoma,30250,Petaluma Joint Union High School District,0630250,49708620000000
+896,06,097,Sonoma,30450,Piner-Olivet Union Elementary School District,0630450,49708700000000
+897,06,097,Sonoma,31230,Point Arena Joint Union High School District,0631230,23655990000000
+898,06,097,Sonoma,32340,Kashia Elementary School District,0632340,49708880000000
+899,06,097,Sonoma,32640,Rincon Valley Union Elementary School District,0632640,49708960000000
+900,06,097,Sonoma,33510,Roseland School District,0633510,49709040000000
+901,06,097,Sonoma,35810,Santa Rosa Elementary School District,0635810,49709120000000
+902,06,097,Sonoma,35830,Santa Rosa High School District,0635830,49709200000000
+903,06,097,Sonoma,36180,Sebastopol Union Elementary School District,0636180,49709380000000
+904,06,097,Sonoma,36670,Shoreline Unified School District,0636670,21733610000000
+905,06,097,Sonoma,37200,Sonoma Valley Unified School District,0637200,49709530000000
+906,06,097,Sonoma,40230,Twin Hills Union Elementary School District,0640230,49709610000000
+907,06,097,Sonoma,40260,Two Rock Union Elementary School District,0640260,49709790000000
+908,06,097,Sonoma,41790,Waugh Elementary School District,0641790,49709950000000
+909,06,097,Sonoma,42270,West Side Union Elementary School District,0642270,49710010000000
+910,06,097,Sonoma,42750,Wilmar Union Elementary School District,0642750,49710190000000
+911,06,097,Sonoma,43200,Wright Elementary School District,0643200,49710350000000
+912,06,099,Stanislaus,00060,Hughson Unified School District,0600060,50755490000000
+913,06,099,Stanislaus,00061,Riverbank Unified School District,0600061,50755560000000
+914,06,099,Stanislaus,00062,Oakdale Joint Unified School District,0600062,50755640000000
+915,06,099,Stanislaus,00063,Waterford Unified School District,0600063,50755720000000
+916,06,099,Stanislaus,00158,Turlock Unified School District,0600158,50757390000000
+918,06,099,Stanislaus,08130,Ceres Unified School District,0608130,50710430000000
+919,06,099,Stanislaus,08250,Chatom Union Elementary School District,0608250,50710500000000
+920,06,099,Stanislaus,11040,Denair Unified School District,0611040,50710680000000
+921,06,099,Stanislaus,12690,Empire Union Elementary School District,0612690,50710760000000
+922,06,099,Stanislaus,15810,Gratton Elementary School District,0615810,50710840000000
+923,06,099,Stanislaus,16650,Hart-Ransom Union Elementary School District,0616650,50710920000000
+924,06,099,Stanislaus,17160,Hickman Community Charter School District,0617160,50711000000000
+925,06,099,Stanislaus,19620,Keyes Union Elementary School District,0619620,50711340000000
+926,06,099,Stanislaus,20010,Knights Ferry Elementary School District,0620010,50711420000000
+927,06,099,Stanislaus,25130,Modesto City Elementary School District,0625130,50711670000000
+928,06,099,Stanislaus,25150,Modesto City High School District,0625150,50711750000000
+929,06,099,Stanislaus,27200,Newman-Crows Landing Unified School District,0627200,50736010000000
+930,06,099,Stanislaus,29790,Paradise Elementary School District,0629790,50712090000000
+931,06,099,Stanislaus,30030,Patterson Joint Unified School District,0630030,50712170000000
+932,06,099,Stanislaus,33210,Roberts Ferry Union Elementary School District,0633210,50712330000000
+933,06,099,Stanislaus,33900,Salida Union Elementary School District,0633900,50712660000000
+934,06,099,Stanislaus,36660,Shiloh Elementary School District,0636660,50712740000000
+935,06,099,Stanislaus,37950,Stanislaus Union Elementary School District,0637950,50712820000000
+936,06,099,Stanislaus,38670,Sylvan Union Elementary School District,0638670,50712900000000
+937,06,099,Stanislaus,40800,Valley Home Joint Elementary School District,0640800,50713240000000
+940,06,101,Sutter,06090,Brittan Elementary School District,0606090,51713570000000
+941,06,101,Sutter,06100,Browns Elementary School District,0606100,51713650000000
+942,06,101,Sutter,11780,East Nicolaus Joint Union High School District,0611780,51713730000000
+943,06,101,Sutter,14340,Franklin Elementary School District,0614340,51713810000000
+944,06,101,Sutter,22050,Live Oak Unified School District,0622050,51713990000000
+945,06,101,Sutter,23800,Marcum-Illinois Union Elementary School District,0623800,51714070000000
+946,06,101,Sutter,24690,Meridian Elementary School District,0624690,51714150000000
+947,06,101,Sutter,27750,Nuestro Elementary School District,0627750,51714230000000
+948,06,101,Sutter,30900,Pleasant Grove Joint Union Elementary School District,0630900,51714310000000
+949,06,101,Sutter,38610,Sutter Union High School District,0638610,51714490000000
+950,06,101,Sutter,42900,Winship Robbins Elementary School District,0642900,51714560000000
+951,06,101,Sutter,43080,Woodland Joint Unified School District,0643080,57727100000000
+952,06,101,Sutter,43470,Yuba City Unified School District,0643470,51714640000000
+953,06,103,Tehama,00045,Orland Joint Unified School District,0600045,11754810000000
+954,06,103,Tehama,02760,Antelope Elementary School District,0602760,52714720000000
+955,06,103,Tehama,07410,Capay Joint Union Elementary School District,0607410,11625540000000
+956,06,103,Tehama,09780,Corning Union Elementary School District,0609780,52714980000000
+957,06,103,Tehama,09810,Corning Union High School District,0609810,52715060000000
+958,06,103,Tehama,13170,Evergreen Union Elementary School District,0613170,52715220000000
+959,06,103,Tehama,13860,Flournoy Union Elementary School District,0613860,52715300000000
+960,06,103,Tehama,15090,Gerber Union Elementary School District,0615090,52715480000000
+961,06,103,Tehama,19860,Kirkwood Elementary School District,0619860,52715550000000
+962,06,103,Tehama,21090,Lassen View Union Elementary School District,0621090,52715630000000
+963,06,103,Tehama,22860,Los Molinos Unified School District,0622860,52715710000000
+964,06,103,Tehama,31980,Red Bluff Union Elementary School District,0631980,52716210000000
+965,06,103,Tehama,32010,Red Bluff Joint Union High School District,0632010,52716390000000
+966,06,103,Tehama,32250,Reeds Creek Elementary School District,0632250,52716470000000
+967,06,103,Tehama,32400,Richfield Elementary School District,0632400,52716540000000
+968,06,105,Trinity,00018,Mountain Valley Unified School District,0600018,53750280000000
+969,06,105,Trinity,01331,Trinity Alps Unified School District,0601331,53765130000000
+971,06,105,Trinity,06510,Burnt Ranch Elementary School District,0606510,53716620000000
+972,06,105,Trinity,09240,Coffee Creek Elementary School District,0609240,53716700000000
+973,06,105,Trinity,11430,Douglas City Elementary School District,0611430,53716960000000
+974,06,105,Trinity,19170,Junction City Elementary School District,0619170,53717380000000
+975,06,105,Trinity,19950,Klamath-Trinity Joint Unified School District,0619950,12629010000000
+976,06,105,Trinity,21480,Lewiston Elementary School District,0621480,53717460000000
+977,06,105,Trinity,37630,Southern Trinity Joint Unified School District,0637630,53738330000000
+978,06,105,Trinity,39750,Trinity Center Elementary School District,0639750,53717610000000
+979,06,107,Tulare,00035,Farmersville Unified School District,0600035,54753250000000
+980,06,107,Tulare,00064,Porterville Unified School District,0600064,54755230000000
+981,06,107,Tulare,00065,Dinuba Unified School District,0600065,54755310000000
+982,06,107,Tulare,01418,Woodlake Unified School District,0601418,54767940000000
+983,06,107,Tulare,01423,Exeter Unified School District,0601423,54768360000000
+984,06,107,Tulare,01980,Allensworth Elementary School District,0601980,54717950000000
+985,06,107,Tulare,02010,Alpaugh Unified School District,0602010,54718030000000
+986,06,107,Tulare,02220,Alta Vista Elementary School District,0602220,54718110000000
+991,06,107,Tulare,06420,Buena Vista Elementary School District,0606420,54718290000000
+992,06,107,Tulare,06570,Burton Elementary School District,0606570,54718370000000
+993,06,107,Tulare,08850,Clay Joint Elementary School District,0608850,10621090000000
+994,06,107,Tulare,09510,Columbine Elementary School District,0609510,54718520000000
+995,06,107,Tulare,09690,Corcoran Joint Unified School District,0609690,16638910000000
+996,06,107,Tulare,10350,Cutler-Orosi Joint Unified School District,0610350,54718600000000
+997,06,107,Tulare,10860,Delano Joint Union High School District,0610860,15634120000000
+998,06,107,Tulare,11550,Ducor Union Elementary School District,0611550,54718940000000
+999,06,107,Tulare,11760,Earlimart Elementary School District,0611760,54719020000000
+1000,06,107,Tulare,16500,Hanford Joint Union High School District,0616500,16639250000000
+1001,06,107,Tulare,17520,Hope Elementary School District,0617520,54719440000000
+1002,06,107,Tulare,17640,Hot Springs Elementary School District,0617640,54719510000000
+1003,06,107,Tulare,19700,Kings Canyon Joint Unified School District,0619700,10622650000000
+1004,06,107,Tulare,19740,Kings River Union Elementary School District,0619740,54719690000000
+1005,06,107,Tulare,19800,Kingsburg Elementary Charter School District,0619800,10622400000000
+1006,06,107,Tulare,19830,Kingsburg Joint Union High School District,0619830,10622570000000
+1007,06,107,Tulare,19890,Kit Carson Union Elementary School District,0619890,16639580000000
+1008,06,107,Tulare,21570,Liberty Elementary School District,0621570,54719850000000
+1009,06,107,Tulare,21870,Lindsay Unified School District,0621870,54719930000000
+1010,06,107,Tulare,21900,Linns Valley-Poso Flat Union School District,0621900,15635860000000
+1011,06,107,Tulare,25350,Monson-Sultana Joint Union Elementary School District,0625350,54720090000000
+1012,06,107,Tulare,27900,Oak Valley Union Elementary School District,0627900,54720170000000
+1013,06,107,Tulare,29160,Outside Creek Elementary School District,0629160,54720250000000
+1014,06,107,Tulare,29670,Palo Verde Union Elementary School District,0629670,54720330000000
+1015,06,107,Tulare,30630,Pixley Union Elementary School District,0630630,54720410000000
+1016,06,107,Tulare,31050,Pleasant View Elementary School District,0631050,54720580000000
+1017,06,107,Tulare,32430,Richgrove Elementary School District,0632430,54720820000000
+1018,06,107,Tulare,33270,Rockford Elementary School District,0633270,54720900000000
+1019,06,107,Tulare,35940,Saucelito Elementary School District,0635940,54721080000000
+1020,06,107,Tulare,36360,Sequoia Union Elementary School District,0636360,54721160000000
+1021,06,107,Tulare,37770,Springville Union Elementary School District,0637770,54721320000000
+1022,06,107,Tulare,38040,Stone Corral Elementary School District,0638040,54721400000000
+1023,06,107,Tulare,38130,Strathmore Union Elementary School District,0638130,54721570000000
+1024,06,107,Tulare,38340,Sundale Union Elementary School District,0638340,54721730000000
+1025,06,107,Tulare,38430,Sunnyside Union Elementary School District,0638430,54721810000000
+1026,06,107,Tulare,39060,Terra Bella Union Elementary School District,0639060,54721990000000
+1027,06,107,Tulare,39210,Three Rivers Union Elementary School District,0639210,54722070000000
+1028,06,107,Tulare,39300,Tipton Elementary School District,0639300,54722150000000
+1029,06,107,Tulare,39600,Traver Joint Elementary School District,0639600,54722230000000
+1030,06,107,Tulare,39870,Tulare City Elementary School District,0639870,54722310000000
+1031,06,107,Tulare,39930,Tulare Joint Union High School District,0639930,54722490000000
+1032,06,107,Tulare,41160,Visalia Unified School District,0641160,54722560000000
+1033,06,107,Tulare,41820,Waukena Joint Union Elementary School District,0641820,54722640000000
+1034,06,107,Tulare,43170,Woodville Elementary School District,0643170,54722980000000
+1035,06,109,Tuolumne,04500,Belleview Elementary School District,0604500,55723060000000
+1036,06,109,Tuolumne,09480,Columbia Union Elementary School District,0609480,55723480000000
+1037,06,109,Tuolumne,10320,Curtis Creek Elementary School District,0610320,55723550000000
+1038,06,109,Tuolumne,18690,Jamestown Elementary School District,0618690,55723630000000
+1039,06,109,Tuolumne,37230,Sonora Elementary School District,0637230,55723710000000
+1040,06,109,Tuolumne,37260,Sonora Union High School District,0637260,55723890000000
+1041,06,109,Tuolumne,37320,Soulsbyville Elementary School District,0637320,55723970000000
+1042,06,109,Tuolumne,38250,Summerville Elementary School District,0638250,55724050000000
+1043,06,109,Tuolumne,38280,Summerville Union High School District,0638280,55724130000000
+1044,06,109,Tuolumne,40200,Twain Harte School District,0640200,55724210000000
+1045,06,109,Tuolumne,91137,Big Oak Flat-Groveland Unified School District,0691137,55751840000000
+1046,06,111,Ventura,00009,Cuyama Joint Unified School District,0600009,42750100000000
+1047,06,111,Ventura,00026,El Tejon Unified School District,0600026,15751680000000
+1048,06,111,Ventura,01421,Santa Paula Unified School District,0601421,56768280000000
+1050,06,111,Ventura,06030,Briggs Elementary School District,0606030,56724470000000
+1051,06,111,Ventura,09640,Conejo Valley Unified School District,0609640,56737590000000
+1052,06,111,Ventura,13800,Fillmore Unified School District,0613800,56724540000000
+1053,06,111,Ventura,17850,Hueneme Elementary School District,0617850,56724620000000
+1054,06,111,Ventura,21000,Las Virgenes Unified School District,0621000,19646830000000
+1055,06,111,Ventura,24720,Mesa Union Elementary School District,0624720,56724700000000
+1056,06,111,Ventura,25690,Moorpark Unified School District,0625690,56739400000000
+1057,06,111,Ventura,26460,Mupu Elementary School District,0626460,56725040000000
+1058,06,111,Ventura,27850,Oak Park Unified School District,0627850,56738740000000
+1059,06,111,Ventura,28170,Ocean View Elementary School District,0628170,56725120000000
+1060,06,111,Ventura,28270,Ojai Unified School District,0628270,56725200000000
+1061,06,111,Ventura,29220,Oxnard Elementary School District,0629220,56725380000000
+1062,06,111,Ventura,29270,Oxnard Union High School District,0629270,56725460000000
+1063,06,111,Ventura,30990,Pleasant Valley Elementary School District,0630990,56725530000000
+1064,06,111,Ventura,32760,Rio Elementary School District,0632760,56725610000000
+1065,06,111,Ventura,35490,Santa Clara Elementary School District,0635490,56725790000000
+1066,06,111,Ventura,36840,Simi Valley Unified School District,0636840,56726030000000
+1067,06,111,Ventura,37140,Somis Union Elementary School District,0637140,56726110000000
+1068,06,111,Ventura,40980,Ventura Unified School District,0640980,56726520000000
+1069,06,113,Yolo,10620,Davis Joint Unified School District,0610620,57726780000000
+1070,06,113,Yolo,12930,Esparto Unified School District,0612930,57726860000000
+1071,06,113,Yolo,30360,Pierce Joint Unified School District,0630360,06616140000000
+1072,06,113,Yolo,33110,River Delta Joint Unified School District,0633110,34674130000000
+1073,06,113,Yolo,41580,Washington Unified School District,0641580,57726940000000
+1074,06,113,Yolo,42930,Winters Joint Unified School District,0642930,57727020000000
+1075,06,113,Yolo,43080,Woodland Joint Unified School District,0643080,57727100000000
+1076,06,115,Yuba,07260,Camptonville Elementary School District,0607260,58727280000000
+1077,06,115,Yuba,24090,Marysville Joint Unified School District,0624090,58727360000000
+1078,06,115,Yuba,31180,Plumas Lake Elementary School District,0631180,58727440000000
+1079,06,115,Yuba,42330,Wheatland Elementary School District,0642330,58727510000000
+1080,06,115,Yuba,42350,Wheatland Union High School District,0642350,58727690000000

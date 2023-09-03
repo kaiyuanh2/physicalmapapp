@@ -6,9 +6,20 @@ const methodOverride = require('method-override');
 const ExpressError = require('./utils/ExpressError');
 const flash = require('connect-flash');
 const fs = require('fs');
-const { validateParameters, validateParametersPost } = require('./middleware');
+const { validateParameters, validateParametersPost, uploadSuccess } = require('./middleware');
 const { getAverage, getRange } = require('./helper');
 const session = require('express-session');
+const multer  = require('multer')
+const storage = multer.diskStorage({
+    destination: function(req, file, callback) {
+      callback(null, path.join(__dirname, './uploads'));
+    },
+    filename: function (req, file, callback) {
+      callback(null, file.fieldname + '-' + Date.now());
+    }
+  });
+const upload = multer({storage});
+const {PythonShell} = require("python-shell");
 
 app.use(express.json({limit: '10mb'}));
 app.use(express.urlencoded({limit: '10mb', extended: true, parameterLimit: 10000}));
@@ -34,8 +45,6 @@ const sessionConfig = {
 };
 app.use(session(sessionConfig));
 app.use(flash());
-
-
 
 const sd = [];
 const latlon = [];
@@ -225,6 +234,30 @@ app.post('/custom', validateParametersPost, (req, res) => {
         }
     }
     res.render('custom', { item, checkboxStr, checkedLength, mapLat, mapLon, zoom, messages: req.flash('error'), page_name });
+})
+
+app.get('/upload', (req, res) => {
+    const page_name = 'upload';
+    res.render('upload', {page_name, messages: req.flash('success')});
+})
+
+app.post('/upload', upload.single('dataSet'), uploadSuccess, (req, res) => {
+    const py = new PythonShell('./script.py');
+    py.on('message', function (message) {
+        console.log(message);
+    });
+
+    py.send(req.file.path);
+    py.send(req.body.mapName);
+    
+    py.end(function (err) {
+        if (err){
+            throw err;
+        };
+        console.log('finished');
+    });
+    const page_name = 'upload';
+    res.render('upload', {page_name, messages: req.flash('success')});
 })
 
 app.all('*', (req, res, next) => {

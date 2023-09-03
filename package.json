@@ -9,7 +9,10 @@
     "joi": "^17.9.2",
     "leaflet-geoserver-request": "^1.2.2",
     "method-override": "^3.0.0",
-    "nodemon": "^2.0.20",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.5-lts.1",
+    "nodemon": "^3.0.1",
+    "python-shell": "^5.0.0",
     "sanitize-html": "^2.10.0"
   }
 }
