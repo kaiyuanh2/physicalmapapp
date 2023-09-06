@@ -173,3 +173,10 @@ buildNumber.properties
 
 **/.DS_Store
 uploads/
+readme.html
+*.cpg
+*.dbf
+*.prj
+*.shp
+*.shx
+.Rhistory

@@ -40,13 +40,13 @@ if __name__ == '__main__':
                     elem['properties']['scaled'] = -1.0
                 output.write({'properties': elem['properties'], 'geometry': mapping(shape(elem['geometry']))})
 
-    with fiona.open("output_insurance.shp") as src:
-        print(src.schema)
-        a = 0
-        for elem in src:
-            print(elem['properties']['data'])
-            print(elem['properties']['scaled'])
-            print()
-            a += 1
-            if a > 5:
-                break
+    # with fiona.open("output_insurance.shp") as src:
+    #     print(src.schema)
+    #     a = 0
+    #     for elem in src:
+    #         print(elem['properties']['data'])
+    #         print(elem['properties']['scaled'])
+    #         print()
+    #         a += 1
+    #         if a > 5:
+    #             break
