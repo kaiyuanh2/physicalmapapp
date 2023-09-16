@@ -181,7 +181,7 @@ app.post('/california', validateParametersPost, (req, res) => {
 
 app.get('/custom', validateParameters, (req, res) => {
     console.log("CUSTOM GET");
-    var item = 'insurance';
+    var item = 'output_insurance';
     var checkboxStr = 'all';
     var checkedLength = 1125;
     var mapLat = 37.1661;

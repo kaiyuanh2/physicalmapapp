@@ -13,6 +13,7 @@ def read_in():
 if __name__ == '__main__':
     print('Running Python Script')
     line = read_in()
+    final_path = '../ca_custom/' + line[1] + '.shp'
     sd_df = pd.read_csv('./public/school_district_codes_merged_nonan.csv', converters={i: str for i in range(10)})
     ins_df = pd.read_csv(line[0], index_col=0, converters={i: str for i in range(4)})
     ins_df['data_scaled'] = ((ins_df['data'] - ins_df['data'].min()) / (ins_df['data'].max() - ins_df['data'].min())) * 100
@@ -24,7 +25,7 @@ if __name__ == '__main__':
         schema['properties']['scaled'] = 'float'
         crs = src.crs
     
-        with fiona.open('output_insurance.shp', 'w', 'ESRI Shapefile', schema, crs) as output:
+        with fiona.open(final_path, 'w', 'ESRI Shapefile', schema, crs) as output:
             for elem in src:
                 # print(elem['properties']['DistrictNa'])
                 if len(sd_df[sd_df['CDSCODE'] == elem['properties']['CDSCode']]) > 0:

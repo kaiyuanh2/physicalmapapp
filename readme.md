@@ -1,6 +1,6 @@
 ### *All configuration files listed below should be in [pftconfig](https://github.com/kaiyuanh2/pftappconfig) repository.*
 
-# How to run the app locally
+# Part 1: How to run the app locally
 
 ## Step 1: Install & Run GeoServer
 1. Install GeoServer
@@ -28,4 +28,28 @@
 2. Run `nodemon app.js` (use nodemon instead of node to make app restart automatically when files change)
 3. The link should be `localhost:3000` to access from web browsers (if the port 3000 is not occupied), the terminal will display debug output
 
-# How to run the app on AWS instance (available later)
+# Part 2: How to run the app on AWS instance
+
+## Step 1: AWS File Preparation
+*Check the code files to make sure `dev` is set to `false`!*
+1. Use the key file to log in the AWS instance using sftp. `sftp -i KaiYuan.pem ubuntu@ec2-54-176-149-48.us-west-1.compute.amazonaws.com`
+2. In the local machine, make the directories containing .shp files into zipped (.zip) files, then navigate to the directory of .zip files in sftp console using `lcd`
+3. Upload the .zip files into AWS instance using `put`, then leave sftp
+4. Use the key file to log in the AWS instance using ssh. `ssh -i KaiYuan.pem ubuntu@ec2-54-176-149-48.us-west-1.compute.amazonaws.com`, a Ubuntu console will appear
+5. Unzip the .zip files on AWS instance using `unzip` command
+
+## Step 2: Install and Configure GeoServer on AWS Instance
+1. Install GeoServer on AWS instance following this [tutorial](https://docs.geoserver.org/latest/en/user/installation/linux.html) for Linux
+2. Change the password of GeoServer immediately (for security concerns): Go to GeoServer Web Portal, click "Users, Groups, Roles", then click "Users/Groups" tab, click "admin" user and change the password in the user page
+3. Follow 3-8 in Step 2 of "Running Locally"
+
+## Step 3: Sync Code Files from GitHub
+*Generating a token for GitHub access is required before you proceed into this step. Log into a GitHub account with access to this repository and go to this [link](https://github.com/settings/tokens) to generate a token*
+1. Install GitHub CLI following this [tutorial](https://github.com/cli/cli/blob/trunk/docs/install_linux.md) for Linux
+2. Log in using generated token by using the command `gh auth login`
+3. Sync "physicalmapapp" and "pftconfig" using `gh repo sync` ([Tutorial Here](https://cli.github.com/manual/gh_repo_sync))
+
+## Step 4: Run Everything Using PM2
+*[Tutorial Here](https://pm2.keymetrics.io/docs/usage/quick-start/)*
+1. Run GeoServer (`startup.sh`) using PM2
+2. Run the web app (`app.js`) using PM2
