@@ -24,9 +24,10 @@
 2. Check the code in `map.js` and `map_custom.js`, make sure `dev` is set to `true` (enable local development mode)
 
 ## Step 4: Run Web App Locally
-1. Open the terminal, navigate to the directory of the web app
-2. Run `nodemon app.js` (use nodemon instead of node to make app restart automatically when files change)
-3. The link should be `localhost:3000` to access from web browsers (if the port 3000 is not occupied), the terminal will display debug output
+1. Use pip to install required Python packages: Pandas, Fiona, and Shapely
+2. Open the terminal, navigate to the directory of the web app
+3. Run `nodemon app.js` (use nodemon instead of node to make app restart automatically when files change)
+4. The link should be `localhost:3000` to access from web browsers (if the port 3000 is not occupied), the terminal will display debug output
 
 # Part 2: How to run the app on AWS instance
 
@@ -50,6 +51,7 @@
 3. Sync "physicalmapapp" and "pftconfig" using `gh repo sync` ([Tutorial Here](https://cli.github.com/manual/gh_repo_sync))
 
 ## Step 4: Run Everything Using PM2
-*[Tutorial Here](https://pm2.keymetrics.io/docs/usage/quick-start/)*
-1. Run GeoServer (`startup.sh`) using PM2
-2. Run the web app (`app.js`) using PM2
+*[PM2 Tutorial Here](https://pm2.keymetrics.io/docs/usage/quick-start/)*
+1. Use pip to install required Python packages: Pandas, Fiona, and Shapely
+2. Run GeoServer (`startup.sh`) using PM2
+3. Run the web app (`app.js`) using PM2
