@@ -1,4 +1,4 @@
-import sys, json
+import sys, json, requests
 import pandas as pd
 import fiona
 from fiona import Geometry, Feature, Properties
@@ -26,6 +26,26 @@ def read_in():
         lines[i] = lines[i].strip()
     return lines
 
+def get_layer_xml(lname):
+    return f"""
+    <featureType><name>{lname}</name>
+            <nativeBoundingBox>
+                <minx>-13849212.31989677</minx>
+                <maxx>-12705028.292196771</maxx>
+                <miny>3833655.391757408</miny>
+                <maxy>5162403.053757408</maxy>
+                <crs>EPSG:3857</crs>
+            </nativeBoundingBox>
+            <latLonBoundingBox>
+                <minx>-124.40959099979645</minx>
+                <maxx>-114.13121100051302</maxx>
+                <miny>32.53432592843067</miny>
+                <maxy>42.00950300056604</maxy>
+                <crs>EPSG:3857</crs>
+            </latLonBoundingBox>
+        </featureType>
+"""
+
 if __name__ == '__main__':
     print('Running Python Script')
     line = read_in()
@@ -39,13 +59,9 @@ if __name__ == '__main__':
     final_path = '../ca_custom/' + line[1] + '.shp'
     sd_df = pd.read_csv('./public/school_district_codes_merged_nonan.csv', converters={i: str for i in range(10)})
     ins_df = None
-    if line[0][-3:].lower() == 'csv':
-        try:
-            ins_df = pd.read_csv(line[0], index_col=0, converters={i: str for i in range(4)})
-        except:
-            f_name = line[0].split('/')[-1]
-            raise FileFormatError(f_name)
-    else:
+    try:
+        ins_df = pd.read_csv(line[0], index_col=0, converters={i: str for i in range(4)})
+    except:
         try:
             ins_df = pd.read_excel(line[0], index_col=0, converters={i: str for i in range(4)})
         except:
@@ -90,6 +106,19 @@ if __name__ == '__main__':
 
     with open('./public/custom.json', 'w') as json_file:
         json_file.write(new_json)
+
+    if line[2] == 'dev':
+        url = 'http://localhost:8080/geoserver/rest/workspaces/california/datastores/ca_custom/featuretypes'
+        auth = ('admin', 'geoserver')
+    else:
+        url = ''
+        auth = ('', '')
+    headers = {'Content-Type': 'text/xml'}
+    
+
+    layer_xml = get_layer_xml(line[1])
+    r = requests.post(url, headers=headers, auth=auth, data=layer_xml)
+    print(r.text)
 
     # with fiona.open("output_insurance.shp") as src:
     #     print(src.schema)

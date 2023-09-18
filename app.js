@@ -249,6 +249,10 @@ app.post('/upload', upload.single('dataSet'), uploadSuccess, (req, res) => {
 
     py.send(req.file.path);
     py.send(req.body.mapName);
+
+    // Switch here to change the dev mode of Python script
+    py.send('dev');
+    // py.send('');
     
     py.end(function (err) {
         if (err){
