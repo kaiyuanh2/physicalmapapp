@@ -23,7 +23,11 @@
                             <div class="col-md-8">
                                 <select class="form-select" name="item" id="item">
                                     <option value="" selected><strong>--Item--</strong></option>
-                                    <option value="aero" <%=item==="output_insurance" ? 'selected' : '' %>>Children's Insurance Coverage</option>
+                                    <option value="output_insurance" <%=item==="output_insurance" ? 'selected' : '' %>>Children's Insurance Coverage</option>
+                                    <% const keys = Array.from(custom_map.keys())%>
+                                    <% for (let i=1; i<keys.length; i++) { %>
+                                        <option value="<%= keys[i] %>" <%=item===keys[i] ? 'selected' : '' %>><%= keys[i] %></option>
+                                    <% } %>
                                 </select>
                             </div>
                             

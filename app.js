@@ -6,7 +6,7 @@ const methodOverride = require('method-override');
 const ExpressError = require('./utils/ExpressError');
 const flash = require('connect-flash');
 const fs = require('fs');
-const { validateParameters, validateParametersPost, uploadSuccess } = require('./middleware');
+const { validateParameters, validateParametersPost, validateParametersPostCustom, createNewLayer, uploadSuccess } = require('./middleware');
 const { getAverage, getRange } = require('./helper');
 const session = require('express-session');
 const multer  = require('multer')
@@ -19,7 +19,7 @@ const storage = multer.diskStorage({
     }
   });
 const upload = multer({storage});
-const {PythonShell} = require("python-shell");
+
 
 app.use(express.json({limit: '10mb'}));
 app.use(express.urlencoded({limit: '10mb', extended: true, parameterLimit: 10000}));
@@ -54,10 +54,10 @@ for (let i = 0; i < 58; i++) {
 }
 var county = -1;
 const jsonString = fs.readFileSync("./public/entities.json").toString();
-const customString = fs.readFileSync("./public/custom.json").toString();
+var customString = ''
 const cmap = new Map(Object.entries(JSON.parse(jsonString)));
-const mmap = new Map(Object.entries(JSON.parse(customString)));
-console.log(mmap.get('insurance'));
+var custom_map = '';
+
 // console.log(cmap);
 cmap.forEach(function (v, k) {
     county = parseInt(k.substring(0, 2)) - 1;
@@ -78,7 +78,6 @@ global.names = ['Alameda', 'Alpine', 'Amador', 'Butte'
     , 'Stanislaus', 'Sutter', 'Tehama', 'Trinity', 'Tulare'
     , 'Tuolumne', 'Ventura', 'Yolo', 'Yuba'];
 // console.log(global.sdi[1]);
-global.custom_map = mmap;
 
 const latlonString = fs.readFileSync("./public/latlon.json").toString();
 const lmap = new Map(Object.entries(JSON.parse(latlonString)));
@@ -188,10 +187,15 @@ app.get('/custom', validateParameters, (req, res) => {
     var mapLon = -119.4494;
     var zoom = 7;
     const page_name = 'custom';
-    res.render('custom', { item, checkboxStr, checkedLength, mapLat, mapLon, zoom, messages: req.flash('error'), page_name });
+
+    customString = fs.readFileSync("./public/custom.json").toString();
+    custom_map = new Map(Object.entries(JSON.parse(customString)));
+    console.log(custom_map);
+    console.log(Array.from(custom_map.keys()));
+    res.render('custom', { item, checkboxStr, checkedLength, mapLat, mapLon, zoom, messages: req.flash('error'), page_name, custom_map });
 })
 
-app.post('/custom', validateParametersPost, (req, res) => {
+app.post('/custom', validateParametersPostCustom, (req, res) => {
     console.log("CUSTOM POST");
     var item = req.body.item;
     var checkboxStr = req.body.checkboxStr;
@@ -233,7 +237,11 @@ app.post('/custom', validateParametersPost, (req, res) => {
             console.log(zoom);
         }
     }
-    res.render('custom', { item, checkboxStr, checkedLength, mapLat, mapLon, zoom, messages: req.flash('error'), page_name });
+
+    customString = fs.readFileSync("./public/custom.json").toString();
+    custom_map = new Map(Object.entries(JSON.parse(customString)));
+    console.log(custom_map)
+    res.render('custom', { item, checkboxStr, checkedLength, mapLat, mapLon, zoom, messages: req.flash('error'), page_name, custom_map });
 })
 
 app.get('/upload', (req, res) => {
@@ -241,25 +249,7 @@ app.get('/upload', (req, res) => {
     res.render('upload', {page_name, messages: req.flash('success')});
 })
 
-app.post('/upload', upload.single('dataSet'), uploadSuccess, (req, res) => {
-    const py = new PythonShell('./script.py');
-    py.on('message', function (message) {
-        console.log(message);
-    });
-
-    py.send(req.file.path);
-    py.send(req.body.mapName);
-
-    // Switch here to change the dev mode of Python script
-    py.send('dev');
-    // py.send('');
-    
-    py.end(function (err) {
-        if (err){
-            throw err;
-        };
-        console.log('finished');
-    });
+app.post('/upload', upload.single('dataSet'), createNewLayer, uploadSuccess, (req, res) => {
     const page_name = 'upload';
     res.render('upload', {page_name, messages: req.flash('success')});
 })

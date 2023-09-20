@@ -1,4 +1,5 @@
 const Joi = require('joi');
+const {PythonShell} = require("python-shell");
 
 const schema = Joi.object().keys({
     item: Joi.string().valid('aero', 'body', 'abd', 'trunk', 'ub', 'flex').required().default('aero'),
@@ -9,7 +10,7 @@ const schema = Joi.object().keys({
 }).unknown(true);
 
 const schemaCustom = Joi.object().keys({
-    item: Joi.string().required().default('insurance'),
+    item: Joi.string().required().default('output_insurance'),
     checkboxStr: Joi.string().required().min(3).default('all'),
     checkedLength: Joi.number().integer().required().min(1).max(1125).default(1125)
 }).unknown(true);
@@ -32,7 +33,7 @@ module.exports.validateParametersPostCustom = async (req, res, next) => {
     const { error, value } = await schemaCustom.validate(req.body);
     if (error) {
         console.log(value);
-        req.body.item = 'insurance';
+        req.body.item = 'output_insurance';
         req.body.checkboxStr = 'all';
         req.body.checkedLength = '1125';
         req.flash('error', "Invalid parameter(s)! Displaying the map under default options: Map of Insurance Coverage, and the whole California. Please make sure that every parameter is not empty and is valid.");
@@ -61,7 +62,29 @@ module.exports.validateParametersPost = async (req, res, next) => {
     next();
 }
 
+module.exports.createNewLayer = async (req, res, next) => {
+    const py = new PythonShell('./script.py');
+    py.on('message', function (message) {
+        console.log(message);
+    });
+
+    py.send(req.file.path);
+    py.send(req.body.mapName);
+
+    // Switch here to change the dev mode of Python script
+    py.send('dev');
+    // py.send('');
+    
+    py.end(function (err) {
+        if (err){
+            throw err;
+        };
+        console.log('finished');
+    });
+    next();
+}
+
 module.exports.uploadSuccess = async (req, res, next) => {
-    req.flash('success', "Upload success!!!");
+    req.flash('success', "Upload success!!! It might take a while for the new dataset to appear on the list.");
     next();
 }
