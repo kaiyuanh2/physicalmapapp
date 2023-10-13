@@ -1,5 +1,6 @@
 const Joi = require('joi');
 const {PythonShell} = require("python-shell");
+const fs = require('fs');
 
 const schema = Joi.object().keys({
     item: Joi.string().valid('aero', 'body', 'abd', 'trunk', 'ub', 'flex').required().default('aero'),
@@ -62,29 +63,69 @@ module.exports.validateParametersPost = async (req, res, next) => {
     next();
 }
 
-module.exports.createNewLayer = async (req, res, next) => {
-    const py = new PythonShell('./script.py');
-    py.on('message', function (message) {
-        console.log(message);
-    });
+function createNewLayer(req, res) {
+    return new Promise((resolve, reject) => {
+        const py = new PythonShell('./script.py');
+        py.on('message', function (message) {
+            console.log(message);
+        });
 
-    py.send(req.file.path);
-    py.send(req.body.mapName);
+        py.send(req.file.path);
+        py.send(req.body.mapName);
 
-    // Switch here to change the dev mode of Python script
-    py.send('dev');
-    // py.send('');
-    
-    py.end(function (err) {
-        if (err){
-            throw err;
-        };
-        console.log('finished');
+        // Switch here to change the dev mode of Python script
+        py.send('dev');
+        // py.send('');
+        console.log('arg sent');
+        
+        py.end(function (err) {
+            flag = true;
+            if (err){
+                console.log('python fail');
+                flag = false;
+            }
+            else {
+                console.log('success');
+            }
+            resolve(flag);
+            console.log('finished');
+        });
     });
-    next();
 }
 
-module.exports.uploadSuccess = async (req, res, next) => {
-    req.flash('success', "Upload success!!! It might take a while for the new dataset to appear on the list.");
-    next();
+async function deleteUploadedFile(req, res) {
+    fs.unlink(req.file.path, (err) => {
+        if (err) {
+            console.log('Fatal: failed to delete');
+        }
+        console.log("Uploaded file was deleted successfully");
+    });
+    return 0;
+}
+
+module.exports.uploadProcess = async (req, res, next) => {
+    // req.flash('success', "Test");
+    createNewLayer(req, res).then(flag => {
+        msg = 'Upload ';
+        if (flag) {
+            console.log('success flag');
+            req.flash('success', msg + 'success! It might take a while for the new dataset to appear on the list.')
+        }
+        else {
+            console.log('fail flag');
+            req.flash('error', msg + 'failed! Please check file format and try again.')
+        }
+
+        fs.unlink(req.file.path, (err) => {
+            if (err) {
+                console.log('Fatal: failed to delete');
+            }
+            else {
+                console.log("Uploaded file was deleted successfully");
+            }
+        });
+        next();
+    }).catch(err => {
+        console.log(err);
+    })
 }

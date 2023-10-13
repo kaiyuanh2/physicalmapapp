@@ -10,7 +10,7 @@ class FileFormatError(Exception):
         self.fname = f
 
     def __str__(self):
-        return f'The file "{self.fname}" is not a valid custom dataset file! Please follow the format guide and try again.'
+        return f'The file "{self.fname}" is not a valid custom dataset file or missing! Please follow the format guide and try again.'
     
 class DatasetExistsError(Exception):
     def __init__(self, d, *args):
@@ -111,7 +111,7 @@ if __name__ == '__main__':
         url = 'http://localhost:8080/geoserver/rest/workspaces/california/datastores/ca_custom/featuretypes'
         auth = ('admin', 'geoserver')
     else:
-        url = ''
+        url = 'http://ec2-54-176-149-48.us-west-1.compute.amazonaws.com:8080/geoserver/rest/workspaces/california/datastores/ca_custom/featuretypes'
         auth = ('', '')
     headers = {'Content-Type': 'text/xml'}
     

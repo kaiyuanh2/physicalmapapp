@@ -6,7 +6,7 @@ const methodOverride = require('method-override');
 const ExpressError = require('./utils/ExpressError');
 const flash = require('connect-flash');
 const fs = require('fs');
-const { validateParameters, validateParametersPost, validateParametersPostCustom, createNewLayer, uploadSuccess } = require('./middleware');
+const { validateParameters, validateParametersPost, validateParametersPostCustom, uploadProcess } = require('./middleware');
 const { getAverage, getRange } = require('./helper');
 const session = require('express-session');
 const multer  = require('multer')
@@ -246,12 +246,12 @@ app.post('/custom', validateParametersPostCustom, (req, res) => {
 
 app.get('/upload', (req, res) => {
     const page_name = 'upload';
-    res.render('upload', {page_name, messages: req.flash('success')});
+    res.render('upload', {page_name, success: req.flash('success'), error: req.flash('error')});
 })
 
-app.post('/upload', upload.single('dataSet'), createNewLayer, uploadSuccess, (req, res) => {
+app.post('/upload', upload.single('dataSet'), uploadProcess, (req, res) => {
     const page_name = 'upload';
-    res.render('upload', {page_name, messages: req.flash('success')});
+    res.render('upload', {page_name, success: req.flash('success'), error: req.flash('error')});
 })
 
 app.all('*', (req, res, next) => {

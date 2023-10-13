@@ -4,11 +4,17 @@
         <h3 class="">Upload Custom Dataset</h3>
     </div>
 
-    <% if (messages.length> 0) { %>
+    <% if(success && success.length) { %>
         <div class="alert alert-success alert-dismissible fade show" role="alert">
-            <%= messages[0] %>
+            <%= success %>
         </div>
-        <% } %>
+    <% } %>
+    
+    <% if(error && error.length) { %>
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            <%= error %>
+        </div>
+    <% } %>
 
     <div class="row align-items-center mt-3">
         <div class="card">
