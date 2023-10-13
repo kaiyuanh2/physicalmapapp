@@ -1,7 +1,9 @@
 function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
-const dev = true;
+
+// change here before AWS deployment
+const dev = false;
 
 // var map_lat = 37.1661;
 // var map_lon = -119.4494;

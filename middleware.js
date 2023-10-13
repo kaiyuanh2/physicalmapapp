@@ -73,15 +73,15 @@ function createNewLayer(req, res) {
         py.send(req.file.path);
         py.send(req.body.mapName);
 
-        // Switch here to change the dev mode of Python script
-        py.send('dev');
-        // py.send('');
-        console.log('arg sent');
-        
+        // Switch comment here to change the dev mode of Python script
+        // py.send('dev');
+        py.send('');
+
+        // console.log('arg sent');
         py.end(function (err) {
             flag = true;
             if (err){
-                console.log('python fail');
+                console.log(err);
                 flag = false;
             }
             else {
@@ -93,26 +93,26 @@ function createNewLayer(req, res) {
     });
 }
 
-async function deleteUploadedFile(req, res) {
-    fs.unlink(req.file.path, (err) => {
-        if (err) {
-            console.log('Fatal: failed to delete');
-        }
-        console.log("Uploaded file was deleted successfully");
-    });
-    return 0;
-}
+// async function deleteUploadedFile(req, res) {
+//     fs.unlink(req.file.path, (err) => {
+//         if (err) {
+//             console.log('Fatal: failed to delete');
+//         }
+//         console.log("Uploaded file was deleted successfully");
+//     });
+//     return 0;
+// }
 
 module.exports.uploadProcess = async (req, res, next) => {
     // req.flash('success', "Test");
     createNewLayer(req, res).then(flag => {
         msg = 'Upload ';
         if (flag) {
-            console.log('success flag');
+            // console.log('success flag');
             req.flash('success', msg + 'success! It might take a while for the new dataset to appear on the list.')
         }
         else {
-            console.log('fail flag');
+            // console.log('fail flag');
             req.flash('error', msg + 'failed! Please check file format and try again.')
         }
 

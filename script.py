@@ -3,6 +3,8 @@ import pandas as pd
 import fiona
 from fiona import Geometry, Feature, Properties
 from shapely.geometry import mapping, shape
+import boto3
+from botocore.exceptions import ClientError
 
 class FileFormatError(Exception):
     def __init__(self, f, *args):
@@ -112,10 +114,29 @@ if __name__ == '__main__':
         auth = ('admin', 'geoserver')
     else:
         url = 'http://ec2-54-176-149-48.us-west-1.compute.amazonaws.com:8080/geoserver/rest/workspaces/california/datastores/ca_custom/featuretypes'
-        auth = ('', '')
-    headers = {'Content-Type': 'text/xml'}
-    
 
+        secret_name = "geoserver"
+        region_name = "us-west-1"
+        session = boto3.session.Session()
+        client = session.client(
+            service_name='secretsmanager',
+            region_name=region_name
+        )
+
+        try:
+            get_secret_value_response = client.get_secret_value(
+                SecretId=secret_name
+            )
+        except ClientError as e:
+            # For a list of exceptions thrown, see
+            # https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_GetSecretValue.html
+            raise e
+        
+        secret = get_secret_value_response['SecretString']
+        secret_dict = json.loads(secret)
+        auth = (secret_dict['username'], secret_dict['password'])
+
+    headers = {'Content-Type': 'text/xml'}
     layer_xml = get_layer_xml(line[1])
     r = requests.post(url, headers=headers, auth=auth, data=layer_xml)
     print(r.text)
