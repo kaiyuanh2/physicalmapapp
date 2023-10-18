@@ -32,7 +32,7 @@
 # Part 2: How to run the app on AWS instance
 
 ## Step 1: AWS File Preparation
-*Check the code files to make sure `dev` is set to `false`!*
+*Check the code files to make sure `dev` variables are set to `false`!*
 1. Use the key file to log in the AWS instance using sftp. `sftp -i KaiYuan.pem ubuntu@ec2-54-176-149-48.us-west-1.compute.amazonaws.com`
 2. In the local machine, make the directories containing .shp files into zipped (.zip) files, then navigate to the directory of .zip files in sftp console using `lcd`
 3. Upload the .zip files into AWS instance using `put`, then leave sftp
@@ -45,13 +45,16 @@
 3. Follow 3-8 in Step 2 of "Running Locally"
 
 ## Step 3: Sync Code Files from GitHub
-*Generating a token for GitHub access is required before you proceed into this step. Log into a GitHub account with access to this repository and go to this [link](https://github.com/settings/tokens) to generate a token*
+*Generating a token for GitHub access is required before you proceed into this step. Log into a GitHub account with access to this repository and go to this [link](https://github.com/settings/tokens) to generate an access token.*
 1. Install GitHub CLI following this [tutorial](https://github.com/cli/cli/blob/trunk/docs/install_linux.md) for Linux
 2. Log in using generated token by using the command `gh auth login`
 3. Sync "physicalmapapp" and "pftconfig" using `gh repo sync` ([Tutorial Here](https://cli.github.com/manual/gh_repo_sync))
 
-## Step 4: Run Everything Using PM2
+## Step 4: Configure AWS Instance and Run Everything Using PM2
 *[PM2 Tutorial Here](https://pm2.keymetrics.io/docs/usage/quick-start/)*
-1. Use pip to install required Python packages: Pandas, Fiona, and Shapely
-2. Run GeoServer (`startup.sh`) using PM2
-3. Run the web app (`app.js`) using PM2
+1. Store the GeoServer username and password in AWS Secret Manager, store as "Other type of secrets", and leave other options in their default value
+2. Record the generated secret ARN, create a new access policy in AWS IAM.
+3. Create a new IAM role including the new access policy in IAM portal, then modify the IAM role of the AWS instance to attach this new IAM role
+4. Reboot the AWS instance, then use `pip` to install required Python packages: `pandas`, `fiona`, `shapely`, and `boto3`
+5. Run GeoServer (`startup.sh`) using PM2
+6. Run the web app (`app.js`) using PM2
