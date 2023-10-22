@@ -180,3 +180,4 @@ readme.html
 *.shp
 *.shx
 .Rhistory
+/public/custom.json
