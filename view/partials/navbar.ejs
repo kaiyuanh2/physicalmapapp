@@ -8,18 +8,21 @@
             <span class="navbar-toggler-icon"></span>
         </button>
 
-        <div class="collapse navbar-collapse" id="navLinks">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <div class="collapse navbar-collapse flex-column" id="navLinks">
+            <!-- <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <a href="#" class="navbar-brand">California School-based Interactive Map</a>
+            </ul> -->
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0 ml-5">
                 <li class="nav-item">
                     <a href="/" class="nav-link <%= page_name === 'index' && 'active' %>">About</a>
                 </li>
 
                 <li class="nav-item">
-                    <a href="/california" class="nav-link <%= page_name === 'california' && 'active' %>">Interactive Map</a>
+                    <a href="/california" class="nav-link <%= page_name === 'california' && 'active' %>">California physical fitness testing map</a>
                 </li>
 
                 <li class="nav-item">
-                    <a href="/custom" class="nav-link <%= page_name === 'custom' && 'active' %>">Custom Maps</a>
+                    <a href="/custom" class="nav-link <%= page_name === 'custom' && 'active' %>">Custom school-based map</a>
                 </li>
             </ul>
         </div>

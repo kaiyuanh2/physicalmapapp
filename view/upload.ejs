@@ -1,7 +1,7 @@
 <% layout('layouts/boilerplate') %>
 
     <div id="headingGroup" class="text-center d-none d-lg-block mt-3">
-        <h3 class="">Upload Custom Dataset</h3>
+        <h2 class="">Upload Custom Dataset</h2>
     </div>
 
     <% if(success && success.length) { %>
@@ -16,10 +16,10 @@
         </div>
     <% } %>
 
-    <div class="row align-items-center mt-3">
+    <div class="row align-items-center mt-3 mb-3">
         <div class="card">
             <div class="card-body">
-                <p>Please follow the format described in the documentation. The file types allowed are .csv, .xlsx, and
+                <p>Please follow the format described in the documentation below. The file types allowed are .csv, .xlsx, and
                     .xls. The maximum file size allowed is 10MB.</p>
                 <div class="row align-items-center mt-3">
                     <form id="custom_map_upload" action="/upload" method="POST" enctype="multipart/form-data">
@@ -45,4 +45,73 @@
                 </div>
             </div>
         </div>
+    </div>
+
+    <div class="content mt-5">
+        <div class="text-center" id="headingGroup">
+            <h2>Instructions for Uploading a Custom Dataset</h2>
+        </div>
+
+        <br>
+
+        <div id="headingGroup">
+            <h3>File format requirements:</h3>
+        </div>
+        <div id="aboutText">
+            <p style='margin-top:3.0pt;margin-right:0in;
+                    margin-left:1.0in;margin-bottom:.0001pt;text-indent:-.25in;line-height:normal'>1.&nbsp;&nbsp;
+                The dataset should either be an Excel worksheet with filename extensions <strong><i>.xls</i></strong> or <strong><i>.xlsx</i></strong> or a comma-separated values (CSV) file (with filename extension <strong><i>.csv</i></strong>).</p>
+            <p style='margin-top:3.0pt;margin-right:0in;
+            margin-left:1.0in;margin-bottom:.0001pt;text-indent:-.25in;line-height:normal'>2.&nbsp;&nbsp;Ensure these are the common filename extensions you use when working on your custom map.</p>
+        </div>
+
+        <br>
+
+        <div id="headingGroup">
+            <h3>Column renaming:</h3>
+        </div>
+
+        <div id="aboutText">
+            <p style='margin-top:3.0pt;margin-right:0in;
+            margin-left:1.0in;margin-bottom:.0001pt;text-indent:-.25in;line-height:normal'>1.&nbsp;&nbsp;The visualization script depends on specific column names. Before uploading, rename the columns as follows:</p>
+            <p style='margin-top:3.0pt;margin-right:0in;
+            margin-left:1.5in;margin-bottom:.0001pt;text-indent:-.25in;line-height:normal'>a.&nbsp;&nbsp;For the data column that will be visualized: <strong>rename to “data”</strong></p>
+            <p style='margin-top:3.0pt;margin-right:0in;
+            margin-left:1.5in;margin-bottom:.0001pt;text-indent:-.25in;line-height:normal'>b.&nbsp;&nbsp;For school district identification:</p>
+            <p style='margin-top:3.0pt;margin-right:0in;
+            margin-left:2.0in;margin-bottom:.0001pt;text-indent:-.25in;line-height:normal'>i.&nbsp;&nbsp;If your dataset contains both LEAID and CDS Code, <strong>rename the CDS Code column to “cdscode” for enhanced speed.</strong></p>
+            <p style='margin-top:3.0pt;margin-right:0in;
+            margin-left:2.0in;margin-bottom:.0001pt;text-indent:-.25in;line-height:normal'>ii.&nbsp;&nbsp;If it only contains one identifier, rename that column to either <strong>“leaid”</strong> or <strong>“cdscode”</strong> (all lowercase, without spaces) based on the identifier present.</p>
+            <p style='margin-top:3.0pt;margin-right:0in;
+            margin-left:1.0in;margin-bottom:.0001pt;text-indent:-.25in;line-height:normal'>2.&nbsp;&nbsp;Note: Our Python script will automatically handle conversions between LEAID and CDS Code using built-in conversion tables.</p>
+        </div>
+
+        <br>
+
+        <div id="headingGroup">
+            <h3>File size and optimization:</h3>
+        </div>
+
+        <div id="aboutText">
+
+            <p style='margin-top:3.0pt;margin-right:0in;
+                    margin-left:1.0in;margin-bottom:.0001pt;text-indent:-.25in;line-height:normal'>1.&nbsp;&nbsp;To prevent server overload, the dataset should not exceed <strong>10MB</strong>.</p>
+            <p style='margin-top:3.0pt;margin-right:0in;
+                    margin-left:1.0in;margin-bottom:.0001pt;text-indent:-.25in;line-height:normal'>2.&nbsp;&nbsp;For faster map generation:</p>
+            <p style='margin-top:3.0pt;margin-right:0in;
+                    margin-left:1.5in;margin-bottom:.0001pt;text-indent:-.25in;line-height:normal'>a.&nbsp;&nbsp;Consider converting Excel files to CSV format.</p>
+            <p style='margin-top:3.0pt;margin-right:0in;
+                    margin-left:1.5in;margin-bottom:.0001pt;text-indent:-.25in;line-height:normal'>b.&nbsp;&nbsp;While not mandatory, removing columns other than 'data' and school district identifiers can greatly reduce file size.</p>
+        </div>
+
+        <br>
+
+        <div id="headingGroup">
+            <h3>Upload limitations:</h3>
+        </div>
+
+        <div id="referenceText">
+            <p>You can upload only <strong>1 file at a time</strong>.</p>
+        </div>
+        
     </div>

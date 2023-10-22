@@ -59,63 +59,34 @@
                                         <div class="accordion-body">
                                             <% if (checkboxStr=='all' ) { %>
                                                 <strong>Every School District in California</strong>
-                                                <% } else { %>
-                                                    <% var flag=false %>
-                                                        <% const selectedStr=checkboxStr.split(',') %>
-                                                            <% var curr_county=-1 %>
-                                                                <% var new_county=0 %>
-                                                                    <% var line_str='' %>
-                                                                        <% for (let i=0; i<selectedStr.length; i++) { %>
-                                                                            <% new_county=parseInt(selectedStr[i].substring(0,
-                                                                                2)) - 1 %>
-                                                                                <% if (new_county !=curr_county) { %>
-                                                                                    <% curr_county=new_county %>
-                                                                                        <% if (line_str.length>
-                                                                                            0) { %>
-                                                                                            <%= line_str.substring(0,
-                                                                                                line_str.length - 2) %>
-                                                                                                <br>
-                                                                                                <% line_str='' %>
-                                                                                                    <% } %>
-                                                                                                        <strong>
-                                                                                                            <%= names[curr_county]
-                                                                                                                %>:
-                                                                                                        </strong>
-                                                                                                        <% } %>
-                                                                                                            <% for (let
-                                                                                                                j=0;
-                                                                                                                j<sdi[curr_county].length;
-                                                                                                                j++) {
-                                                                                                                %>
-                                                                                                                <% if
-                                                                                                                    (sdi[curr_county][j][0]==selectedStr[i])
-                                                                                                                    { %>
-                                                                                                                    <% line_str
-                                                                                                                        +=sdi[curr_county][j][1]
-                                                                                                                        + ', '
-                                                                                                                        %>
-                                                                                                                        <% }
-                                                                                                                            %>
-                                                                                                                            <% }
-                                                                                                                                %>
-                                                                                                                                <% }
-                                                                                                                                    %>
-                                                                                                                                    <% if
-                                                                                                                                        (line_str.length>
-                                                                                                                                        0)
-                                                                                                                                        {
-                                                                                                                                        %>
-                                                                                                                                        <%= line_str.substring(0,
-                                                                                                                                            line_str.length
-                                                                                                                                            -
-                                                                                                                                            2)
-                                                                                                                                            %>
-                                                                                                                                            <% line_str=''
-                                                                                                                                                %>
-                                                                                                                                                <% }
-                                                                                                                                                    %>
-                                                                                                                                                    <% }
-                                                                                                                                                        %>
+                                            <% } else { %>
+                                                <% var flag=false %>
+                                                <% const selectedStr=checkboxStr.split(',') %>
+                                                <% var curr_county=-1 %>
+                                                <% var new_county=0 %>
+                                                <% var line_str='' %>
+                                                <% for (let i=0; i<selectedStr.length; i++) { %>
+                                                    <% new_county=parseInt(selectedStr[i].substring(0, 2)) - 1 %>
+                                                    <% if (new_county !=curr_county) { %>
+                                                        <% curr_county=new_county %>
+                                                        <% if (line_str.length>0) { %>
+                                                            <%= line_str.substring(0, line_str.length - 2) %>
+                                                            <br>
+                                                            <% line_str='' %>
+                                                        <% } %>
+                                                        <strong><%= names[curr_county] %>:</strong>
+                                                    <% } %>
+                                                    <% for (let j=0; j<sdi[curr_county].length; j++) { %>
+                                                        <% if (sdi[curr_county][j][0]==selectedStr[i]) { %>
+                                                            <% line_str +=sdi[curr_county][j][1] + ', ' %>
+                                                        <% }  %>
+                                                    <% }  %>
+                                                <% } %>
+                                                <% if (line_str.length>0) { %>
+                                                    <%= line_str.substring(0, line_str.length - 2) %>
+                                                    <% line_str='' %>
+                                                <% } %>
+                                           <% } %>
                                         </div>
                                     </div>
                                 </div>
@@ -287,8 +258,9 @@
         </div>
 
         <div class="row align-items-center mt-2">
-            <p>Demo video:</p>
+            <h4><strong>A demo of creating your own custom map:</strong></h4>
             <iframe height="600" src="https://www.youtube.com/embed/JXbaOMjQ8fA?si=daNcH9bMjopiEfau" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <p>(Recorded under development environment)</p>
         </div>
 
         <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"

@@ -5,7 +5,7 @@
         <div class="row align-items-center mt-5">
             <div class="card mx-auto w-85 border-0">
                 <div id="headingGroup" class="text-center d-none d-lg-block">
-                    <h2 class="">School-based Physical Fitness Testing of California School Districts</h2>
+                    <h2 class="">School-based Physical Fitness Testing Results of California School District</h2>
                 </div>
                 <!-- <div id="headingGroup" class="text-center d-none d-lg-block">
                 <h4>Legend: The lighter, the higher percentage (better); the darker, the lower percentage (worse)</h4>
@@ -98,69 +98,34 @@
                                                 <div class="accordion-body">
                                                     <% if (checkboxStr=='all' ) { %>
                                                         <strong>Every School District in California</strong>
-                                                        <% } else { %>
-                                                            <% var flag=false %>
-                                                                <% const selectedStr=checkboxStr.split(',') %>
-                                                                    <% var curr_county=-1 %>
-                                                                        <% var new_county=0 %>
-                                                                            <% var line_str='' %>
-                                                                                <% for (let i=0; i<selectedStr.length;
-                                                                                    i++) { %>
-                                                                                    <% new_county=parseInt(selectedStr[i].substring(0,
-                                                                                        2)) - 1 %>
-                                                                                        <% if (new_county !=curr_county)
-                                                                                            { %>
-                                                                                            <% curr_county=new_county %>
-                                                                                                <% if (line_str.length>
-                                                                                                    0) { %>
-                                                                                                    <%= line_str.substring(0,
-                                                                                                        line_str.length
-                                                                                                        - 2) %>
-                                                                                                        <br>
-                                                                                                        <% line_str=''
-                                                                                                            %>
-                                                                                                            <% } %>
-                                                                                                                <strong>
-                                                                                                                    <%= names[curr_county]
-                                                                                                                        %>:</strong>
-                                                                                                                <% } %>
-                                                                                                                <% for
-                                                                                                                        (let
-                                                                                                                        j=0;
-                                                                                                                        j<sdi[curr_county].length;
-                                                                                                                        j++)
-                                                                                                                        {
-                                                                                                                        %>
-                                                                                                                        <% if
-                                                                                                                            (sdi[curr_county][j][0]==selectedStr[i])
-                                                                                                                            {
-                                                                                                                            %>
-                                                                                                                            <% line_str
-                                                                                                                                +=sdi[curr_county][j][1]
-                                                                                                                                + ', '
-                                                                                                                                %>
-                                                                                                                                <% }
-                                                                                                                                    %>
-                                                                                                                                    <% }
-                                                                                                                                        %>
-                                                                                                                                        <% }
-                                                                                                                                            %>
-                                                                                                                                            <% if
-                                                                                                                                                (line_str.length>
-                                                                                                                                                0)
-                                                                                                                                                {
-                                                                                                                                                %>
-                                                                                                                                                <%= line_str.substring(0,
-                                                                                                                                                    line_str.length
-                                                                                                                                                    -
-                                                                                                                                                    2)
-                                                                                                                                                    %>
-                                                                                                                                                    <% line_str=''
-                                                                                                                                                        %>
-                                                                                                                                                        <% }
-                                                                                                                                                            %>
-                                                                                                                                                            <% }
-                                                                                                                                                                %>
+                                                    <% } else { %>
+                                                        <% var flag=false %>
+                                                        <% const selectedStr=checkboxStr.split(',') %>
+                                                        <% var curr_county=-1 %>
+                                                        <% var new_county=0 %>
+                                                        <% var line_str='' %>
+                                                        <% for (let i=0; i<selectedStr.length; i++) { %>
+                                                            <% new_county=parseInt(selectedStr[i].substring(0, 2)) - 1 %>
+                                                            <% if (new_county !=curr_county) { %>
+                                                                <% curr_county=new_county %>
+                                                                <% if (line_str.length>0) { %>
+                                                                    <%= line_str.substring(0, line_str.length - 2) %>
+                                                                    <br>
+                                                                    <% line_str='' %>
+                                                                <% } %>
+                                                                <strong><%= names[curr_county] %>:</strong>
+                                                            <% } %>
+                                                            <% for (let j=0; j<sdi[curr_county].length; j++) { %>
+                                                                <% if (sdi[curr_county][j][0]==selectedStr[i]) { %>
+                                                                    <% line_str +=sdi[curr_county][j][1] + ', ' %>
+                                                                <% }  %>
+                                                            <% }  %>
+                                                        <% } %>
+                                                        <% if (line_str.length>0) { %>
+                                                            <%= line_str.substring(0, line_str.length - 2) %>
+                                                            <% line_str='' %>
+                                                        <% } %>
+                                                   <% } %>
                                                 </div>
                                             </div>
                                         </div>
