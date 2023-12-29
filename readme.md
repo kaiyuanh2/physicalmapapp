@@ -41,7 +41,7 @@
 
 ## Step 2: Install and Configure GeoServer on AWS Instance
 1. Install GeoServer on AWS instance following this [tutorial](https://docs.geoserver.org/latest/en/user/installation/linux.html) for Linux
-2. Change the password of GeoServer immediately (for security concerns): Go to GeoServer Web Portal, click "Users, Groups, Roles", then click "Users/Groups" tab, click "admin" user and change the password in the user page
+2. Change the password of GeoServer immediately (for security reasons): Go to GeoServer Web Portal, click "Users, Groups, Roles", then click "Users/Groups" tab, click "admin" user and change the password in the user page
 3. Follow 3-8 in Step 2 of "Running Locally"
 
 ## Step 3: Sync Code Files from GitHub
@@ -53,7 +53,7 @@
 ## Step 4: Configure AWS Instance and Run Everything Using PM2
 *[PM2 Tutorial Here](https://pm2.keymetrics.io/docs/usage/quick-start/)*
 1. Store the GeoServer username and password in AWS Secret Manager, store as "Other type of secrets", and leave other options in their default value
-2. Record the generated secret ARN, create a new access policy in AWS IAM.
+2. Record the generated secret ARN, create a new access policy in AWS IAM using this ARN code.
 3. Create a new IAM role including the new access policy in IAM portal, then modify the IAM role of the AWS instance to attach this new IAM role
 4. Reboot the AWS instance, then use `pip` to install required Python packages: `pandas`, `fiona`, `shapely`, and `boto3`
 5. Run GeoServer (`startup.sh`) using PM2

@@ -62,15 +62,19 @@ if __name__ == '__main__':
     sd_df = pd.read_csv('./public/school_district_codes_merged_nonan.csv', converters={i: str for i in range(10)})
     ins_df = None
     try:
-        ins_df = pd.read_csv(line[0], index_col=0, converters={i: str for i in range(4)})
+        ins_df = pd.read_csv(line[0], index_col=0, dtype={'leaid': str, 'cdscode': str, 'data': float})
     except:
         try:
-            ins_df = pd.read_excel(line[0], index_col=0, converters={i: str for i in range(4)})
+            ins_df = pd.read_excel(line[0], index_col=0, dtype={'leaid': str, 'cdscode': str, 'data': float})
         except:
             f_name = line[0].split('/')[-1]
             raise FileFormatError(f_name)
     
     if ins_df is None:
+        f_name = line[0].split('/')[-1]
+        raise FileFormatError(f_name)
+    
+    if not ('cdscode' in ins_df.columns or 'leaid' in ins_df.columns):
         f_name = line[0].split('/')[-1]
         raise FileFormatError(f_name)
     
@@ -84,30 +88,33 @@ if __name__ == '__main__':
         crs = src.crs
     
         with fiona.open(final_path, 'w', 'ESRI Shapefile', schema, crs) as output:
+            flag = False
+            if 'cdscode' in ins_df.columns:
+                flag = True
             for elem in src:
                 # print(elem['properties']['DistrictNa'])
-                if len(sd_df[sd_df['CDSCODE'] == elem['properties']['CDSCode']]) > 0:
-                    leaid = sd_df[sd_df['CDSCODE'] == elem['properties']['CDSCode']]['LEAID'].iloc()[0]
-                    if len(ins_df[ins_df['LEAID'] == leaid]['data']) > 0:
-                        elem['properties']['data'] = ins_df[ins_df['LEAID'] == leaid]['data'].iloc()[0]
-                        elem['properties']['scaled'] = ins_df[ins_df['LEAID'] == leaid]['data_scaled'].iloc()[0]
+                cdscode = elem['properties']['CDSCode']
+                if len(sd_df[sd_df['CDSCODE'] == cdscode]) > 0:
+                    # CDS Code is first matched if exists, LEAID otherwise
+                    if flag:
+                        if len(ins_df[ins_df['cdscode'] == cdscode]['data']) > 0:
+                            elem['properties']['data'] = ins_df[ins_df['cdscode'] == cdscode]['data'].iloc()[0]
+                            elem['properties']['scaled'] = ins_df[ins_df['cdscode'] == cdscode]['data_scaled'].iloc()[0]
+                        else:
+                            elem['properties']['data'] = -1.0
+                            elem['properties']['scaled'] = -1.0
                     else:
-                        elem['properties']['data'] = -1.0
-                        elem['properties']['scaled'] = -1.0
+                        leaid = sd_df[sd_df['CDSCODE'] == elem['properties']['CDSCode']]['LEAID'].iloc()[0]
+                        if len(ins_df[ins_df['leaid'] == leaid]['data']) > 0:
+                            elem['properties']['data'] = ins_df[ins_df['leaid'] == leaid]['data'].iloc()[0]
+                            elem['properties']['scaled'] = ins_df[ins_df['leaid'] == leaid]['data_scaled'].iloc()[0]
+                        else:
+                            elem['properties']['data'] = -1.0
+                            elem['properties']['scaled'] = -1.0
                 else:
                     elem['properties']['data'] = -1.0
                     elem['properties']['scaled'] = -1.0
                 output.write({'properties': elem['properties'], 'geometry': mapping(shape(elem['geometry']))})
-
-    with open('./public/custom.json', 'r') as json_file:
-        json_str = json_file.read()
-        json_body = json.loads(json_str)
-        # print(json_body)
-        json_body.update({line[1]: [ins_df['data'].min(), ins_df['data'].max()]})
-        new_json = json.dumps(json_body)
-
-    with open('./public/custom.json', 'w') as json_file:
-        json_file.write(new_json)
 
     if line[2] == 'dev':
         url = 'http://localhost:8080/geoserver/rest/workspaces/california/datastores/ca_custom/featuretypes'
@@ -140,6 +147,16 @@ if __name__ == '__main__':
     layer_xml = get_layer_xml(line[1])
     r = requests.post(url, headers=headers, auth=auth, data=layer_xml)
     print(r.text)
+
+    with open('./public/custom.json', 'r') as json_file:
+        json_str = json_file.read()
+        json_body = json.loads(json_str)
+        # print(json_body)
+        json_body.update({line[1]: [ins_df['data'].min(), ins_df['data'].max()]})
+        new_json = json.dumps(json_body)
+
+    with open('./public/custom.json', 'w') as json_file:
+        json_file.write(new_json)
 
     # with fiona.open("output_insurance.shp") as src:
     #     print(src.schema)
