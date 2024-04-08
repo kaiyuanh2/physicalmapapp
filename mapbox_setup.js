@@ -1,4 +1,4 @@
-import { SecretsManagerClient, GetSecretValueCommand } from "@aws-sdk/client-secrets-manager";
+const { SecretsManagerClient, GetSecretValueCommand } = require("@aws-sdk/client-secrets-manager");
 
 async function getSecret(secret_name) {
     const secret_name = "mapbox";
