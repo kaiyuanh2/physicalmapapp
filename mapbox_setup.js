@@ -20,6 +20,7 @@ async function getSecret(secret_name) {
     }
 
     let secret = response.SecretString;
+    console.log(secret);
     return secret;
 }
 

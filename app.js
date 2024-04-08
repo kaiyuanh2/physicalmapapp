@@ -265,7 +265,7 @@ app.get('/updates', (req, res) => {
     res.render('updates', {page_name});
 })
 
-app.get('/school', async (req, res) => {
+app.get('/school', (req, res) => {
     var item = 'aero';
     var grade = '5';
     var year = '2019';
@@ -274,7 +274,7 @@ app.get('/school', async (req, res) => {
     res.render('school', {page_name, mapboxgl, mapboxToken, messages: req.flash('error'), item, grade, year, schoolString});
 })
 
-app.post('/school', validateParametersPostSchool, async (req, res) => {
+app.post('/school', validateParametersPostSchool, (req, res) => {
     // console.log(req.body);
     var item = req.body.item;
     var grade = req.body.grade;
