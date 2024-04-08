@@ -181,3 +181,4 @@ readme.html
 *.shx
 .Rhistory
 /public/custom.json
+.env

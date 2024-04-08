@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const app = express();
 const path = require('path');
@@ -6,7 +7,7 @@ const methodOverride = require('method-override');
 const ExpressError = require('./utils/ExpressError');
 const flash = require('connect-flash');
 const fs = require('fs');
-const { validateParameters, validateParametersPost, validateParametersPostCustom, uploadProcess } = require('./middleware');
+const { validateParameters, validateParametersPost, validateParametersPostCustom, validateParametersPostSchool, uploadProcess } = require('./middleware');
 const { getAverage, getRange } = require('./helper');
 const session = require('express-session');
 const multer  = require('multer')
@@ -19,7 +20,7 @@ const storage = multer.diskStorage({
     }
   });
 const upload = multer({storage});
-
+const mapboxgl = require('mapbox-gl');
 
 app.use(express.json({limit: '10mb'}));
 app.use(express.urlencoded({limit: '10mb', extended: true, parameterLimit: 10000}));
@@ -252,6 +253,31 @@ app.get('/upload', (req, res) => {
 app.post('/upload', upload.single('dataSet'), uploadProcess, (req, res) => {
     const page_name = 'upload';
     res.render('upload', {page_name, success: req.flash('success'), error: req.flash('error')});
+})
+
+app.get('/updates', (req, res) => {
+    const page_name = 'updates';
+    res.render('updates', {page_name});
+})
+
+app.get('/school', (req, res) => {
+    var item = 'aero';
+    var grade = '5';
+    var year = '2019';
+    const page_name = 'school';
+    const schoolString = fs.readFileSync("./public/CA_all_schools_19_results.json").toString();
+    res.render('school', {page_name, mapboxgl, messages: req.flash('error'), item, grade, year, schoolString});
+})
+
+app.post('/school', validateParametersPostSchool, (req, res) => {
+    // console.log(req.body);
+    var item = req.body.item;
+    var grade = req.body.grade;
+    var year = req.body.year;
+    const page_name = 'school';
+    const school_file_name = "./public/CA_all_schools_" + year.slice(2) + "_results.json";
+    const schoolString = fs.readFileSync(school_file_name).toString();
+    res.render('school', {page_name, mapboxgl, messages: req.flash('error'), item, grade, year, schoolString});
 })
 
 app.all('*', (req, res, next) => {
