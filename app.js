@@ -24,7 +24,7 @@ const mapboxgl = require('mapbox-gl');
 const getSecret = require('./mapbox_setup');
 let mapboxToken = '';
 getSecret('mapbox').then(secret => {
-    mapboxToken = secret;
+    mapboxToken = secret['MAPBOX_TOKEN'];
 });
 const cors = require('cors');
 app.use(cors());
