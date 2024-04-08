@@ -26,8 +26,6 @@ let mapboxToken = '';
 getSecret('mapbox').then(secret => {
     mapboxToken = secret;
 });
-mapboxToken = JSON.parse(mapboxToken);
-mapboxToken = mapboxToken['MAPBOX_TOKEN'];
 const cors = require('cors');
 app.use(cors());
 

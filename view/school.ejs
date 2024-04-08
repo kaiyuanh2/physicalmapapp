@@ -81,7 +81,7 @@
     </div>
 
     <script>
-        const mapbox_token = '<%- mapboxToken %>';
+        const mapbox_token = JSON.parse('<%- mapboxToken %>');
         const grade_str = '<%- grade %>';
         const item_str = '<%- item %>';
         const year_str = '<%- year %>';

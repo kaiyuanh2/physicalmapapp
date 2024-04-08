@@ -1,4 +1,4 @@
-mapboxgl.accessToken = mapbox_token; 
+mapboxgl.accessToken = mapbox_token['MAPBOX_TOKEN']; 
 console.log(mapboxgl);
 geojson = CA_all_schools;
 
