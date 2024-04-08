@@ -1,25 +1,4 @@
-// mapboxgl.accessToken = process.env.MAPBOX_TOKEN;
-const { SecretsManagerClient, GetSecretValueCommand } = require("@aws-sdk/client-secrets-manager");
-const secret_name = "mapbox";
-const client = new SecretsManagerClient({
-    region: "us-west-1",
-});
-let response;
-try {
-    response = client.send(
-      new GetSecretValueCommand({
-        SecretId: secret_name,
-        VersionStage: "AWSCURRENT", // VersionStage defaults to AWSCURRENT if unspecified
-      })
-    );
-} catch (error) {
-    // For a list of exceptions thrown, see
-    // https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_GetSecretValue.html
-    throw error;
-}
-  
-mapboxgl.accessToken = response.SecretString;
-
+// mapboxgl.accessToken = process.env.MAPBOX_TOKEN; 
 geojson = CA_all_schools;
 
 var filteredData = {};
