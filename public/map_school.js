@@ -1,15 +1,12 @@
 // mapboxgl.accessToken = process.env.MAPBOX_TOKEN;
-import {
-    SecretsManagerClient,
-    GetSecretValueCommand,
-} from "@aws-sdk/client-secrets-manager";
+const { SecretsManagerClient, GetSecretValueCommand } = require("@aws-sdk/client-secrets-manager");
 const secret_name = "mapbox";
 const client = new SecretsManagerClient({
     region: "us-west-1",
 });
 let response;
 try {
-    response = await client.send(
+    response = client.send(
       new GetSecretValueCommand({
         SecretId: secret_name,
         VersionStage: "AWSCURRENT", // VersionStage defaults to AWSCURRENT if unspecified
