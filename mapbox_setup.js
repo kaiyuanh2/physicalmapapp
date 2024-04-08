@@ -13,4 +13,10 @@ async function getSecret(secret_name) {
     }
 }
 
+async function getSecretDev(secret_name) {
+    console.log(secret_name);
+    let secret = process.env.MAPBOX_TOKEN;
+    return secret;
+}
+
 module.exports = getSecret;

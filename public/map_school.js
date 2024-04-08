@@ -1,4 +1,5 @@
-// mapboxgl.accessToken = process.env.MAPBOX_TOKEN; 
+mapboxgl.accessToken = mapbox_token; 
+console.log(mapboxgl);
 geojson = CA_all_schools;
 
 var filteredData = {};

@@ -21,7 +21,11 @@ const storage = multer.diskStorage({
   });
 const upload = multer({storage});
 const mapboxgl = require('mapbox-gl');
-const { getSecret } = require('./mapbox_setup');
+const getSecret = require('./mapbox_setup');
+let mapboxToken = '';
+getSecret('mapbox').then(secret => {
+    mapboxToken = secret;
+});
 
 app.use(express.json({limit: '10mb'}));
 app.use(express.urlencoded({limit: '10mb', extended: true, parameterLimit: 10000}));
@@ -267,8 +271,7 @@ app.get('/school', async (req, res) => {
     var year = '2019';
     const page_name = 'school';
     const schoolString = fs.readFileSync("./public/CA_all_schools_19_results.json").toString();
-    mapboxgl.accessToken = await getSecret('mapbox');
-    res.render('school', {page_name, mapboxgl, messages: req.flash('error'), item, grade, year, schoolString});
+    res.render('school', {page_name, mapboxgl, mapboxToken, messages: req.flash('error'), item, grade, year, schoolString});
 })
 
 app.post('/school', validateParametersPostSchool, async (req, res) => {
@@ -279,8 +282,7 @@ app.post('/school', validateParametersPostSchool, async (req, res) => {
     const page_name = 'school';
     const school_file_name = "./public/CA_all_schools_" + year.slice(2) + "_results.json";
     const schoolString = fs.readFileSync(school_file_name).toString();
-    mapboxgl.accessToken = await getSecret('mapbox');
-    res.render('school', {page_name, mapboxgl, messages: req.flash('error'), item, grade, year, schoolString});
+    res.render('school', {page_name, mapboxgl, mapboxToken, messages: req.flash('error'), item, grade, year, schoolString});
 })
 
 app.all('*', (req, res, next) => {
