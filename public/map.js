@@ -74,7 +74,7 @@ if (checkbox.length > 0) {
         stylename += checkbox;
         var wmsLayer = L.Geoserver.wms(link + "wms", {
             layers: layer,
-            styles: "schooldistrict:school_districts",
+            styles: "schooldistrict:school_districts_orange_blue",
             env: stylename
         });
         wmsLayer.addTo(map);
@@ -88,7 +88,7 @@ if (checkbox.length > 0) {
                 console.log(checkbox.substring((i-1) * 15 * 128, i * 15 * 128 - 1));
                 checked.push(L.Geoserver.wms(link + "wms", {
                     layers: layer,
-                    styles: "schooldistrict:school_districts",
+                    styles: "schooldistrict:school_districts_orange_blue",
                     env: stylename + checkbox.substring((i-1) * 15 * 128, i * 15 * 128 - 1)
                 }));
             }
@@ -96,7 +96,7 @@ if (checkbox.length > 0) {
                 console.log(checkbox.substring((i-1) * 15 * 128));
                 checked.push(L.Geoserver.wms(link + "wms", {
                     layers: layer,
-                    styles: "schooldistrict:school_districts",
+                    styles: "schooldistrict:school_districts_orange_blue",
                     env: stylename + checkbox.substring((i-1) * 15 * 128)
                 }));
             }
