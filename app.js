@@ -267,6 +267,11 @@ app.get('/updates', (req, res) => {
     res.render('updates', {page_name});
 })
 
+app.get('/stats', (req, res) => {
+    const page_name = 'stats';
+    res.render('stats', {page_name});
+})
+
 app.get('/school', (req, res) => {
     var item = 'aero';
     var grade = '5';
