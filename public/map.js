@@ -112,7 +112,7 @@ if (checkbox.length > 0) {
 
     legend.onAdd = function (map) {
         var div = L.DomUtil.create('div', 'info legend');
-        div.innerHTML += '<img src="legend.png" alt="legend">';
+        div.innerHTML += '<img src="legend_orange_blue.png" alt="legend">';
         return div;
     };
     legend.addTo(map);
